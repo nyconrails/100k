@@ -1,0 +1,22 @@
+<% (1..100).each do |n| %>
+
+vetting<%= n %>:
+  user: vetter<%= ((n%10)==0) ? 10 : n%10 %>
+  application: application<%= (n-1)/10 + 1 %>
+  comments: This is a vetting comment 
+  status: <%= Vetting::STATUSES[rand(Vetting::STATUSES.length)] %>
+
+<% end %>
+# == Schema Information
+#
+# Table name: vettings
+#
+#  id             :integer         not null, primary key
+#  user_id        :integer
+#  application_id :integer
+#  status         :string(255)
+#  comments       :text
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+

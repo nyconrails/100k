@@ -1,0 +1,5 @@
+%div.body= post.body
+%div.form-submit
+  = semantic_form_for([organization, post], :html => {:remote => true, :id => "edit-post-status"}) do |f|
+    = f.text_area :body
+    = f.submit "Update"

@@ -1,0 +1,72 @@
+%ul.tabs-content    
+  / Give ID that matches HREF of above anchors
+  %li#tools
+    =image_tag("header-tools.png",:alt => "Tools", :height => "58", :width => "630")
+  / end tools
+  %li#community
+    =image_tag("header-community.png", :alt => "Community", :height => "58", :width => "630")
+  / end community
+  %li#nomination.active
+    #nom-header
+      %span#nom-text= Content.insert('nomination_header') 
+    .arrow-down
+    #nomination.formShell
+      %span{:style => "font-size:22px;;color:#222222;font-family:Arial, Helvetica, sans-serif; line-height:28px;"} Dear #{params[:nominee_first_name]}  #{params[:nominee_last_name]},
+      %br/
+      %p Congratulations on your nomination for partnership in 100Kin10! 100Kin10 represents a diverse, best-in-class network of organizations strategically applying their unique assets to solve a complex, national challenge: 100,000 excellent STEM teachers for our schools over the coming 10 years.
+      .hr
+      %h1 Here’s a message from #{params[:nominator_first_name]} #{params[:nominator_last_name]}:
+      =params[:message].html_safe
+      .hr
+      %p The online application portal is open and submissions are due on November 25.  You can access the portal with the username and password included at the bottom of this message, and once you begin your application you can save your entry, add to it, and submit it at any point before 11:59pm on November 25th.
+      %p To help you craft a competitive submission, we offer the following resources:
+      %ul
+        %li The FAQ tab on the application portal responds to questions generated during our last round of nominations.
+        %li The nominee toolkit, also located on the application portal, can help you craft your commitment.
+      %p We also recommend that you reach out for additional guidance and support from the organization(s) that nominated you. And please feel free to contact info@100Kin10.org for any questions you may have. We monitor this mailbox closely and will respond to all inquiries promptly. 
+      %p As a reminder, if your application is accepted, you will have access to the 100Kin10 community, including exclusive workshops and resources to increase impact and opportunities for collaboration. You will also participate in a learning and R&D platform created in partnership with the University of Chicago Urban Education Institute (UEI). The platform will spotlight emerging best practices and innovations and, over time, formative data on successful efforts and teacher and student outcomes to enable continuous improvement for all partner organizations. In addition, partners will have the opportunity to apply to work with UEI-deployed research teams. All partners also have access, through a common application form, to funding to support their efforts through the growing 100Kin10 funders’ collaborative.
+      %p We have several conference calls scheduled, to help you with any questions you may have regarding your application, or the online portal.   You will receive call times and call-in information in the next few days.
+      %p We do hope you will apply for partnership in this growing movement. If you have additional questions or require technical assistance to access the application portal, please contact us at info@100Kin10.org.
+      %p Sincerely,
+      %p The 100Kin10 Team
+      %p
+        =link_to("info@100Kin10.org","info@100Kin10.org")
+      %span{:style => "font-size:22px;;color:#222222;font-family:Arial, Helvetica, sans-serif; line-height:40px;"} Login Information
+      %br/
+      Login: #{params[:nominee_email]}
+      %br/
+      Password: *******
+      %br/
+      Login URL:
+      =link_to('http://100kin10.org/login', 'http://100kin10.org')
+
+      %br
+      %br/
+      =form_tag('/nominations', :id=>"nomination_form", :remote=>true) do
+        /=submit_tag('Back/Edit', :id=>"nomination_back")
+        = button_to_function "Back/Edit",'history.back()'
+        &nbsp;
+        
+        =hidden_field_tag 'nominee_first_name', params[:nominee_first_name]      
+        =hidden_field_tag 'nominee_last_name', params[:nominee_last_name]      
+        =hidden_field_tag 'nominee_title', params[:nominee_title]      
+        =hidden_field_tag 'nominee_organization_name', params[:nominee_organization_name]      
+        =hidden_field_tag 'nominee_email', params[:nominee_email]      
+        =hidden_field_tag 'nominee_phone', params[:nominee_phone]      
+
+        =hidden_field_tag 'nominator_first_name', params[:nominator_first_name]      
+        =hidden_field_tag 'nominator_last_name', params[:nominator_last_name]      
+        =hidden_field_tag 'nominator_title', params[:nominator_title]      
+        =hidden_field_tag 'nominator_organization_name', params[:nominator_organization_name]      
+        =hidden_field_tag 'nominator_email', params[:nominator_email]      
+        =hidden_field_tag 'nominator_phone', params[:nominator_phone]   
+        =hidden_field_tag 'nominator_orgtype', params[:nominator_orgtype]   
+
+        =hidden_field_tag 'reason', params[:reason]      
+        =hidden_field_tag 'message', params[:message]      
+        =hidden_field_tag 'is_primary_nominator', params[:is_primary_nominator]      
+        
+        =submit_tag("Submit", :id=>"nomination_submit")
+    / end formShell
+    / end preview
+    / start thanks

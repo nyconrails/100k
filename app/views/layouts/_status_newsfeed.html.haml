@@ -1,0 +1,26 @@
+#newsfeed_header
+  100Kin10 Status Newsfeed
+- @top_posts_by_org = all_top_posts_of_organizations
+- @top_posts_by_org.each do |top_post|
+  - @post = Post.find_by_id(top_post.post_id)
+  %strong
+    = @post.organization.name.upcase + " " 
+    #newsfeed_date
+      -#- if @post.created_at.year == Date.today.year
+        -#= @post.created_at.to_date.strftime('%B %e')
+      -#- else
+      = @post.created_at.to_date.strftime('%B %e, %Y')
+    %br
+    #newsfeed_name                                    
+      = @post.user.first_name.capitalize + " " + @post.user.last_name
+      
+  #newsfeed_body
+    = truncate(@post.body, :length => 120)
+  %p
+#paginate
+  .wp-pagenavi
+    #paginator
+      = paginate @top_posts_by_org, :remote => true
+%br
+%br
+      

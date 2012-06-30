@@ -1,0 +1,127 @@
+<script>
+  $(document).ready(function() {
+    $('.section_square').bind('click',function(event){
+      window.location=$(this).find('a').attr('href');       
+    });  
+
+    $('#partner_image_holder img').click(function() {
+      window.location='/page/partners';       
+    });
+        
+  });
+</script>
+
+
+
+<table id="tbl" border="0" cellspacing="0" cellpadding="0"><tr>
+
+
+<td class="aboutbox section_square" colspan="2">
+<% Content.insert('homepage_about_us') do |c| %>
+<table class="aboutcontent" style="width:500px;">
+<tr>
+<td style="width:212px;">
+<h1><%= c.render_field(:title) %></h1>
+</td>
+<td>
+<img src="images/arrowright.png" alt="" />
+</td>
+<td style="width:240px;padding:20px;">
+<div class="copyblock">
+  <%= c.render_field(:body) %>
+</div>
+</td>
+</tr>
+</table>
+<% end %>
+
+</td><!-- end td aboutbox -->
+
+<td class="photobox2">
+</td>
+<% Content.insert('homepage_more_commitments') do |c| %>
+<td class="commitmentbox section_square">
+<div class="commitmentboxdiv"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock">
+  <%= c.render_field(:body) %>
+</div>
+</div>
+</td>
+<% end %>
+</tr>
+<tr>
+<td class="photobox1">
+</td>
+<% Content.insert('homepage_view_partners') do |c| %>
+<td class="partnerbox section_square">
+<div class="partnerboxdiv"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock">
+   <%= c.render_field(:body) %>
+</div>
+</div>
+</td>
+<% end %>
+<td class="photobox3">
+</td>
+<% Content.insert('homepage_faq') do |c| %>
+<td class="faqbox section_square">
+<div class="faqboxdiv"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock">
+   <%= c.render_field(:body) %>
+</div>
+</div>
+</td>
+<% end %>
+</tr></table>
+
+<script>
+  
+  var displayLength=7;
+  
+  var scroll_partners_left=function(){
+    $('#partner_scroll').append($('#partner_image_holder > img').slice(0,displayLength));
+    removeElementsCount=$('#partner_scroll > img').length - displayLength;
+    $('#partner_image_holder').append($('#partner_scroll > img').slice(0,$('#partner_scroll > img').length - displayLength));
+  }
+  
+  var scroll_partners_right=function(){
+    $('#partner_scroll').prepend($('#partner_image_holder > img').slice(displayLength*(-1)));
+    $('#partner_image_holder').prepend($('#partner_scroll > img').slice(displayLength*(-1)));  
+  }
+  
+  $(document).ready(function(){
+    scroll_partners_left();
+    
+  });
+    
+  
+
+</script>
+
+<div id="logoscroll">
+<a href="#" onclick="scroll_partners_left(); return false;"><img src="/images/scroll_left.png" alt="Scroll Left" style="border:0;" /></a>
+<!-- begin logos -->
+<div id="partner_scroll_wrapper">
+<div id="partner_scroll">
+
+</div>
+</div>
+<!-- end logos -->
+<a href="#" onclick="scroll_partners_right(); return false;"><img src="/images/scroll_right.png" alt="Scroll Right" style="border:0;" /></a>
+</div><!-- end logoscroll div -->
+
+
+
+<div id="partner_image_holder" style="display:none;">
+<% Organization.funding_partners.each do |organization| %>
+  <%= image_tag organization.avatar.grey_tile.url %>
+<% end %>
+<% Organization.regular_partners.each do |organization| %>
+  <%= image_tag organization.avatar.grey_tile.url %>
+<% end %>
+</div>
+
+

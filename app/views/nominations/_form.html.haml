@@ -1,0 +1,90 @@
+:javascript
+  $(document).ready(function() {
+    $("form").validate(function() {
+      onkeyup: false;
+    });
+  });
+#errContainer
+
+=form_tag('/nominations?preview=true', :id => 'nomination-form') do
+
+  .formRight
+
+    .fText
+      =label_tag 'nominee_organization_name', 'Nominee Organization: *'
+      =text_field_tag 'nominee_organization_name',  params[:nominee_organization_name], :class=>'required'
+
+    .fText
+      =label_tag 'nominee_first_name', 'Nominee First Name: *'
+      =text_field_tag 'nominee_first_name', params[:nominee_first_name], :class=>'required'
+
+    .fText
+      =label_tag 'nominee_first_name', 'Nominee Last Name: *'
+      =text_field_tag 'nominee_last_name', params[:nominee_last_name], :class=>'required'
+      
+    .fText
+      =label_tag 'nominee_title', 'Nominee Title: *'
+      =text_field_tag 'nominee_title', params[:nominee_title], :class=>'required'  
+
+    .fText
+      =label_tag 'nominee_phone', 'Nominee Phone: *'
+      =text_field_tag 'nominee_phone', params[:nominee_phone], :class=>'required phoneUS'     
+                        
+    .fText
+      =label_tag 'nominee_email', 'Nominee Email: *'
+      =text_field_tag 'nominee_email', params[:nominee_email], :class=>'required email'   
+      
+    %span.fNote
+      %b Please note:
+      The information below will be shared with the nominee.
+      
+    .fText
+      =label_tag 'nominator_first_name', 'Your First Name: *'
+      =text_field_tag 'nominator_first_name', ( (params[:nominator_first_name].present?) ? params[:nominator_first_name] : current_user.first_name ), :class=>'required'
+
+    .fText
+      =label_tag 'nominator_last_name', 'Your Last Name: *'
+      =text_field_tag 'nominator_last_name', ( (params[:nominator_first_name].present?) ? params[:nominator_last_name] : current_user.last_name ), :class=>'required'
+      
+    .fText
+      =label_tag 'nominator_title', 'Your Title: *'
+      =text_field_tag 'nominator_title', ( (params[:nominator_title].present?) ? params[:nominator_title] : (current_user.title if current_user.title.present?) ), :class=>'required'         
+
+    .fText
+      =label_tag 'nominator_organization_name', 'Your Organization: *'
+      =text_field_tag 'nominator_organization_name',  ( (params[:nominator_organization_name].present?) ? params[:nominator_organization_name] :  (current_user.organization.name if current_user.organization.present?) ), :class=>'required'
+
+    .fText
+      =label_tag 'nominator_orgtype', 'Organization Type: *'
+      =select_tag 'nominator_orgtype', options_from_collection_for_select(Orgtype.all, "id", "title", ( (params[:nominator_orgtype].present?) ? params[:nominator_orgtype] :  (current_user.organization.orgtype_id if current_user.organization.present?) )), :class=>'required'
+                        
+    .fText
+      =label_tag 'nominator_email', 'Your Email: *'
+      =text_field_tag 'nominator_email', ( (params[:nominator_email].present?) ? params[:nominator_email] : (current_user.email if current_user.email.present?) ), :class=>'required email'       
+
+    .fText
+      =label_tag 'nominator_phone', 'Your Phone: *'
+      =text_field_tag 'nominator_phone', ( (params[:nominator_phone].present?) ? params[:nominator_phone] : (current_user.phone if current_user.phone.present?) ), :class=>'required phoneUS'       
+      
+  .formLeft
+    =label_tag 'reason', 'Reason for nominating organization: * <span>You have <span id="reasonCharsLeft"></span> chars left.</span>'.html_safe
+    %br/
+    =text_area_tag 'reason', params[:reason], :class=>'required'
+    
+    =label_tag 'message', 'Personal Message to the Nominee: * <span>You have <span id="messageCharsLeft"></span> chars left.</span>'.html_safe
+    %br/
+    =text_area_tag 'message', params[:message], :class=>'required'
+    %br/
+    %br/
+    
+    =check_box_tag 'is_primary_nominator', params[:is_primary_nominator], params[:is_primary_nominator]
+    %span Yes, I'd like to be the primary contact for the nomination process.
+    %br/
+    %br/
+  =submit_tag("Preview")
+%br/
+%br/  
+
+:javascript
+  $('#reason').limit('500','#reasonCharsLeft');
+  $('#message').limit('500','#messageCharsLeft');  

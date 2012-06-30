@@ -1,0 +1,18 @@
+= semantic_form_for([@organization, @user]) do |f|
+  = f.inputs do
+    = f.input :first_name, :label => "First Name:"
+    = f.input :last_name, :label => "Last Name:"
+    = f.input :title, :label => "Title:"
+    = f.input :phone, :label => "Phone:"
+    = f.input :email, :label => "Email:"
+    = check_box_tag(:send_welcome_email, 1, checked = true)
+    %label &nbsp;Send welcome email and password instructions.
+  = f.buttons do
+    - if controller.action_name == "new"
+      = f.commit_button :label => "Create Contact", :button_html => { :class => "create"}
+    - else
+      = f.commit_button :label => "Update Contact", :button_html => { :class => "update"}
+
+-#  = f.inputs "Password" do
+-#    = f.input :password
+-#    = f.input :password_confirmation

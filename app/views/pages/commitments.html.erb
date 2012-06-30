@@ -1,0 +1,123 @@
+<% Content.insert 'page_commitments' do |c| %>
+
+<div id="leftcolumn">
+<div id="contentheader"><!-- the colorblock header above the texual content -->
+<table id="contenttbl">
+<tr> <td width="220">
+<h1><%= c.render_field(:title) %></h1>
+</td>
+<td width="17"><img src="/images/arrowright.png" width="12" height="148" alt="" /></td>
+<td width="440">
+<div class="copyblock">
+<%= c.render_field(:lede) %>
+</div>
+</td>
+</tr></table>
+<div id="contentnav">
+<ul class="commitmenttabs">
+<li><a class="active subsection_increase_supply" href="#" id="subnav1" onclick="show_subsection('subsection_increase_supply');return false;">Increase Supply</a></li>
+<li><a class="subsection_retain_excellence" href="#" id="subnav2" onclick="show_subsection('subsection_retain_excellence');return false;">Retain Excellence</a></li>
+<li><a class="subsection_build_the_movement" href="#" id="subnav3" onclick="show_subsection('subsection_build_the_movement');return false;">Build the Movement</a></li>
+</ul>
+<!-- search box -->
+<div id="searchfield">
+<form method="get" id="searchform">
+  <fieldset>
+  <input type="hidden" name="commitment" value="search">
+  <input type="text" name="search" id="search">
+  <input type="submit" id="searchsubmit" value="Search" class="btn">
+  </fieldset>
+</form>
+</div><!-- end search box -->
+</div><!-- end contentnav -->
+</div><!-- end contentheader -->
+<div style="clear:both;"></div>
+
+<script>
+  var show_subsection=function(section) {
+    $('.subsection').hide();
+    $('#maincontent_landing').hide();
+    $('#'+section).show();
+    $('#contentnav .tabs li a').removeClass('active');
+    $('a.'+section).addClass('active');
+        resizeGraybox();
+  }
+
+  $(document).ready(function(){
+    <% if params[:commitment] %>
+      show_subsection('subsection_<%= escape_javascript params[:commitment] %>');
+    <% end %>
+  });
+</script>
+
+
+<div id="maincontent"> <!-- this is where the main content / running text should go -->
+
+<% if params[:search] %>
+
+<div  class="subsection" id="subsection_search">
+  <p><strong>Results for:</strong> <%= highlight params[:search],params[:search] %>  [<%= link_to 'clear', '/page/commitments' %>]</p>
+  <br>
+
+  <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).full_search(params[:search]).each do |organization| %>
+    <h1>INCREASE SUPPLY</h1>
+    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
+  <% end %>
+
+  <% Organization.all_partners.where(:commitment_category=>'retain_excellence').order(:name).full_search(params[:search]).each do |organization| %>
+    <h1>RETAIN EXCELLENCE</h1>
+    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
+  <% end %>
+
+  <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).full_search(params[:search]).each do |organization| %>
+    <h1>BUILD THE MOVEMENT</h1>
+    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
+  <% end %>
+</div>
+
+<% end %>
+
+
+<div class="subsection" id="subsection_increase_supply">
+  <h1>INCREASE SUPPLY</h1>
+  <div class="commitment_subtabs"><%= Content.insert 'increase_supply' %></div>
+  <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).each do |organization| %>
+    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+  <% end %>
+</div>
+
+<div class="subsection" id="subsection_retain_excellence" style="display:none;">
+  <h1>RETAIN EXCELLENCE</h1>
+  <div class="commitment_subtabs"><%= Content.insert 'retain_excellence' %></div>
+  <% Organization.all_partners.where(:commitment_category=>'retain_excellence').order(:name).each do |organization| %>
+    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+  <% end %>
+</div>
+
+<div class="subsection" id="subsection_build_the_movement" style="display:none;">
+  <h1>BUILD THE MOVEMENT</h1>
+  <div class="commitment_subtabs"><%= Content.insert 'build_the_movement' %></div>
+  <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).each do |organization| %>
+    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+  <% end %>
+</div>
+
+
+
+</div><!-- end maincontent -->
+</div><!-- end leftcolumn -->
+
+
+<div id="rightcolumn">
+<img src="/images/column_counting.jpg" id="rightphoto" alt="100kin10" border="0" />
+<div id="graybox">&nbsp;</div>
+
+</div><!-- end rightcolumn -->
+
+<% end %>
+
+
+
+
+
+

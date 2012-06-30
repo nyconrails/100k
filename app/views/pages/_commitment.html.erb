@@ -1,0 +1,13 @@
+
+  <br>
+  <a name="organization_<%= organization.id %>"></a>
+  <p><%= image_tag organization.avatar.regular.url %></p>
+  <br>
+  <p><strong><%= organization.name %></strong></p>
+  <p><%= organization.commitment %></p>
+  <br>
+    <% unless organization.additional_commitment.blank? %>
+    <p><strong>Additional Commitment: <%= organization.additional_commitment_category.humanize.gsub(/\b\w/){$&.upcase} if organization.additional_commitment_category %></strong></p>
+    <p><%= organization.additional_commitment %></p>
+    <br>
+    <% end %>

@@ -1,0 +1,58 @@
+= form_for @application do |f|
+  -if @application.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@application.errors.count, "error")} prohibited this application from being saved:"
+      %ul
+        - @application.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :primary_commitment
+    = f.text_area :primary_commitment
+  .field
+    = f.label :collab_org
+    = f.text_field :collab_org
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :commitmentcat
+    = f.text_field :commitmentcat
+  .field
+    = f.label :year1
+    = f.text_field :year1
+  .field
+    = f.label :year2
+    = f.text_field :year2
+  .field
+    = f.label :year3
+    = f.text_field :year3
+  .field
+    = f.label :year4
+    = f.text_field :year4
+  .field
+    = f.label :org_commitment_type
+    = f.text_field :org_commitment_type
+  .field
+    = f.label :further_info
+    = f.text_area :further_info
+  .field
+    = f.label :add_info
+    = f.text_area :add_info
+  .field
+    = f.label :avatar
+    = f.text_field :avatar
+  .field
+    = f.label :is_consent
+    = f.check_box :is_consent
+  .field
+    = f.label :secondary_id
+    = f.number_field :secondary_id
+  .field
+    = f.label :vetting_id
+    = f.number_field :vetting_id
+  .actions
+    = f.submit 'Save'

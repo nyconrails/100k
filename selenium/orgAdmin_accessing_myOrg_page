@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/" />
+<title>admin_myorganizations_functions</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">admin_myorganizations_functions</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Partner Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Logged in!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Resources</td>
+	<td>Resources</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Nomination</td>
+	<td>Nomination</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Partner News</td>
+	<td>Partner News</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partner News</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Organization</td>
+	<td>My Organization</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Admin</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Settings</td>
+	<td>My Settings</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Log out</td>
+	<td>Log out</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Organization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ORGANIZATION PROFILE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>COMMITMENT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.leftprofile &gt; strong</td>
+	<td>Organization Type:</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='contentWrapper']/div[2]/div/strong[2]</td>
+	<td>Date Joined:</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='contentWrapper']/div[2]/div/strong[3]</td>
+	<td>exact:Address:</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>CONTACTS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Organization Newsfeed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

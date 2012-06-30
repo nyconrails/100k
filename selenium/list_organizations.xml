@@ -1,0 +1,5 @@
+<testdata>
+  <test link="Organizations" link_org="New Organization" name="TestOrg_One" add1="3144, Oberoi Garden" add2="Chandivli, Andheri" city="Mumbai" zip="12304" year="2012" month="March" day="18" primary_contact="Admin TestOrg_One" primary_email="admin_testorg_one@locomotivellc.com" orgtype="Non-profit Organization" partner="partner" commitment="increase_supply" add_commit="retain_excellence" />
+  <test link="Organizations" link_org="New Organization" name="TestOrg_Two" add1="3144, Oberoi Garden" add2="Chandivli, Andheri" city="Mumbai" zip="78945" year="2012" month="March" day="20" primary_contact="Admin TestOrg_Two" primary_email="admin_testorg_two@locomotivellc.com" orgtype="Museum" partner="partner" commitment="increase_supply" add_commit="build_the_movement" />
+</testdata>
+

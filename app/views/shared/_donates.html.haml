@@ -1,0 +1,33 @@
+.breadscrumb
+  %span Projects:
+  %span.filter-words= filter_search_breadcrumbs(params)
+- if !results[:exception] && results['totalProposals'].to_i > 0
+  - results['proposals'].each do |project|
+    .excerptshare.project
+      .image= image_tag(project["imageURL"])
+      %div.content
+        .title
+          %h3= raw CGI.unescapeHTML(project['title'])
+        .description= raw CGI.unescapeHTML(project['shortDescription'])
+        .fulfillment= raw CGI.unescapeHTML(project['fulfillmentTrailer'].gsub(/^My students need/, '<strong>My students need </strong>'))
+        .term= "#{project['povertyLevel']}, #{project['city']}, #{project['state']}"
+      %div.donatebox
+        .label Give any amount
+        .input
+          = form_tag(project['fundURL']) do
+            = text_field_tag "donationAmount"
+            = submit_tag 'Give', :onclick => "this.form.target='_blank';this.form.submit();this.form.reset();"
+        .progress
+          = "$#{project['costToComplete'].to_i} to go"
+          .bar{:style => "width:100%;", :title => "#{project['percentFunded'].to_i}%"}
+            .percent{:style => "width: #{project['percentFunded'].to_i}%;"}
+  - if results['totalProposals'].to_i > 0
+    .paginations#pagination-donates
+      = "From #{results['index'].to_i+1} to #{results['index'].to_i + results['max'].to_i} of #{results['totalProposals']}"
+      - if params[:page].to_i > 1
+        = link_to "Prev", "javascript:#", :class => "pagination", :id => "#{params[:page].to_i - 1}", :rel => 'donates', :title => "Page #{params[:page].to_i-1}"
+      - #if params[:page].to_i < (results['totalProposals'].to_f/results['max'].to_i).ceil
+      - if (results['totalProposals'].to_i - results['max'].to_i > results['index'].to_i)
+        = link_to "Next", "javascript:#", :class => "pagination", :id => "#{params[:page].to_i+1}", :rel => 'donates', :title => "Page #{params[:page].to_i+1}"
+- else
+  %p No matches found.

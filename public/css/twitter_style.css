@@ -1,0 +1,91 @@
+/*
+Site Name: Nettuts+
+Site URI: http://net.tutsplus.com/
+Description: Twitter API Widget Tutorial Demo - Multiple Tweets v1
+Version: 1.0
+Author: Janet Wagner
+Author URI:  http://www.WebCodePro.net/
+*/
+
+
+/*  Color Reference
+---------------------------------------------------
+Blue: #2a88b3
+Light Gray: #f2f2f2
+Border: 1px solid #d8d8d8
+*/
+
+
+/*  Default Styles
+--------------------------------------------------- */
+
+
+
+
+
+#graybox .twitterfeed	{	
+	float: left;
+	background-color: #efefef;
+	width: 280px;
+	margin: 0px 0px 30px 0px;
+	border: 0px solid #d8d8d8; 
+	padding: 5px 5px 15px 0px;
+}
+
+#graybox img	{
+	margin: 15px 0px 0px 10px;
+	border: 0px solid red;}
+
+#graybox h3	{
+	display: inline;
+	padding: 0px 5px 0px 0px;
+	margin: -50px 10px 0px 5px;
+	line-height: 30px;
+	border: 0px solid red;}
+
+#graybox h3 a {
+	text-decoration: none;
+}
+
+#graybox hr	{
+    width: 90%;
+    height: 1px;
+    background: #dfdfdf;
+    display: block;
+    border: none;
+	margin: 20px 0px 20px 12px;
+}
+
+#tweet	{
+	float: none;
+	clear: both;
+}
+
+#tweet p {
+	margin: 15px 15px 0px 10px;
+}
+
+#tweet .profile_icon {
+	float: left;
+	margin: 0px 10px 10px 0px;
+}
+
+#web_intent	{	
+	float: none;
+	clear: both;
+	margin: 10px 0px 0px 15px;
+}
+
+#web_intent	a:link, #web_intent	a:visited, #web_intent a:active {
+	margin: 0px 10px 0px 0px;
+}
+
+#web_intent img {
+	margin: 0px 3px 0px 0px;
+	position: relative;
+	top: 2px;
+}
+
+#web_intent .time {
+	margin: 0px 10px 0px 0px;
+}

@@ -1,0 +1,364 @@
+/*
+* Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+  /* header */
+  #topMain{
+    background-color:#ffc42b;
+    height:130px;
+    width:100%;
+  }
+  
+  #container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+  
+  #logo a{
+    background: url('/assets/logo.png') no-repeat scroll top left;
+    width: 304px;
+    height: 79px;
+    float: left;
+    margin-top:50px;
+  }
+  
+  /* header / utility nav */
+  ul#utilityNav{
+    font-size:12px;
+    color:#9a7507;
+    float:right;
+    width: auto;
+    text-align:right;
+    margin-top:10px;
+    font-weight:600;
+  }
+  
+  ul#utilityNav li{
+    float:left;
+    padding:0 8px;
+    border-right:1px solid #9a7507;
+  }
+  
+  ul#utilityNav li a{
+    color:#333333;
+    text-decoration:none;
+    font-weight:normal;
+  }
+  
+  ul#utilityNav li a:hover{
+    color:#000;
+    text-decoration:underline;
+  }
+  
+  ul#utilityNav li.last{
+    border-right:none;
+  }
+  
+  /* tabs */ 
+  #tabWrapper{
+    margin:25px 0 0 290px;
+    padding:0px;
+  }
+  
+  /* guts */ 
+  
+  #sidebar{
+    float:left;
+    width:290px;
+  }
+  
+  #sidebarCap{
+    width:290px;
+    background: url('/assets/bg-content-cap.png') no-repeat scroll top right;
+  }
+  
+  #sidebarPad{
+    padding:25px 15px 0 15px;
+  }
+  
+  #sideNewsWrapper{
+    width:257px;
+  }
+  
+  #contentWrapper{
+    display:block;
+    overflow:hidden;
+    height:auto;
+    width:960px;
+    margin:20px 0;
+    /*background: transparent url('../images/bg-content.png');*/
+    background: transparent url('/assets/bg-fauxcolumn.png');
+  }    
+  
+  .content{
+    float:left;
+    width:630px;
+    /*margin:25px 20px 0 0;*/
+    padding-left:20px;
+  }
+  
+  .formShell{
+    width:588px;
+    padding:40px 20px 20px 20px;
+    background-color:#fafafa;
+    border:solid 1px #dedede; 
+/*  margin-top:-20px;*/
+    margin-top:-83px;
+  }
+  
+  .formRight{
+    width:510px;
+    text-align:right;
+    margin:20px;
+  }
+  
+  .formLeft{
+    width:580px;
+  }
+  
+  .contentShell{
+    width:588px;
+    padding:20px;
+    margin-top:20px;
+  }
+  
+  #welcome .contentShell, #faq .contentShell{
+    margin-top:0px;
+  }
+  
+  .storyWrapper{
+    font-size:12px;
+    margin:0 0 10px 0;
+    padding:0 0 10px 0;
+    border-bottom:solid 1px #dedede; 
+  }
+  
+  #sideNewsWrapper .last{
+    border-bottom:none; 
+  }
+  
+  .storyWrapper a.headline{
+    font-size:14px;
+    display:block;
+  }
+  
+  .storyWrapper a.readMore{
+    text-decoration:none;
+  }
+  
+  .storyWrapper span{
+    font-size:10px;
+    display:block;
+    font-style:italic;
+    color:#999;
+  }
+  
+  .tweet{
+    font-size:15px;
+    color:#777;
+    margin-bottom:30px;
+  }
+  
+  /* footer */
+  
+  #footMain{
+    background-color:#ffc42b;
+    height:90px;
+    border-top: 1px solid #eeb41c;
+    margin: 0 auto;
+    width: 960px;
+  }
+  
+  ul#footerNav{
+    font-size:15px;
+    color:#fff;
+    font-weight:600;
+    margin: 0 0 0 310px;
+    text-align:center;
+    margin-top:0px;
+    padding-top:30px;
+  }
+  
+  ul#footerNav li{
+    float:left;
+    padding:0 8px;
+  }
+  
+  ul#footerNav li a{
+    color:#9a7507;
+    text-decoration:none;
+    font-weight:normal;
+    font-size:12px;
+  }
+  
+  ul#footerNav li a:hover{
+    color:#333;
+  }
+  
+  ul#footerNav li.last{
+    border-right:none;
+  }
+  
+  .hr {
+    background-color: #FFFFFF;
+    border-top: 1px solid #dedede;
+    height: 1px;
+    margin: 10px 0;
+  }
+
+
+  p.question {
+    font-size:16px;
+    color:#222;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  
+  p.answer {
+    border-bottom: 1px solid #dedede;
+    padding-bottom:20px;
+  }
+
+  fieldset.rb label {
+    display:block;
+    margin-bottom:10px;
+  }
+
+  fieldset.rb span {
+    line-height:25px;
+    margin-bottom:10px;
+  }
+  
+  input.other{
+    width:200px;
+    margin-left:5px;
+  }
+  
+  span.fNote{
+    display:block;
+    color:#777;
+    margin:15px 0 20px 0;
+    font-size:15px;
+  }
+
+  span.fNote b{
+    color:#333;
+  }
+  
+  span.fNoteBig{
+    display:block;
+    color:#222;
+    margin:15px 0 20px 0;
+    font-size:16px;
+
+  }
+
+  span.fEx{
+    display:block;
+    color:#999;
+    margin:5px 0;
+  }
+
+  /* label.sBlk{
+    font-size:14px;
+    line-height:18px;
+  } */
+
+  span.fBig{
+    display:block;
+    font-size:16px;
+    margin-top:10px;
+  }
+
+  .fText{
+    margin-bottom:10px;
+  }
+  
+  a {
+    text-decoration:none;
+  }
+
+  .formLeft .fText{
+    padding-bottom:10px;
+    border-bottom:solid 1px #dedede; 
+  }
+
+  .formLeft .fLast{
+    padding-bottom:10px;
+    border-bottom:none; 
+  }
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
+
+
+	.header {
+	margin-top:50px;
+	background: url(/assets/header-blue.png) no-repeat 0 0;
+    font-family: 'LeagueGothicRegular';
+	font-size: 30px;
+	width:610px;
+	height:38px;
+	padding:14px 12px;
+	color: #FFF;
+	}
+	
+	.menu_current_selected
+	{
+	  font-size: 13px;
+	  font-weight: bold !important;
+	  text-decoration: underline !important; 
+	}

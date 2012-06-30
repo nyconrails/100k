@@ -1,0 +1,289 @@
+/*
+rgb colors:
+yellow 255 196 37 / #ffc425
+blue 11 100 172 / #0b64ac FAQ
+lt blue 130 201 240 /#82c9f0
+green 89 165 84 / #59a554 /
+turquoise 0 149 143 / #00958f / partners
+gray #585858
+lt gray #efefef
+*/
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/League-Gothic/league_gothic-webfont.eot');
+    src: url('../fonts/League-Gothic/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/League-Gothic/league_gothic-webfont.woff') format('woff'),
+         url('../fonts/League-Gothic/league_gothic-webfont.ttf') format('truetype'),
+         url('../fonts/League-Gothic/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+margin: 0;
+}
+
+
+/* This code will highlight the correct subnav button when on that page */
+body.subnav1 a#subnav1,
+body.subnav2 a#subnav2,
+body.subnav3 a#subnav3,
+body.subnav4 a#subnav4,
+body.subnav5 a#subnav5 {
+  color: #fff;
+  background: url(../images/navbutton.png) no-repeat 0 0;
+  background-position: 50% -4px;
+}
+
+body {
+line-height: 24px;
+}
+
+
+/* HEADER STYLES */
+/* HEADER STYLES */
+
+h1, h2, h3 {
+  font-family: 'LeagueGothicRegular', arial, sans;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 28px;
+  margin-bottom: 10px 0;
+  text-transform: uppercase;
+  color: #585858;
+  -webkit-font-smoothing: antialiased;
+}
+h2 {
+  font-size: 25px;
+  line-height: 22px;
+  margin: 10px 0;
+}
+h3 {
+  font-size: 20px;
+  line-height: 18px;
+  margin: 10px 0;
+}
+
+blockquote {
+  margin: 20px;
+  background-color: #efefef;
+  padding: 10px;
+}
+
+/* GENERAL NAVIGATION */
+/* GENERAL NAVIGATION */
+
+
+a:link,
+a:visited,
+a:active {color: #000000; text-decoration: none;}
+a:hover {color: #ffc425; text-decoration: none;}
+
+
+/* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
+/* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
+
+#mainnav,
+#contentnav,
+#secondarynav ul {
+  list-style: none;
+  text-align: center;
+  font-family: 'LeagueGothicRegular', arial, sans;
+  -webkit-font-smoothing: antialiased;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+
+/* This code will highlight the correct main meu nav button when on that page */
+body#home a#homenav,
+body#aboutus a#aboutnav,
+body#commitments a#commitnav,
+body#news a#newsnav,
+body#partners a#partnersnav,
+body#faq a#faqnav {
+  color: #fff;
+  background: url(../images/navbutton.png) no-repeat 0 0;
+  background-position: 50% 0px;
+}
+
+
+.portal {
+  border-right: 2px solid #585858;
+  padding-top: 2px;
+  padding-right: 10px;
+}
+.contact {
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+.gobutton {
+  background-color: #efefef;
+  color: #585858;
+  height: 22px;
+  width: 30px;
+  border: 0;
+  -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/* CONTENT NAV UNDERNEATH COORBLOCK DIV */
+
+#contentnav {
+  width: 100%;
+  clear: left;
+  float: left;
+  background-color: #585858;
+  position: relative;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  height: 36px;
+  vertical-align: middle;
+  display: inline
+}
+#contentnav A:link,
+#contentnav A:visited,
+#contentnav A:active { padding: 7px 4px 4px 4px; color: #FFF; text-decoration: none;}
+#contentnav A:hover { color: #DDD;
+text-decoration: none;
+background: url(../images/navbutton.png) no-repeat 50% -4px;
+padding-bottom: 0px;
+overflow: visible; padding: 7px 4px 4px 4px;
+}
+
+#contentnav ul li {
+  margin-top: 0px;
+  border-right: 1px solid #FFF;
+  list-style: none;
+  width: 145px;
+  height: 36px;
+  padding-bottom: 0px;
+  float: left;
+  background-color: #585858;
+  padding: 10px 4px 4px 4px;
+}
+
+#contentnav ul {
+  display: inline;
+}
+
+#contentnav ul li:last-child {
+  border-right: none;
+}
+
+
+/* grid styling on community page */
+div.boxes {
+  border: 0px dashed #333;
+  background-color: #fff;
+  font-size: 11px;
+  line-height:16px;
+  }
+div.spacer {
+  clear: both;
+  }
+
+div.float {
+  float: left;
+  width: 310px;
+  height: 225px;
+  margin-bottom:10px;
+}
+
+div.boxcontent {
+  float:left;
+  width:180px;
+  padding: 0 4px;
+}
+
+div.boxleft {
+  float: left;
+  width: 290px;
+  overflow: hidden;
+}
+
+
+div.boxleft img {
+  width: 290px;
+}
+
+div.boxleft a img {
+  width: 120px;
+}
+
+div.resourcebox  {
+  float: left;
+  width: 100%;
+  background-color: #efefef;
+  padding:10px;
+  margin-bottom:10px;
+  }
+div.resourcecontent {
+  float:left;
+  width:310px;
+  padding: 0 10px;
+  font-size: 11px;
+  line-height:16px;
+  }
+div.resourcecontent h3 {
+  margin-top:0px;
+}
+
+.resourcebutton a:link,
+.resourcebutton a:visited,
+.resourcebutton a:active {
+  padding: 2px 8px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 11px;
+  background: #ffc425;
+  color: #333;
+  display: block;
+  width:100px;
+  text-align:center;
+  margin-top:10px;
+  }
+.resourcebutton a:hover {
+  background: #333;
+  color: #ffc425;
+}
+
+#logobox {
+  margin-top:-10px;margin-bottom:10px;width:240px;padding:10px;background:#FFF;
+  min-height:50px;
+  vertical-align: middle;
+}
+#logobox img {
+  max-width: 240px;
+  vertical-align: middle;
+}
+.leftprofile {
+  float:left;
+  width:300px;
+  }
+
+.rightprofile {
+  float:left;
+  width:300px;
+  }
+
+
+h3 a:link,
+h3 a:visited,
+h3 a:hover,
+h3 a:active {
+text-decoration: none;
+}
+
+
+#partnerlogo {
+  margin-bottom: 20px;
+}

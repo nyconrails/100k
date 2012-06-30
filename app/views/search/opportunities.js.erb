@@ -1,0 +1,3 @@
+document.body.style.cursor = 'default';
+$("#opportunities").html("<%= escape_javascript(render :partial => "shared/opportunities", :locals => {:opportunities => @opportunities, :params => params})%>");
+$QUERY_PARAMS = <%= raw params.to_json %>;

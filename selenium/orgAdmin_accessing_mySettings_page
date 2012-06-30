@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/" />
+<title>orgAdmin_accessing_mySettings_page</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">orgAdmin_accessing_mySettings_page</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Partner Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Hello, ${admin_fname}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_email</td>
+	<td>${admin_email}</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_first_name</td>
+	<td>${admin_fname}</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_last_name</td>
+	<td>${admin_lname}</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Password Reset</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Update</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Organization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>${admin_email}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>${admin_phone}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_first_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_last_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Could not update your account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_first_name</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_last_name</td>
+	<td>TestOrg_One</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_title</td>
+	<td>Admin_TestOrg_One</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_phone</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_show_contact</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Your information was updated successfully.</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(.//*[@id='user_email'])</td>
+	<td>user_email</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(.//*[@id='user_first_name'])</td>
+	<td>user_fname</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(.//*[@id='user_last_name'])</td>
+	<td>user_lname</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(.//*[@id='user_title'])</td>
+	<td>user_title</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>xpath=(.//*[@id='user_phone'])</td>
+	<td>user_phone</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Organization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ORGANIZATION PROFILE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${user_fname}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${user_lname}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${user_title}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${user_email}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${user_phone}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=post_body</td>
+	<td>Hello, this is test on My settings page!!!!!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.body</td>
+	<td>Hello, this is test on My settings page!!!!!</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Organization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='sidebarPad']/h1[2]</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Hello, this is test on My settings page!!!!!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.content &gt; h1</td>
+	<td>Organization Newsfeed</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.body</td>
+	<td>Hello, this is test on My settings page!!!!!</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Partner Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Contact Us</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

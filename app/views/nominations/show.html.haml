@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+  %b Nom org name:
+  = @nomination.nom_org_name
+%p
+  %b Nom first name:
+  = @nomination.nom_first_name
+%p
+  %b Nom last name:
+  = @nomination.nom_last_name
+%p
+  %b Nom title:
+  = @nomination.nom_title
+%p
+  %b Nom email:
+  = @nomination.nom_email
+%p
+  %b Nom phone:
+  = @nomination.nom_phone
+%p
+  %b Your first name:
+  = @nomination.your_first_name
+%p
+  %b Your last name:
+  = @nomination.your_last_name
+%p
+  %b Your title:
+  = @nomination.your_title
+%p
+  %b Your org:
+  = @nomination.your_org
+%p
+  %b Organization type:
+  = @nomination.organization_type
+%p
+  %b Your email:
+  = @nomination.your_email
+%p
+  %b Your phone:
+  = @nomination.your_phone
+%p
+  %b Reason:
+  = @nomination.reason
+%p
+  %b Message:
+  = @nomination.message
+%p
+  %b Is primary:
+  = @nomination.is_primary
+
+= link_to 'Edit', edit_nomination_path(@nomination)
+\|
+= link_to 'Back', nominations_path

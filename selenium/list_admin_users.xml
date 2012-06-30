@@ -1,0 +1,5 @@
+<testdata>
+  <test linkUsers="Users"  linkUser="New User" email="admin_testorg_one@locomotivellc.com" first_name="Admin" last_name="TestOrg_One" title="Admin_One" password="password"/>
+  <test linkUsers="Users"  linkUser="New User" email="admin_testorg_two@locomotivellc.com" first_name="Admin" last_name="TestOrg_Two" title="Admin_Two" password="password"/>
+</testdata>
+

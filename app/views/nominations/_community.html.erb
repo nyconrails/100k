@@ -1,0 +1,33 @@
+
+<%= Content.insert('community_partners') %>
+
+<h3>sort by:  <a href="?order=name">NAME</a>  |   <a href="?order=joined_at">DATE JOINED</a>  |   <a href="?order=orgtype_id">ORG TYPE</a>  |  <a href="?order=state_id">STATE</a>  |  <a href="?order=commitment_category">COMMITMENT CATEGORY</a></h3><br/>
+
+
+<div class="boxes">
+
+<% Organization.all_partners.order(params[:order]).each do |organization| %>
+  
+  <div class="float">
+    <div class="boxleft">
+    <%= link_to organization do %>
+      <%= image_tag organization.avatar.grey_tile.url %><br />
+    <% end %>
+    </div>
+    <div class="boxcontent">
+    <strong><%= organization.name %></strong><br>
+  	<%= organization.orgtype.title if organization.orgtype  %><br>
+  	<%= organization.city %>, <%= organization.state.abbreviation if organization.state %><br>
+  	<%= organization.joined_at.strftime('%m/%Y') if organization.joined_at %>
+  	</div>	
+  </div>
+
+<% end %>
+
+<div class="spacer">
+  &nbsp;
+</div>
+
+
+</div>
+

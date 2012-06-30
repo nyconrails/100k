@@ -1,0 +1,54 @@
+#contentnav
+  -if @current_user
+    -if @current_user.is_nominator
+      %ul.tabs
+        / Give href an ID value of corresponding "tabs-content" <li>'s
+        %li
+          %a{:href => "#community"} Community
+        %li
+          %a{:href => "#resources"} Resources
+        %li
+          %a{:href => "#nomination"} Nomination
+        %li
+          %a.active{:href => "#partnernews"} Partner News
+    -else
+      %ul.tabs
+        / Give href an ID value of corresponding "tabs-content" <li>'s
+        %li
+          %a.active{:href => "#welcome"} Welcome
+        %li
+          %a{:href => "#faq"} FAQs
+        %li
+          %a{:href => "#application"} Application
+
+%ul.tabs-content
+  %li#partnernews.active
+    - Content.insert 'partner_news' do |c|
+      %h1
+        = c.render_field(:title)
+      %p
+        = c.render_field(:lede)
+      - if c.body
+        %p
+          = c.render_field(:body)
+    %iframe{:src => 'http://www.100kpress.com/partner-news/', :style => "width: 650px; height: 1050px;", :scrolling => 'auto'}
+  %li#resources
+    =render :partial=>'nominations/resources'
+  %li#community
+    =render :partial=>'nominations/community'
+  / end community
+  %li#nomination
+    -#= Content.insert('nomination_header')
+    #nom-header
+      %span#nom-text= Content.insert('nomination_header') 
+    .arrow-down
+    #nomination.formShell
+      - nomination_date = "#{Content.insert('nomination_date')}"
+      = "Unable to display Nomination content as Nomination end date is not available." if nomination_date == ""
+      - if nomination_date != ""
+        - if lambda {Time.now < Time.parse(nomination_date)}.call
+          = Content.insert 'nomination_body'
+          =render '/nominations/form'
+        -else
+          = Content.insert('nomination_thankyou_body')
+/ end tabs-content

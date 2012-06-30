@@ -1,0 +1,34 @@
+= link_to '< Portal Home', welcome_index_path
+%br
+%br
+
+%h1#header
+  MY SETTINGS  	
+%br
+
+%h2 Contact Information
+= semantic_form_for(@user, :url => update_account_path) do |f|
+  = f.inputs do
+    = f.input :first_name, :label => "First Name:"
+    = f.input :last_name, :label => "Last Name:"
+    = f.input :title, :label => "Title:"
+    = f.input :phone, :label => "Phone:"
+    = f.input :email, :label => "Email:"
+    -#.showContactDetails
+      -#= f.input :show_contact, :as => :boolean, :label => "Display your contact information in your organization's page."
+  -#%strong Password Reset
+  = f.inputs do
+    = f.input :password, :label => "Password:"
+    = f.input :password_confirmation, :label => "Password Confirmation:"
+  .showContactDetails
+    = f.input :show_contact, :as => :boolean, :label => "Display your contact information in your organization's page."
+  = f.buttons do
+    = f.submit "Update" 
+
+-# %h2 Post Status
+-# - if can? :post, @organization
+-#  = render :partial => "posts/form"
+-# #posts-list
+-#  = render :partial => "posts/list", :locals => { :posts => current_user.posts.order("posts.created_at DESC"), :organization => @organization}
+
+

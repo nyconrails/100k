@@ -1,0 +1,108 @@
+/* styles for the table and colorboxes on the home page of 100kin10 */
+#tbl {
+margin-top: -10px;
+border-collapse:collapse;
+}
+
+#abouttbl {
+text-align: center;
+border-collapse:collapse;
+padding: 0;
+margin: 0;
+}
+
+#tbl A:link,
+#tbl A:visited,
+#tbl A:active {
+background-color: #FFF;
+margin-top: 8px;
+padding: 4px 6px 3px 6px;
+font-size: 16px;
+font-family: 'LeagueGothicRegular', arial, sans;
+font-weight: normal;
+font-style: normal;
+color: #585858; 
+text-decoration: none;
+text-transform: uppercase;
+float: left;
+}
+#tbl .aboutbox A:hover {color: #ffc425; text-decoration: none;}
+#tbl .commitmentbox A:hover {color: #82c9f0; text-decoration: none;}
+#tbl .faqbox A:hover {color: #0b64ac; text-decoration: none;}
+#tbl .partnerbox A:hover {color: #00958f; text-decoration: none;}
+
+.photobox1 {
+width:256px;
+height:256px;
+background:#ffffff url('../images/home_photo1.jpg') no-repeat left top;
+}
+.photobox2 {
+width:256px;
+height:256px;
+background:#ffffff url('../images/home_photo2a_256x256.jpg') no-repeat left top;
+}
+.photobox3 {
+width:256px;
+height:256px;
+background:#ffffff url('../images/home_photo2b_256x256.jpg') no-repeat left top;
+}
+
+.partnerbox,
+.commitmentbox,
+.faqbox,
+.aboutbox {
+	/*padding: 20px 20px 0 20px;*/
+	text-align: center;
+	width: 256px;
+}
+
+
+.partnerbox {
+background:#00958f;
+}
+.commitmentbox {
+background:#82c9f0;
+}
+.faqbox {
+background:#0b64ac;
+}
+.aboutbox {
+width: 512px;
+border: 0px dotted black;
+background:#ffc425;
+}
+
+.aboutbox  td{
+height: 200px;
+}
+
+a.partnerbox:hover,
+a.faqbox:hover,
+a.commitmentbox:hover,
+a.aboutbox:hover {
+background:#efefef;
+color:#333;
+}
+
+
+
+
+h1 {
+	color: #FFF;	
+}
+
+.copyblock{ 
+	padding: 0 20px;
+}
+
+/* Styles for the logo scroller underneath the color boxes */
+
+#logoscroll {
+margin-top: 5px;
+margin-bottom: -10px;
+padding: 0 5px 0 5px;
+letter-spacing: 4px;
+}
+
+	
+

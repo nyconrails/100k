@@ -1,0 +1,82 @@
+<%= link_to '< Portal Home', welcome_index_path %>
+<br />
+<br />
+<% if @organization == @current_user.organization %>
+<h1 id="header">
+ MY ORGANIZATION
+</h1>
+<% end %>
+<br />
+<div class="leftprofile">
+
+  <h2>ORGANIZATION PROFILE</h2>
+  
+  <% if @organization == @current_user.organization %>
+  	<span style='color: #FFC425;'> <%= @organization.name %> </span>
+  <% else %>
+    <%= @organization.name %>
+  <% end %>
+  <br />
+  <br />
+  <%= show_field("Organization Type", @organization.orgtype.title).html_safe unless @organization.orgtype.blank? %>
+  <br />
+  <%= show_field("Date Joined", @organization.joined_at.strftime('%m/%Y')).html_safe unless @organization.joined_at.blank? %>
+  <br />
+
+  <strong>Address:</strong><br />
+  <%= @organization.address %><br />
+  <%= (@organization.address2 + "<br>").html_safe unless @organization.address2.blank? %>
+  <%= @organization.city %> <%= @organization.state.abbreviation if @organization.state %> <%= @organization.zip %>
+  <br />
+  <br />
+
+  <strong>CONTACTS</strong><br />
+  <% if primary_contact=@organization.primary_contact %>
+    <%= primary_contact.full_name %>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 12px;">[Admin]</span><br />
+    Title:  <%= primary_contact.title %><br />
+    <% if primary_contact.show_contact == true %>
+      Email:  <%= primary_contact.email %><br />
+      Phone:  <%= primary_contact.phone %><br />
+    <% end %>
+  <% else %>
+    Email: <%= @organization.primary_contact_email %><br />
+  <% end %>
+  <br/>
+  <% @users.each do |user|%>
+    <% if user.role == 'regular_user' %>
+      <%= user.full_name %><br />
+      Title:  <%= user.title %><br />
+      <% if user.show_contact == true %>
+        Email:  <%= user.email %><br />
+        Phone:  <%= user.phone %><br />
+      <% end %>
+    <% end %>
+    <br/>
+  <% end %>
+</div>
+<div class="rightprofile">
+
+
+  <h3> COMMITMENT</h3>
+  <%= strip_tags(@organization.commitment) if @organization.commitment.present? %>
+  <% unless @organization.additional_commitment.blank? %>
+    <h3>ADDITIONAL COMMITMENT</h3>
+    <%= @organization.additional_commitment %>
+  <% end %>
+
+</div>
+<br/>
+<div class="spacer">
+  &nbsp;
+</div>
+<%
+=begin
+%>
+<h2>Organization Newsfeed</h2>
+
+<div id="posts-list">
+  <%= render :partial => "posts/list", :locals => { :posts => @organization.posts.order("posts.created_at DESC"), :organization => @organization} %>
+</div>
+<%
+=end
+%>

@@ -1,0 +1,7 @@
+<testdata>
+  <test linkUsers="Users"  linkUser="New User" email="regular1_one@locomotivellc.com" first_name="RegularUser1" last_name="TestOrg_One" title="RegUser_One" organization="TestOrg_One" password="password"/>
+  <test linkUsers="Users"  linkUser="New User" email="regular2_one@locomotivellc.com" first_name="RegularUser2" last_name="TestOrg_One" title="RegUser_One" organization="TestOrg_One" password="password"/>
+  <test linkUsers="Users"  linkUser="New User" email="regular1_two@locomotivellc.com" first_name="RegularUser1" last_name="TestOrg_Two" title="RegUser_Two" organization="TestOrg_Two" password="password"/>
+  <test linkUsers="Users"  linkUser="New User" email="regular2_two@locomotivellc.com" first_name="RegularUser2" last_name="TestOrg_Two" title="RegUser_Two" organization="TestOrg_Two" password="password"/>
+</testdata>
+

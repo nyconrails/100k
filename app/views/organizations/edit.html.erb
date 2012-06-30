@@ -1,0 +1,86 @@
+<%= link_to '< Portal Home', welcome_index_path %>
+<br />
+<br />
+
+<h1 id="header">
+ ADMIN
+</h1>
+
+<br />
+<% content_for :dashboard_leftside do %>
+  <%= semantic_form_for @organization do |f| %>
+    <div id="logobox" style="background:#efefef !important;">
+      <%= image_tag f.object.avatar.regular.url %>
+    </div>
+    <%=  f.input :avatar, :as=>:file, :label=>"Logo" %> <%# Added on 13-Mar-2012 to upload Organization_logo %>
+    <br />
+    <%= f.buttons %>
+    <strong> Organization: </strong>
+    <br />
+    <%= @organization.name %>
+    <br /><br />
+    <strong> Organization Type: </strong>
+    </br>
+    <%= @organization.orgtype.title %>
+  <% end %>
+<% end %>
+<div id="organization_form_wrapper">
+  <%= render :partial=>'basic_form', :locals=>{:organization=>@organization} %>
+</div>
+
+<script>
+
+  $(document).ready(function(){
+    var SAVED_USERS = {};
+<% @organization.users.each do |user| %>
+      SAVED_USERS["<%= user.id %>"] = <%= raw user.attributes.reject{|k,v| !(['email', 'id', 'phone', 'title'].include?(k.to_s)) }.to_json %>;
+      SAVED_USERS["<%= user.id %>"].name = "<%= user.full_name %>";
+<% end %>
+    $('#organization_primary_contact_id').bind('change', function(){
+      var selected = $(this).val();
+      var obj = SAVED_USERS[selected];
+      if(obj != undefined){
+        $("#organization_primary_contact_title").val(obj.title);
+        $("#organization_primary_contact_phone").val(obj.phone);
+        $("#organization_primary_contact_email").val(obj.email);
+      }else{
+        $("#organization_primary_contact_title").val('');
+        $("#organization_primary_contact_phone").val('');
+        $("#organization_primary_contact_email").val('');
+      }
+    });
+    $('.edit_link').bind('click',function(event){
+      $('#organization_form_wrapper').toggle();
+    });
+  });
+
+</script>
+
+<div class="spacer">
+  &nbsp;
+</div>
+<%# Commented on 13-Mar-2012 as this is no longer required as it donot provide any Edit feature%>
+<%# Start Comment%>
+<!--strong>COMMITMENT</strong-->
+<!--p><%#= @organization.commitment %></p-->
+<%# unless @organization.additional_commitment.blank? %>
+<!--strong>ADDITIONAL COMMITMENT</strong-->
+<!--p><%#= @organization.additional_commitment %></p-->
+<%# end %>
+<%# End Comment%>
+
+
+<%
+=begin
+%>
+<h2>Organization Newsfeed</h2>
+
+<div id="posts-list">
+  <%= render :partial => "posts/list", :locals => { :posts => @organization.posts.order("posts.created_at DESC"), :organization => @organization} %>
+</div>
+<div class="spacer">
+  &nbsp;
+</div>
+<%
+=end
+%>

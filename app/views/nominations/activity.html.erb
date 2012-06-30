@@ -1,0 +1,40 @@
+<%= link_to '< Portal Home', welcome_index_path %>
+<br />
+<br />
+<h1 id="header">
+  ACTIVITY
+</h1>
+<br />
+<h2>Nominated Contacts</h2>
+<% if @nominations.empty? %>
+  <p>No contacts nominated yet by this Organization.</p>
+<% else %>
+  <% @nominations.each do |nom| %>
+    <div class="leftprofile">
+      <h3>Organization Name</h3>
+      <%= nom.nominee.organization.name %>
+      <h3>Status</h3>
+      <% if nom.nominee.application.nil? %>
+        <%= "Did Not Apply" %>
+      <% else %>
+        <%= nom.nominee.application.status %>
+      <% end %>
+      <h3>Name</h3>
+      <%= nom.nominee.full_name %>
+      <h3>Email</h3>
+      <%= nom.nominee.email %>
+      <h3>Nominated On</h3>
+      <%= nom.created_at.to_date.strftime('%B %e, %Y') %>
+    </div>
+    <div class="rightprofile">
+      <h3>Reason</h3>
+      <%= nom.reason %>
+      <h3>Message</h3>
+      <%= nom.message %>
+    </div>
+    <div class="bot">
+    </div>
+    <br />
+  <% end %>
+<% end %>
+

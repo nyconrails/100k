@@ -1,0 +1,7 @@
+= link_to '< Portal Home', welcome_index_path
+%br
+%br
+%h1 Add New Contact
+= render :partial => "form"
+.viewAllContactsLink
+  = link_to "View All Contacts", organization_users_path(@organization), :class => "button"

@@ -1,0 +1,5 @@
+<testdata>
+  <test linkUser="Add New Contact" email="regular3_Three@locomotivellc.com" first_name="RegularUser3" last_name="TestOrg_One" title="RegUser_Three" phone="12345678"/>
+  <test linkUser="Add New Contact" email="regular4_Four@locomotivellc.com" first_name="RegularUser4" last_name="TestOrg_One" title="RegUser_Four" phone="12345678"/>
+</testdata>
+

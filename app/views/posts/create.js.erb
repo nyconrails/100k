@@ -1,0 +1,6 @@
+<% if @post.errors.empty? %>
+  $("#posts-list").html("<%= escape_javascript( render(:partial => 'posts/list', :locals =>{:posts => @organization.posts.order("posts.created_at DESC"), :organization => @organization}) )%>");
+  document.getElementById('post-status').reset()
+<% else %>
+ alert("<%= escape_javascript(flash[:alert])%>");
+<% end%>

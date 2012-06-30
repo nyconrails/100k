@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="load_env_in_tests">load_env_in_tests</a></td></tr>
+<tr><td><a href="login_org_admin">login_org_admin</a></td></tr>
+<tr><td><a href="orgAdmin_accessing_wholeOrg">orgAdmin_accessing_wholeOrg</a></td></tr>
+<tr><td><a href="login_org_admin">login_org_admin</a></td></tr>
+<tr><td><a href="orgAdmin_accessing_myOrg_page">orgAdmin_accessing_myOrg_page</a></td></tr>
+<tr><td><a href="login_org_admin">login_org_admin</a></td></tr>
+<tr><td><a href="orgAdmin_accessing_mySettings_page">orgAdmin_accessing_mySettings_page</a></td></tr>
+<tr><td><a href="login_org_admin">login_org_admin</a></td></tr>
+<tr><td><a href="orgAdmin_create_regularUsers">orgAdmin_create_regularUsers</a></td></tr>
+<tr><td><a href="login_org_admin">login_org_admin</a></td></tr>
+<tr><td><a href="user_accessingOrg_not_assigned_tothem">user_accessingOrg_not_assigned_tothem</a></td></tr>
+<tr><td><a href="login_active_admin">login_active_admin</a></td></tr>
+<tr><td><a href="delete_all_testdata">delete_all_testdata</a></td></tr>
+</tbody></table>
+</body>
+</html>

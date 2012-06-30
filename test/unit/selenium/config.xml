@@ -1,0 +1,6 @@
+<environment>
+    <user user_email="kavita@locomotivellc.com" user_pswd="password" />
+    <host custom_url="http://localhost:3000" />
+    <speed setspeed="2000"/>
+    <browser name="*chrome" />
+</environment>

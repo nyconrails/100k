@@ -1,0 +1,35 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+#en:
+#  hello: "Hello world"
+en:
+  hello: "Hello world"
+  activerecord:
+    models:
+      contacted_organization: "ContactedOrganization"
+    attributes:
+      contacted_organization:
+        firstname: "First Name"
+        lastname: "Last Name"
+        emailid: "Emailid"
+        question: "Question"
+        reason: "Reason"
+        phonenumber: "Phone Number"
+    errors:
+      models:
+        contacted_organization:
+          attributes:
+            firstname:
+              blank: "First Name is required."
+            lastname:
+              blank: "Last name is required."
+            emailid:
+              blank: "Email Id is required"
+              invalid: "is invalid."
+            question:
+              blank: "Question is required."
+            reason:
+              blank: "Please select reason."
+            phonenumber:
+              blank: "Phone Number is required."

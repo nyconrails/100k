@@ -1,0 +1,13 @@
+- @user = @users.find(user)
+= semantic_form_for @user do |f|
+  = f.input :first_name,  :label => "First Name"
+  = f.input :last_name,  :label => "Last Name"
+  = f.input :title, :label => "Title"
+  = f.input :email, :as => :string, :label => "Email", :input_html => {:disabled => true}
+  = f.input :phone, :label => "Phone"
+  = check_box_tag(:reset_password_email, 0, checked = false)
+  %label{:id=>"reset_password"} &nbsp;Reset password instructions.
+  %br/
+  %br/
+  = f.buttons do
+    = f.commit_button :label => "Update Contact", :button_html => { :class => "update" }

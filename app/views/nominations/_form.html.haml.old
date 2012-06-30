@@ -1,0 +1,58 @@
+= form_for @nomination do |f|
+  -if @nomination.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@nomination.errors.count, "error")} prohibited this nomination from being saved:"
+      %ul
+        - @nomination.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nom_org_name
+    = f.text_field :nom_org_name
+  .field
+    = f.label :nom_first_name
+    = f.text_field :nom_first_name
+  .field
+    = f.label :nom_last_name
+    = f.text_field :nom_last_name
+  .field
+    = f.label :nom_title
+    = f.text_field :nom_title
+  .field
+    = f.label :nom_email
+    = f.text_field :nom_email
+  .field
+    = f.label :nom_phone
+    = f.text_field :nom_phone
+  .field
+    = f.label :your_first_name
+    = f.text_field :your_first_name
+  .field
+    = f.label :your_last_name
+    = f.text_field :your_last_name
+  .field
+    = f.label :your_title
+    = f.text_field :your_title
+  .field
+    = f.label :your_org
+    = f.text_field :your_org
+  .field
+    = f.label :organization_type
+    = f.number_field :organization_type
+  .field
+    = f.label :your_email
+    = f.text_field :your_email
+  .field
+    = f.label :your_phone
+    = f.text_field :your_phone
+  .field
+    = f.label :reason
+    = f.text_area :reason
+  .field
+    = f.label :message
+    = f.text_area :message
+  .field
+    = f.label :is_primary
+    = f.check_box :is_primary
+  .actions
+    = f.submit 'Save'

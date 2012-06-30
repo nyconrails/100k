@@ -1,0 +1,11 @@
+var el = $('#resource_wrapper');
+
+
+
+el.html('<div style="clear:both;"><p>Results for: <%= escape_javascript params[:contentsearch] %></p></div>');
+
+<% @resource_contents.each do |resource| %>
+  el.append("<%= escape_javascript render :partial=>'resource', :locals=>{:content=>resource} %>");
+<% end %>
+
+

@@ -1,0 +1,45 @@
+/* FAQ */
+h1, h2, h3 {
+	color: #0b64ac;
+}
+
+.footer,
+#contentheader {
+	background-color: #0b64ac;
+	color: #FFF;
+}
+
+.footerbox,
+.footerheader {
+	color: #FFF;
+}
+
+.footer A:hover {background-color: #fff; color: #0b64ac; text-decoration: underline;}
+.footericon {background-color: #0b64ac;}
+
+
+#contentnav ul li {
+	border-right: 1px solid #0b64ac;
+}
+
+a:hover {color: #0b64ac;}
+
+#contentnav A:hover {
+	color: #ffc425;
+}
+
+/* This code will highlight the correct main meu nav button when on that page */
+body.subnav1 a#subnav1,
+body.subnav2 a#subnav2,
+body.subnav3 a#subnav3,
+body.subnav4 a#subnav4,
+body.subnav5 a#subnav5 {
+	background: url(../images/navbutton_blue.png) no-repeat 0 0;
+	background-position: 50% -4px;
+}
+
+
+	/* highlights the active tab in the corect color */
+	ul.tabs li a.active {
+		background: url(../images/navbutton_blue.png) no-repeat 50% -4px;
+    }

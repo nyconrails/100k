@@ -1,0 +1,36 @@
+.excerptshare
+  %h1 Donors Choose
+- unless @results[:exception]
+  .breadscrumb
+    %span Projects:
+    - @results['searchTerms'].split(', ').each do |term|
+      %span= term
+
+  - @results['proposals'].each do |project|
+    .excerptshare.project
+      .image= image_tag(project["imageURL"])
+      %div.content
+        .title
+          %h3= raw project['title']
+        .description= raw project['shortDescription']
+        .fulfillment= raw project['fulfillmentTrailer'].gsub(/^My students need/, '<strong>My students need </strong>')
+        .term= "#{project['povertyLevel']}, #{project['city']}, #{project['state']}"
+      %div.donatebox
+        .label Give any amount
+        .input
+          = form_tag do
+            = select_tag "amount", options_for_select([["$10",10],["$20",20],["$30",30]])
+            = submit_tag 'Give'
+        .progress
+          $94 to go 2 donors
+          .bar{:style => "width:100%;", :title => "#{project['percentFunded'].to_i}%"}
+            .percent{:style => "width: #{project['percentFunded'].to_i}%;"}
+
+  - if @results['totalProposals'].to_i > 0
+    #pagination
+      = "From #{@results['index'].to_i+1} to #{@results['index'].to_i + @results['max'].to_i} of #{@results['totalProposals']}"
+      - if params[:page].to_i > 1
+        = link_to "Prev", "javascript:#", :class => "pagination", :id => "#{params[:page]||1}"
+      - if params[:page].to_i < (@results['totalProposals'].to_i/@results['max'].to_i)
+        = link_to "Next", "javascript:#", :class => "pagination", :id => "#{params[:page].to_i+1}"
+

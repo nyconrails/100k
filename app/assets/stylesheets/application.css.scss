@@ -1,0 +1,311 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+*/
+@import "base";
+@import "skeleton";
+@import "layout";
+@import "contents";
+@import "applications";
+
+
+.error { 
+  font-size: 12px;
+  color: #cc0000;
+}
+
+input.error, textarea.error, select.error {
+  border: 1px solid #cc0000;
+} 
+
+
+.flash {
+    text-align: center;
+    padding:    .3em .4em;
+    margin:             0 auto .5em;
+    clear:              both;
+    max-width:  46.923em; /* 610/13 */  
+    *max-width: 45.750em; /* 610/13.3333 - for IE */
+}
+
+#flash_error, #flash_alert {
+    border: thin solid #8b0000;
+    background: #ffc0cb;
+}
+
+#flash_notice, #flash_info {
+    border: thin solid #ff0;
+    background: #ffe;
+}
+
+#flash_warning {
+    border: thin solid #b8860b;
+    background: #ff0;
+}
+
+.flash .close {
+    float:      right;
+}
+
+.flash .close a {
+    color:                              #f00;
+    text-decoration:    none;
+}
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+
+/* Modified on 13-Mar-2012 to allow Regular User to alter Org info in Admin section */
+/* Start Modification */
+
+div.contacts{
+    float: right;
+    font-size: 12px;
+}
+div.parent1 a.edit_org, div.parent2 a.edit_date{
+    font-size: 12px;
+}
+div.submit_contactinfo, div.submit_orgtype{
+    text-align: center;
+}
+fieldset.buttons ol li.commit input[type="submit"]{
+    float: center;
+    margin-right: 10%;
+}
+div.org_user, div.submit_date{
+    padding: 10px;
+}
+div.submit_date select{
+    width: 30%;
+}
+div.submit_orgtype select{
+    width: 65%;
+}
+div#parent{
+    border:solid 1px #c0c0c0;
+    width: 50%;
+}
+/* End Modification */
+
+.showContactDetails
+{
+  /*margin-left: -3px;*/
+  margin-left: 30px;
+  padding: 0 0 10px 0;
+}
+.viewAllContactsLink
+{
+  margin-left: 30px;
+}
+
+form.formtastic.post {
+  background: #EFEFEF !important;
+  textarea {
+    height: 100px !important;
+    width: 620px;
+    margin: 0px;
+  }
+  div {
+    text-align: right;
+    input[type="submit"] {
+      margin: 5px 50px;
+      background: none;
+      font-size: 150%;
+      font-weight: bold;
+    }
+  }
+}
+#posts-list {
+  ul.list {
+    width: 100%;
+    li {
+      div.form-submit {
+        display: none;
+      }
+      div.author {
+        width: 100%;
+        font-weight: bold;
+        color: #FFC425;
+        span.action {
+          margin-left: 10px;
+          display: none;
+          a {
+            margin: 0 5px;
+          }
+        }
+      }
+      div.body {
+        width: 100%;
+        color: gray;
+      }
+    div.post_date {
+        color: gray;
+        font-size: 10px;
+      }
+
+    p.seperator{
+        border: 1px dotted grey;
+      }
+    div.post-content{
+        margin-top: -15px;
+      }
+      form#edit-post-status {
+        background: none !important;
+        margin-bottom: 25px;
+        input[type="submit"] {
+          float: right; 
+        }
+      }
+    }
+
+  }
+}
+
+nav.pagination {
+    border: 0px solid #FFC425;
+    margin-top: 0;
+    padding: 0 0 0px;
+    font-color: #444444;
+    font-size: 12px;
+    float: left;
+}
+span.current{
+    background-color: #FFC425;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0 5px;
+    padding: 3px 5px;
+}
+span.page
+{
+ /* padding: 3px 5px;*/
+padding: 1px 1px 1px 4px;
+}
+
+nav.pagination a:link {
+    color: #FFC425 !important;
+}
+
+nav.pagination a:visited {
+    color: #FFC425 !important;
+}
+nav.pagination span#readpage{
+    color: #666666;
+}
+
+nav.pagination a:hover{
+    color: #585858 !important;
+}
+nav.pagination span.prev a, span.next a{
+  font-size: 16px;
+padding: 4px;
+}
+
+#newsfeed_header
+{
+ color: white;
+ background-color: #efc01f;
+ font-size: 16px; 
+ font-weight: bold;
+ height: 3%;
+ width: 100%;
+ text-align: center;
+ margin-bottom: 10px;
+}
+
+#newsfeed_name { 
+    color: #FFC425;
+    font-size: 10px;
+    font-style: italic;
+               }
+
+#newsfeed_body {
+  color: #191919;
+  font-size: 12px;
+                }
+
+#newsfeed_date {
+     color: gray;
+    font-size: 9px;
+    font-style: italic;
+    float: right;
+                }
+#newsFeedHeader{
+     color: blue
+}
+
+#header{
+    color: #FFC425;
+    letter-spacing: 1px;
+}
+div#nom-header{
+   background-color:#1c3f76;
+  border:1px solid;
+/*  border-color:#f3f3f3 #bbb #bbb #f3f3f3;*/
+  /*margin-top: 50px;*/
+  margin: 60px 0 1px;
+  height: 32px;
+  padding: 12px 8px 0 15px;
+}
+div#nom-header span#nom-text{
+  color: #fff;
+  font-size: 27px;
+    font-weight: normal;
+    line-height: 28px;
+    font-family: 'LeagueGothicRegular',arial,sans;
+}
+div#nom-header span#nom-text p{
+ /* line-height: 20px;*/
+}
+.arrow-down{
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #1c3f76;
+    display: block;
+    height: 0;
+    width: 0;
+   margin: -1px 20% 10% 45%;
+   position: relative;
+   z-index: 100;
+}
+
+div#log-header{
+   background-color:#00ADE6;
+   height: 35px;
+   padding: 12px 8px 0 17px;
+}
+
+div#log-header span#log-text p{
+   color: #fff;
+   font-size: 27px;
+   font-weight: normal;
+   line-height: 28px;
+   font-family: 'LeagueGothicRegular',arial,sans;
+}
+
+div.log-arrow-down{
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #00ADE6;
+    display: block;
+    height: 0;
+    width: 0;
+   margin: -1px 20% 1% 48%;
+   position: relative;
+   z-index: 100;
+}
+
+.bot{
+   border-bottom: 1px solid #FFC425;
+   clear: left;
+   padding-bottom: 30px;
+}

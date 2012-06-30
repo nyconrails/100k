@@ -1,0 +1,35 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.logIn{
+  margin-bottom:20px;
+  border-bottom:solid 1px #dedede; 
+}
+
+.callOut{
+  // font-size:100%;
+  margin-bottom:20px;
+  border-bottom:solid 1px #dedede;
+  padding-bottom:20px;
+}
+
+.callOut span{
+  color:red;
+}
+
+#welcomeF .formRight{
+  width:380px;
+}
+
+.remember {
+  width:380px;
+  margin-left:110px;
+}
+
+.resetPw {
+  width:380px;
+  margin-left:110px;
+  margin-top:-10px;
+}

@@ -1,0 +1,35 @@
+- unless opportunities.any?
+  There are no teacher opportunities
+- else
+  - opportunities.each do |op|
+    .excerptshare.opportunity
+      %div.content
+        .title
+          %h2= op.program_name
+        .partner-name
+          %strong Partner Name:
+          = op.partner.try(:name) || op.partner_name
+        .location
+          %strong Location:
+          = op.location
+        .due-date
+          %strong Due Date:
+          = op.due_date
+        .additional-details
+          %strong Additional Details:
+          = op.additional
+        - if op.link
+          .website-link
+            %strong Website link for more info:
+            = link_to op.link, op.link, :target => "_blank"
+        .description
+          = op.details
+  .paginations#pagination-opportunities
+    - min_entity = ((opportunities.total_count > 0) && params[:page].to_i-1 > 0) ? (((params[:page].to_i-1))*10+1) : 1
+    - max_entity = (min_entity+opportunities.size-1)
+    - max_entity = max_entity > 0 ? max_entity : 0
+    = "From #{min_entity} to #{max_entity} of #{opportunities.total_count}"
+    - if params[:page].to_i > 1
+      = link_to "Prev", "javascript:#", :class => "pagination", :id => "#{params[:page].to_i-1}", :rel => 'opportunities', :title => "Page #{params[:page].to_i-1}"
+    - if( opportunities.total_count > 0 && params[:page].to_i < (opportunities.total_count/10+1))
+      = link_to "Next", "javascript:#", :class => "pagination", :id => "#{params[:page].to_i+1}", :rel => 'opportunities', :title => "Page #{params[:page].to_i+1}"

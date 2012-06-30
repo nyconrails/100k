@@ -1,0 +1,125 @@
+!!!
+/[if lt IE 7 ] <html class="ie ie6" lang="en">
+/[if IE 7 ] <html class="ie ie7" lang="en">
+/[if IE 8 ] <html class="ie ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    /
+      Basic Page Needs
+      \==================================================
+    %meta{:charset => "utf-8"}/
+    %title 100Kin10
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    /
+      Mobile Specific Metas
+      \==================================================
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    /
+      CSS
+      \==================================================
+    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag    params[:controller]
+    = stylesheet_link_tag    "/css/dashboard.css"
+    = stylesheet_link_tag    "/css/custom.css"
+    = javascript_include_tag "application"
+    = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
+    = javascript_include_tag "/javascripts/additional-methods.min.js"    
+    = javascript_include_tag "/javascripts/twitter-widget.js"
+
+    = csrf_meta_tags
+    /
+      Favicons
+      \==================================================
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    
+  %body
+    /
+      Primary Page Layout
+      \==================================================
+    #topMain
+      .container
+        #logo
+          %a{:href => "/"} 
+        /  - if current_user
+        /    %a{:href => "/welcome/index"}
+        /  - else
+        /    %a{:href => "/"} 
+        %ul#utilityNav
+          -if current_user
+            %li 
+              Hello,            
+              = current_user.first_name 
+            %li 
+              = link_to "My Organization", organization_path(current_user.organization), :class => is_active?("show")
+            - if can? :edit, current_user.organization
+              %li 
+                = link_to "Admin", edit_organization_path(current_user.organization), :class => is_active?("edit")
+            - if can? :edit, current_user.organization
+              %li 
+                = link_to "Activity", activity_path, :class => is_active?("activity")
+            %li 
+              = link_to "My Settings", my_account_path, :class => is_active?("my_account")
+            %li.last
+              = link_to "Log out", logout_path
+          -else
+            %li.last
+              =link_to "Log in", login_path
+      / end container
+    / end topMain
+    .container
+      / end tabWrapper
+      #contentWrapper
+        #sidebar
+          #sidebarPad
+            -if content_for? :dashboard_leftside
+              =yield :dashboard_leftside
+            - else
+              - if @current_user && @current_user.is_nominator
+                - if @current_user.organization.avatar.regular.url
+                  #logobox
+                    =image_tag @current_user.organization.avatar.regular.url
+                %h1
+                  = @current_user.organization.name
+                %strong COMMITMENT
+                %br
+                = strip_tags(@current_user.organization.commitment)
+                %br
+                %br
+                - unless @current_user.organization.additional_commitment.blank?
+                  %strong ADDITIONAL COMMITMENT
+                  %br
+                  = strip_tags(@current_user.organization.additional_commitment)
+                  %br
+                  %br
+              -else
+                =image_tag("sideImage.jpg")
+              -# #link
+              -#  = render :partial => '/layouts/status_newsfeed'
+          / end sidebarPad
+        / end sidebar
+        .content
+          -flash.each do |name, msg|
+            =content_tag(:div, msg, :id => "flash_#{name}", :class => "flash") unless msg=="Nil class was successfully created."
+          =yield
+        / end content
+      / end contentWrapper
+    / end container
+    #footMain
+      .container
+        %ul#footerNav
+          %li 100Kin10 2011&copy;
+          %li.last
+            %a{:href => "/page/privacy"} Privacy Policy and Terms of Service
+      / container
+    / end footerMain
+    /
+    = javascript_include_tag 'google_analytics.js'

@@ -1,0 +1,51 @@
+/* PARTNERS */
+h1, h2, h3 {
+	color: #00958f;
+}
+
+.footer,
+#contentheader {
+	background-color: #00958f;
+	color: #FFF;
+}
+
+.footerbox,
+.footerheader {
+	color: #FFF;
+}
+
+.footer A:hover {background-color: #fff; color: #00958f; text-decoration: underline;}
+.footericon {background-color: #fff;}
+
+#contentnav ul li {
+	border-right: 1px solid #00958f;
+}
+
+a:hover {color: #00958f;}
+
+#contentnav A:hover {
+	color: #ffc425;
+}
+
+/* This code will highlight the correct main meu nav button when on that page */
+body.subnav1 a#subnav1,
+body.subnav2 a#subnav2,
+body.subnav3 a#subnav3,
+body.subnav4 a#subnav4,
+body.subnav5 a#subnav5 {
+	background: url(../images/navbutton_turquoise.png) no-repeat 0 0;
+	background-position: 50% -4px;
+}
+
+	/* highlights the active tab in the corect color */
+	ul.tabs li a.active {
+		background: url(../images/navbutton_turquoise.png) no-repeat 50% -4px;
+    }
+
+#partnerheader {
+	background: #00958f;
+	padding: 10px;
+}
+#partnerheader  h1{
+	color:#FFF;
+}

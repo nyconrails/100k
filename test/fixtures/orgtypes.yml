@@ -1,0 +1,39 @@
+<%
+
+    Orgtype.create!(:title => 'Association')
+    Orgtype.create!(:title => 'Charter Management Organization')
+    Orgtype.create!(:title => 'Corporation')
+    Orgtype.create!(:title => 'Federal Agency')
+    Orgtype.create!(:title => 'Foundation')
+    Orgtype.create!(:title => 'Higher Education Institution')
+    Orgtype.create!(:title => 'Museum')
+    Orgtype.create!(:title => 'Non-profit Organization')
+    Orgtype.create!(:title => 'Residency Program')
+    Orgtype.create!(:title => 'School District')
+    Orgtype.create!(:title => 'State Leadership')
+    Orgtype.create!(:title => 'Individual')
+    
+    #Nov 8th - run this -bret
+    Orgtype.create!(:title=>'Other')
+    
+%>
+# == Schema Information
+#
+# Table name: orgtypes
+#
+#  id         :integer         not null, primary key
+#  title      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# == Schema Information
+#
+# Table name: orgtypes
+#
+#  id         :integer         not null, primary key
+#  title      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

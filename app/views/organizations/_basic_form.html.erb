@@ -1,0 +1,58 @@
+<%# Modified to move Organization Edit feature to Admin page %>
+<%# Start Modification %>
+<%#= semantic_form_for organization do |f| %>
+<%#= f.inputs "General Info" do %>
+<%#= f.input :avatar, :as=>:file, :label=>"Logo" %>
+<%#= f.input :name, :label=>"Organization" %>
+<%#= f.input :orgtype, :label=>"Organization Type", :include_blank=>false %>
+<%# end %>
+<%#= f.inputs "Address" do %>
+<%#= f.input :address %>
+<%#= f.input :address2 %>
+<%#= f.input :city %>
+<%#= f.input :state %>
+<%#= f.input :zip %>
+<%# end %>
+
+<%#= f.inputs "Primary Contact" do %>
+<%#= f.input :primary_contact,  :label => "Person", :collection => organization.users %>
+<%#= f.input :primary_contact_title, :as => :string, :label => "Title", :input_html => {:disabled => true} %>
+<%#= f.input :primary_contact_phone, :as => :string, :label => "Phone", :input_html => {:disabled => true} %>
+<%#= f.input :primary_contact_email, :as => :string, :label => "Email", :input_html => {:disabled => true} %>
+<%#*<label for="organization_show_contact">%>
+<%#= f.check_box :show_contact, :style => "width: 25px;" %>
+<%#*Display my contact info in the portal.%>
+<%#*</label>%>
+<%# end %>
+<%#= f.buttons %>
+<%# end %>
+
+<%= show_field("Date Joined", @organization.joined_at.strftime('%m/%Y')).html_safe unless @organization.joined_at.blank? %>
+<br />
+<div class="edit_address">
+  <strong>Address:</strong>&nbsp;<%=link_to '[edit]', "#", :title => "Click here to edit", :class => 'edit_org'%><br>
+  <div class ="org_type"><%= @organization.address %><br>
+    <%= (@organization.address2 + "<br>").html_safe unless @organization.address2.blank? %>
+    <%= @organization.city %> <%= @organization.state.abbreviation if @organization.state %> <%= @organization.zip %></div>
+  <div class="submit_orgtype" id="parent">
+    <%= semantic_form_for @organization do |f| %>
+      <%= f.input :address %>
+      <%= f.input :address2 %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :zip %>
+      <%= f.buttons %>
+    <% end %>
+  </div>
+</div>
+<%# Moved from top page to bottom on 13-mar-2012 %>
+<%# Start Modification %>
+<br/>
+<p>
+  <% if can? :edit, @organization %>
+    <%= link_to "Add New Contact", new_organization_user_path(organization), :class => "button" %>
+    <%= link_to "View All Contacts", organization_users_path(@organization), :class => "button" %>
+  <% end %>
+</p>
+<%# End Modification %>
+<%# End Modification %>

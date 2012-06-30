@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @application.user_id
+%p
+  %b Primary commitment:
+  = @application.primary_commitment
+%p
+  %b Collab org:
+  = @application.collab_org
+%p
+  %b Description:
+  = @application.description
+%p
+  %b Commitmentcat:
+  = @application.commitmentcat
+%p
+  %b Year1:
+  = @application.year1
+%p
+  %b Year2:
+  = @application.year2
+%p
+  %b Year3:
+  = @application.year3
+%p
+  %b Year4:
+  = @application.year4
+%p
+  %b Org commitment type:
+  = @application.org_commitment_type
+%p
+  %b Further info:
+  = @application.further_info
+%p
+  %b Add info:
+  = @application.add_info
+%p
+  %b Avatar:
+  = @application.avatar
+%p
+  %b Is consent:
+  = @application.is_consent
+%p
+  %b Secondary:
+  = @application.secondary_id
+%p
+  %b Vetting:
+  = @application.vetting_id
+
+= link_to 'Edit', edit_application_path(@application)
+\|
+= link_to 'Back', applications_path

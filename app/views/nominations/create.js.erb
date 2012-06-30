@@ -1,0 +1,5 @@
+<% if (params[:edit]=="true") %>
+  $("#nomination").html("<%= escape_javascript(render :partial=>'index') %>");
+<% else %>
+  $("#nomination").html("<%= escape_javascript(render :partial=>'thank_you') %>");
+<% end %>

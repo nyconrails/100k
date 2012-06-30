@@ -1,0 +1,5 @@
+<% if @post.errors.empty? %>
+  $("#post-<%= @post.id %> div.post-content").html("<%= escape_javascript( render(:partial => 'posts/edit_form', :locals =>{:post => @post, :organization => @organization}) )%>");
+<% else %>
+ alert("<%= escape_javascript(flash[:alert])%>");
+<% end%>

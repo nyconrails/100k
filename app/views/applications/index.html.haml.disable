@@ -1,0 +1,49 @@
+%h1 Listing applications
+
+%table
+  %tr
+    %th User
+    %th Primary commitment
+    %th Collab org
+    %th Description
+    %th Commitmentcat
+    %th Year1
+    %th Year2
+    %th Year3
+    %th Year4
+    %th Org commitment type
+    %th Further info
+    %th Add info
+    %th Avatar
+    %th Is consent
+    %th Secondary
+    %th Vetting
+    %th
+    %th
+    %th
+
+  - @applications.each do |application|
+    %tr
+      %td= application.user_id
+      %td= application.primary_commitment
+      %td= application.collab_org
+      %td= application.description
+      %td= application.commitmentcat
+      %td= application.year1
+      %td= application.year2
+      %td= application.year3
+      %td= application.year4
+      %td= application.org_commitment_type
+      %td= application.further_info
+      %td= application.add_info
+      %td= application.avatar
+      %td= application.is_consent
+      %td= application.secondary_id
+      %td= application.vetting_id
+      %td= link_to 'Show', application
+      %td= link_to 'Edit', edit_application_path(application)
+      %td= link_to 'Destroy', application, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Application', new_application_path

@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}/
+    %title 100Kin10
+  %body{:leftmargin => "0", :marginheight => "0", :marginwidth => "0", :topmargin => "0"}
+    %table{:border => "0", :cellpadding => "15", :cellspacing => "0", :width => "100%"}
+      %tr
+        %td{:align => "center", :bgcolor => "#4f5257", :valign => "middle"}
+          %table{:bgcolor => "#222222", :border => "0", :cellpadding => "0", :cellspacing => "1", :width => "600"}
+            %tr
+              %td{:align => "left", :bgcolor => "#FFFFFF", :valign => "top"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td{:align => "left", :background => "http://good100k.heroku.com/assets/100kin10.gif", :bgcolor => "#ffc427", :height => "100", :style => "padding-left:10px; padding-right:10px;", :valign => "middle"}
+                  %tr
+                    %td{:align => "left", :valign => "top"}
+                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "596"}
+                        %tr
+                          %td{:align => "left", :style => "padding:25px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; line-height:18px;", :valign => "top", :width => "100%"}
+                            =Content.insert('email_nominator_thank_you_nomination_auto',{'nominator'=>@nominator,'nominee'=>@nominee,'nomination'=>@nomination})
+                  %tr
+                    %td{:align => "left", :bgcolor => "#ffc427", :valign => "top"}
+                      %table{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
+                        %tr
+                          %td{:align => "left", :style => "font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#FFFFFF;", :valign => "top"}
+                            %strong 100Kin10
+                            \-  #{Time.now.year}&copy;

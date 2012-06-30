@@ -1,0 +1,19 @@
+<!-- search box -->
+<div style="clear:right;float:left;text-align:right;padding:0px;">
+<%= form_tag '/contents/search_resources', :remote=>true %>
+<span class="contentsearch" style="text-transform:none;color:#fff;font-family:arial,sans;font-size:11px;">
+<input type="text" name="contentsearch" style="width:250px;" /> <input type="submit" class="resourcebutton" value="SEARCH RESOURCES"><br />
+</span>
+
+</div>
+</form>
+<!-- end search box -->
+
+
+<div id="resource_wrapper">
+
+<% Content.where(:section=>'PORTAL_RESOURCES').order(:slug).each do |content| %>
+  <%= render :partial=>'contents/resource', :locals=>{:content=>content} %>
+<% end %>
+
+</div>

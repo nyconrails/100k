@@ -1,0 +1,58 @@
+:javascript
+  var show_subsection=function(section) {
+    $('.subsection').hide();
+    $('#maincontent_landing').hide();
+    $('#'+section).show();
+  	resizeGraybox();
+  }
+
+
+  $(document).ready(function() {
+    $('.subsection').hide();
+  });
+
+- Content.insert page_slug do |c|
+  #leftcolumn
+    #contentheader
+      / the colorblock header above the texual content
+      %table#contenttbl
+        %tr
+          %td{:width => "220"}
+            %h1= c.render_field(:title)
+          %td{:width => "17"}
+            %img{:alt => "", :height => "148", :src => "/images/arrowright.png", :width => "12"}/
+          %td{:width => "440"}
+            .copyblock
+              = c.render_field(:lede)
+      - if c.subsections.any?
+        #contentnav
+          %ul.tabs
+            - c.subsections.each do |subsection|
+              %li
+                %a.subnav1{:href => "#", :id => "subnav_#{subsection.slug}", :onclick => "show_subsection('#{subsection.slug}');return false"}= subsection.render_field(:title)
+          - if @searchable
+            / search box
+            %div{:style => "clear:right;float:right;text-align:right;padding:5px;position:relative;top:2px;"}
+              %span.contentsearch{:style => "text-transform:none;color:#fff;font-family:arial,sans;font-size:11px;"}
+                search
+                %input{:name => "contentsearch", :style => "width:120px;", :type => "text"}/
+                %input.gobutton{:type => "submit", :value => "GO"}/
+                %br/
+            / end search box
+        / end contentnav
+    / end contentheader
+    %div{:style => "clear:both;"}
+    #maincontent
+      / this is where the main content / running text should go
+      #maincontent_landing
+        = c.render_field(:body)
+      - c.subsections.each do |subsection|
+        .subsection{:id => subsection.slug}
+          = subsection.render_field(:body)
+    / end maincontent
+  / end leftcolumn
+  #rightcolumn
+    %img#rightphoto{:alt => "100kin10", :border => "0", :src => sidebar_image ? sidebar_image : '/images/column_chalkboard.jpg'}/
+    #graybox &nbsp;
+  / end rightcolumn
+= javascript_include_tag :search

@@ -1,0 +1,65 @@
+// Place all the styles related to the Organizations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+form.formtastic.post {
+  background: #EFEFEF !important;
+  textarea {
+    height: 100px !important;
+    width: 620px;
+    margin: 0px;
+  }
+  div {
+    text-align: right;
+    input[type="submit"] {
+      margin: 5px 50px;
+      background: none;
+      font-size: 150%;
+      font-weight: bold;
+    }
+  } 
+}
+#posts-list {
+  ul.list {
+    width: 100%;
+    li {
+      div.form-submit {
+        display: none;
+      }
+      div.author {
+        width: 100%;
+        font-weight: bold;
+        color: #FFC425;
+        span.action {
+          margin-left: 10px;
+          display: none;
+          a {
+            margin: 0 5px;
+          }
+        }
+      }
+      div.body {
+        width: 100%;
+        color: gray;
+      }
+    div.post_date {
+        color: gray;
+        font-size: 10px;
+      }
+    
+    p.seperator{
+        border: 1px dotted grey;
+      }
+    div.post-content{
+        margin-top: -15px; 
+      }
+      form#edit-post-status {
+        background: none !important;
+        margin-bottom: 25px;
+        input[type="submit"] {
+          float: right;
+        }
+      }
+    }
+    
+  }
+}

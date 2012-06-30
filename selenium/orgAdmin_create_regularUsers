@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/admin/login" />
+<title>+ test org_admin can create regular user</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">+ test org_admin can create regular user</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Partner Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>loadTestData</td>
+	<td>${load_xml_file}/100K_Suite/OrgAdmin_Regular_users.xml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Logged in!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Organization</td>
+	<td>My Organization</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Admin</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Settings</td>
+	<td>My Settings</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Log out</td>
+	<td>Log out</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Add New Contact</td>
+	<td>Add New Contact</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=View All Contacts</td>
+	<td>View All Contacts</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Organization Newsfeed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>!testdata.EOF()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>nextTestData</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${linkUser}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${linkUser}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_email</td>
+	<td>${email}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_first_name</td>
+	<td>${first_name}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_last_name</td>
+	<td>${last_name}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_title</td>
+	<td>${title}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_phone</td>
+	<td>${phone}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=send_welcome_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>New contact added successfully.</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Organization Contacts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${first_name}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${last_name}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>${title}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type"}/
+    %title 100Kin10
+  %body{:leftmargin => "0", :marginheight => "0", :marginwidth => "0", :topmargin => "0"}
+    %table{:border => "0", :cellpadding => "15", :cellspacing => "0", :width => "100%"}
+      %tr
+        %td{:align => "center", :bgcolor => "#4f5257", :valign => "middle"}
+          %table{:bgcolor => "#222222", :border => "0", :cellpadding => "0", :cellspacing => "1", :width => "600"}
+            %tr
+              %td{:align => "left", :bgcolor => "#FFFFFF", :valign => "top"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td{:align => "left", :background => "http://good100k.heroku.com/assets/100kin10.gif", :bgcolor => "#ffc427", :height => "100", :style => "padding-left:10px; padding-right:10px;", :valign => "middle"}
+                  %tr
+                    %td{:align => "left", :valign => "top"}
+                      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "596"}
+                        %tr
+                          %td{:align => "left", :style => "padding:25px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; line-height:18px;", :valign => "top", :width => "100%"}
+                            %span{:style => "font-size:22px;;color:#222222;font-family:Arial, Helvetica, sans-serif; line-height:28px;"} Dear #{@user.first_name},
+                            %br/
+                            %p As a valued partner in 100Kin10, your organization is encouraged to nominate three organizations for partnership in our growing movement. We are accepting nominations from October 20th through October 28th, 2011. Nominees will be instructed to complete an online application form, available from October 31st to November 25th. The information they provide will be submitted to the University of Chicago Urban Education Institute, which vets all partners using established criteria. This criteria will be made available to the nominees, to inform the crafting of their draft 100Kin10 commitments and supporting application materials. Nominees will be informed of their acceptance status by early January 2012. Any applicant not selected during this round is automatically eligible to re-apply during the next application period.
+
+                            %p Please see below for user name and password log-in information to our online nomination page.
+
+                            %p Additionally, we will be holding two brief conference calls to answer any questions you may have about nominations, the process, or the online form. These calls will be held on the following dates and an additional email will be sent to you with the call in number and instructions prior to the call. 
+
+                            %p 10/24 - 2:30 - 3:00 p.m. EST
+                            %p 10/25 - 3:30 - 4:00 p.m. EST
+
+
+                            %p If you have any further questions, please feel free to contact us directly at info@100kin10.org.
+
+                            %p Thanks,
+                            %p The 100Kin10 Team
+                                                           
+                            %span{:style => "font-size:22px;;color:#222222;font-family:Arial, Helvetica, sans-serif; line-height:40px;"} Login Information
+                            %br/
+                            Login: #{@user.email}
+                            %br/
+                            Password: #{@password}
+                            %br/
+                            Login URL:
+                            =link_to('http://100kin10.org/login', 'http://100kin10.org')
+
+     
+                  %tr
+                    %td{:align => "left", :bgcolor => "#ffc427", :valign => "top"}
+                      %table{:border => "0", :cellpadding => "20", :cellspacing => "0", :width => "100%"}
+                        %tr
+                          %td{:align => "left", :style => "font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#FFFFFF;", :valign => "top"}
+                            %strong 100Kin10
+                            \-  #{Time.now.year}&copy;

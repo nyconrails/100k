@@ -1,0 +1,28 @@
+#contentnav
+  -if @current_user
+    -if @current_user.is_nominator
+      %ul.tabs
+        / Give href an ID value of corresponding "tabs-content" <li>'s
+        %li
+          %a{:href => "#community"} Community
+        %li
+          %a{:href => "#resources"} Resources
+        %li
+          %a.active{:href => "#nomination"} Nomination
+    -else
+      %ul.tabs
+        / Give href an ID value of corresponding "tabs-content" <li>'s
+        %li
+          %a.active{:href => "#welcome"} Welcome
+        %li
+          %a{:href => "#faq"} FAQs
+        %li
+          %a{:href => "#application"} Application 
+
+%ul.tabs-content
+  / Give ID that matches HREF of above anchors
+  %li#welcome.active
+    =render '/applications/welcome'
+  %li#faq
+    =render '/applications/faq'
+

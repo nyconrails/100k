@@ -1,0 +1,25 @@
+<% Content.insert 'page_press' do |c| %>
+
+<div id="leftcolumn">  
+  <div id="contentheader"><!-- the colorblock header above the texual content -->  
+	<table id="contenttbl">
+	  <tr> 
+	    <td width="220">
+  		  <h1><%= c.render_field(:title) %></h1>
+	    </td>
+	    <td width="17"><img src="/images/arrowright.png" width="12" height="148" alt="" /></td>
+	    <td width="440">
+		  <div class="copyblock">
+			<%= c.render_field(:lede) %>
+		  </div>
+	    </td>
+	  </tr></table>
+  </div>
+</div>
+
+<% end %>
+
+<div id="rightcolumn"> 
+  <img src="/images/calculator.png" id="rightphoto" alt="100kin10" border="0" />
+</div>
+<iframe src="http://100kpress.com" width="1024" height="1000" scrolling="no"></iframe>

@@ -1,0 +1,123 @@
+/= render :partial=> 'general',
+/  :locals=>{:page_slug=>'page_takeaction',
+/  :sidebar_image=>'/images/column_chalkboard2.jpg'}
+
+:javascript
+  var show_subsection=function(section) {
+    $('.subsection').hide();
+    $('#maincontent_landing').hide();
+    $('#'+section).show();
+    $("#graybox .facets").hide();
+    $('#graybox_'+section).show();
+    $QUERY_PARAMS = {};
+    //resizeGraybox();
+  }
+
+  $(document).ready(function() {
+    $('.subsection').hide();
+  });
+
+- sidebar_image = nil
+- results ||= {}
+- Content.insert 'page_takeaction' do |c|
+  #leftcolumn
+    #contentheader
+      / the colorblock header above the texual content
+      %table#contenttbl
+        %tr
+          %td{:width => "220"}
+            %h1= c.render_field(:title)
+          %td{:width => "17"}
+            %img{:alt => "", :height => "148", :src => "/images/arrowright.png", :width => "12"}/
+          %td{:width => "440"}
+            .copyblock
+              = c.render_field(:lede)
+      - if c.subsections.any?
+        #contentnav
+          %ul.tabs
+            %li
+              %a.subnav1{:href => "#", :id => "subnav_teacher_opportunities", :onclick => "show_subsection('teacher_opportunities');return false"} Teach
+            %li
+              %a.subnav1{:href => "#", :id => "subnav_donorchoose_donate", :onclick => "show_subsection('donorchoose_donate');return false"} Donate
+            %li
+              %a.subnav1{:href => "#", :id => "subnav_participate", :onclick => "show_subsection('participate');return false"} Participate
+            / other subsections
+            - c.subsections.each do |subsection|
+              - next if(['teach', 'donate', 'participate'].include?(subsection.title.downcase))
+              %li
+                %a.subnav1{:href => "#", :id => "subnav_#{subsection.slug}", :onclick => "show_subsection('#{subsection.slug}');return false"}= subsection.render_field(:title)
+          - if false && @searchable
+            / search box
+            %div{:style => "clear:right;float:right;text-align:right;padding:5px;position:relative;top:2px;"}
+              %span.contentsearch{:style => "text-transform:none;color:#fff;font-family:arial,sans;font-size:11px;"}
+                search
+                %input{:name => "contentsearch", :style => "width:120px;", :type => "text"}/
+                %input.gobutton{:type => "submit", :value => "GO"}/
+                %br/
+            / end search box
+        / end contentnav
+    / end contentheader
+
+    %div{:style => "clear:both;"}
+    #maincontent
+      / this is where the main content / running text should go
+      #maincontent_landing
+        = c.render_field(:body)
+      - c.subsections.each do |subsection|
+        - if subsection.title.downcase == 'teach'
+          .subsection#teacher_opportunities
+            .excerptshare
+              = subsection.render_field(:body)
+            .sorting.teacher-opportunities
+              %h2
+                Sort By:
+                = link_to "Partner Name", "javascript:#", :rel => 'partner_name', :class => 'current'
+                &nbsp;|&nbsp;
+                = link_to "Program Name", "javascript:#", :rel => 'program_name'
+                &nbsp;|&nbsp;
+                = link_to "Location",     "javascript:#", :rel => 'location'
+              %br/
+            #opportunities
+              = render :partial => "shared/opportunities", :locals => {:opportunities => Opportunity.page(1).per(10), :params => {:page => 1}}
+
+        - if subsection.title.downcase == 'donate'
+          .subsection#donorchoose_donate
+            .excerptshare
+              %h1.searchable DONORSCHOOSE.ORG
+              %div.inner-searchbox
+                /%input.input-content{:name => "contentsearch", :type => "text"}/
+                /%input.search-button.gobutton{:type => "submit", :value => "Search Donor Choose", :rel => 'donates' }/
+              %div.tip-msg
+                = subsection.render_field(:body)
+            - facets = {'showFacetCounts' => true, :subject4 => -4, :page => 1}
+            - results = Donor::Search.find(facets)
+            .outer-search
+              - locations = ((results['facetCounts']['location'] || {}) rescue {})
+              - states = locations['state'] || []
+              - states = states.sort_by {|i| i[1]}
+              = select_tag "state", options_for_select([["--- Select State---",nil]] + states.map{|v| ["#{v[1]}", v[0]]})
+              %input.input-content{:name => "contentsearch", :type => "text"}/
+              %input.search-button.gobutton{:type => "submit", :value => "Search", :rel => 'donates' }/
+            #donates= render :partial => "shared/donates", :locals => {:results => results, :params => facets}
+
+        - if subsection.title.downcase == 'participate'
+          .subsection#participate
+            .excerptshare
+              = subsection.render_field(:body)
+
+        - next if(['teach', 'donate', 'participate'].include?(subsection.title.downcase))
+
+        .subsection{:id => subsection.slug}
+          = subsection.render_field(:body)
+    / end maincontent
+  / end leftcolumn
+
+  #rightcolumn
+    %img#rightphoto{:alt => "100kin10", :border => "0", :src => sidebar_image ? sidebar_image : '/images/column_action.jpg'}/
+    #graybox.takeactions
+      #graybox_donorchoose_donate.facets
+        = render :partial => 'shared/facets', :locals => {:results => results}
+      #graybox_teach_opportunities{:style => "min-height: 200px; height: 3100px;"}
+  / end rightcolumn
+
+= javascript_include_tag :search

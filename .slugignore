@@ -1,0 +1,7 @@
+autotest/
+doc/
+log/
+sql/
+spec/
+test/
+tmp/

@@ -1,0 +1,48 @@
+= link_to '< Portal Home', welcome_index_path
+%br
+%br
+%h1 Organization Contacts
+- if @users.empty?
+  %p There are no users in this organization
+- else
+  - if primary_contact=@organization.primary_contact
+    #parent{:class => "parent_#{primary_contact.id}"}
+      .org_user{:id => primary_contact.id}
+        = primary_contact.full_name
+        .contacts
+          %a.edit_contact{:href => "#", :id => primary_contact.id, :title => "Click here to edit"} [edit]
+          |
+          \#{link_to "[delete]", organization_user_path(@organization, primary_contact), :title => "Click here to delete", :method => :delete, :confirm => "Deleting user will also delete related posts. Are you sure want to remove user #{primary_contact.full_name.inspect}?"}
+        %br/
+        Title:  #{primary_contact.title}
+        %br/
+        Email:  #{primary_contact.email}
+        %br/
+        Phone:  #{primary_contact.phone}
+        %br/
+      .submit_contactinfo{:id => ""}= render :partial=>'edit_user_info', :locals=>{:user => primary_contact.id}
+  - else
+    Email: #{@organization.primary_contact_email}
+    %br/
+  
+  - @users.each do |user|
+    - if user.role == 'regular_user'
+      %br/
+      #parent{:class => "parent_#{user.id}"}
+        .org_user{:id => user.id}
+          = user.full_name
+          .contacts
+            %a.edit_contact{:href => "#", :id => user.id, :title => "Click here to edit"} [edit]
+            |
+            \#{link_to "[delete]", organization_user_path(@organization, user), :title => "Click here to delete",:method => :delete, :confirm => "Deleting user will also delete related posts. Are you sure want to remove #{user.full_name.inspect} from the Organization?"}
+          %br/
+          Title:  #{user.title}
+          %br/
+          Email:  #{user.email}
+          %br/
+          Phone:  #{user.phone}
+          %br/
+        .submit_contactinfo{:id => ""}= render :partial=>'edit_user_info', :locals=>{:user => user}
+  %br/
+  - if can? :edit, @organization
+    = link_to "Add New Contact", new_organization_user_path(@organization), :class => "button"

@@ -1,0 +1,17 @@
+#leftcolumn
+  .contact_us
+    %h1#head Contact Us
+    #contact_us= Content.insert 'contact_us_body'
+    -Content.insert 'contact_us_recipients'
+    = semantic_form_for @contactus_data, :url => save_contact_us_path do |f|
+      = f.inputs do
+        = f.input :firstname, :label => "First Name"
+        = f.input :lastname, :label => "Last Name"
+        = f.input :organization, :label => "Organization"
+        = f.input :title, :label => "Title"
+        = f.input :phonenumber, :label => "Phone"
+        = f.input :emailid, :label => "Email"
+        = f.input :reason, :label => "Please tell us the reason for your request", :collection => contactus_reasons, :prompt => "Please select an option.."
+        = f.input :question, :label => "More Details"
+      = f.buttons do
+        = f.submit "Submit" 

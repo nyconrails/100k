@@ -1,0 +1,9 @@
+%h1 Import from CSV file
+%br/
+= form_tag(upload_admin_opportunities_path, :multipart => true) do
+  %label
+    %b CSV file
+    = file_field_tag :file
+  %br/
+  %br/
+  = submit_tag "Upload"

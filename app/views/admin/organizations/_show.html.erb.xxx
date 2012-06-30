@@ -1,0 +1,1 @@
+<iframe src="<%=organization_path(params[:id]) %>" style="width:1024px; height:1100px">

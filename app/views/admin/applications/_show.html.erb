@@ -1,0 +1,52 @@
+<div class="panel">
+  <h3>100K In 10</h3>
+  <div class="panel_contents">
+    <p><%=image_tag application.avatar_url(:thumb) if application.avatar_url.present? %></p>
+    <strong>Invitation</strong>
+      <p><%= application.user.nomination.nominator.full_name %> / <%= application.user.nomination.nominator.organization.name %></p>
+    <strong>Commitment</strong>
+      <p><%= application.primary_commitment %></p>
+    <strong>Collaborations</strong>
+      <p><%= application.collab_org %></p>
+    <strong>Commitment Category</strong>
+      <p><%= application.commitmentcat %></p>
+    <strong>Commitment Type</strong>
+      <p><%= application.org_commitment_type %></p>
+    <strong>Commitment Length</strong>
+      <p>
+      <strong>Year 1: </strong><%= application.year1 %><br>
+      <strong>Year 2: </strong><%= application.year2 %><br>
+      <strong>Year 3: </strong><%= application.year3 %><br>
+      <strong>Year 4: </strong><%= application.year4 %><br>           
+      </p>
+    <strong>Further Information</strong>
+      <p><%= application.further_info %></p>
+    <strong>Additional Comments</strong>
+      <p><%= application.add_info %></p>  
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Vetting</h3>
+  <div class="panel_contents">
+    <a name="vetting"></a>
+    <%= semantic_form_for ['admin', application.vettings.find_or_initialize_by_user_id(current_admin_user.id)] do |form| %>
+      <%= form.inputs do %>
+        <%= form.input :application_id, :as=>:hidden %>
+        <%= form.input :user_id, :as=>:hidden %>
+        <%= form.input :status, :as=>:select, :collection=>Vetting::STATUSES %>
+        <%= form.input :comments %>
+        <%= form.buttons :style => "margin-left: 20%; margin-top: 0px;" %>
+      <% end %>
+    <% end %>
+  
+  
+    <%- application.vettings.each do |vetting| -%>
+      <p><strong><%= vetting.user.shortened_name %></strong> <input type="text" value="<%= vetting.status_text %>" readonly="readonly" style="background:lightgrey;"/></p>
+      <p>
+        <strong>Comments</strong><br/>
+        <%= vetting.comments %>
+      </p>
+    <%- end -%>
+  </div>  
+</div>    

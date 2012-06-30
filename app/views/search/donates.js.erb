@@ -1,0 +1,49 @@
+document.body.style.cursor = 'default';
+$("#donates").html("<%= escape_javascript(render :partial => "shared/donates", :locals => {:results => @results, :params => params})%>");
+<% cities = ((@results['facetCounts']['location']['city']||[]) rescue []) %>
+<% if cities.size > 1 %>
+  $('.locations .cities').html("<%= escape_javascript(render :partial => 'shared/states', :locals => {:cities => cities})%>");
+<% elsif(params['cityName'].blank?) %>
+  $('.locations .cities').html("");
+<% end %>
+
+<% rstsubjects = (@results['facetCounts']['subject'] rescue []) %>
+<% if rstsubjects.any? %>
+  <% subject = params.select {|k,v| k.include?('subject') && v.to_i != 0}.map{|k,v| v}.first.to_i%>
+  <% if subject < 0 %>
+    <% objsub = DonorSubject.find_by_ident(subject) %>
+    <% subsubjects = {} %>
+    <% rstsubjects[objsub.name].to_s.gsub(/^\{|\}$/,'').split(', ').map{|a| a.split('=')}.each{|k,v| subsubjects[k] = v } %>
+    <% dbsubjects = objsub.subsubjects.map {|s| [s.subject, s.id, subsubjects[s.name]] }%>
+    console.log('<%= dbsubjects %>');
+    <% dbsubjects.each do |sbj|%>
+      $(".subjects .subsubjects a#<%= sbj[0] %>-<%= sbj[1]%> .number-facets").show().html('(<%= sbj[2].to_i %>)');
+    <% end %>
+  <% elsif subject==0%>
+    <% DonorSubject.where(:name => rstsubjects.map{|k,v| k}).each do |sub| %>
+      $(".subjects .subject a#<%= sub.subject %>-<%= sub.id %> .number-facets").show().html('(<%= rstsubjects[sub.name].to_i %>)');
+    <% end %>
+  <% end %>
+<% end%>
+$QUERY_PARAMS = <%= raw params.to_json %>;
+
+<% rstsubjects = (@math['facetCounts']['subject'] rescue []) %>
+<% if rstsubjects.any? %>
+  <% subject = params.select {|k,v| k.include?('subject') && v.to_i != 0}.map{|k,v| v}.first.to_i%>
+  <% if subject < 0 %>
+    <% objsub = DonorSubject.find_by_ident(subject) %>
+    <% subsubjects = {} %>
+    <% rstsubjects[objsub.name].to_s.gsub(/^\{|\}$/,'').split(', ').map{|a| a.split('=')}.each{|k,v| subsubjects[k] = v } %>
+    <% dbsubjects = objsub.subsubjects.map {|s| [s.subject, s.id, subsubjects[s.name]] }%>
+    console.log('<%= dbsubjects %>');
+    <% dbsubjects.each do |sbj|%>
+      $(".subjects .subsubjects a#<%= sbj[0] %>-<%= sbj[1]%> .number-facets").show().html('(<%= sbj[2].to_i %>)');
+    <% end %>
+  <% elsif subject==0%>
+    <% DonorSubject.where(:name => rstsubjects.map{|k,v| k}).each do |sub| %>
+      $(".subjects .subject a#<%= sub.subject %>-<%= sub.id %> .number-facets").show().html('(<%= rstsubjects[sub.name].to_i %>)');
+    <% end %>
+  <% end %>
+<% end%>
+$QUERY_PARAMS = <%= raw params.to_json %>;
+

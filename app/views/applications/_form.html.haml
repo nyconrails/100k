@@ -1,0 +1,243 @@
+:javascript
+  $(document).ready(function() {
+
+    $('#application_save').click(function() {
+      $('#application_type').val('save');
+
+    });
+
+    $('#application_submit').click(function() {
+      $('#application_type').val('submit');
+    });
+        
+    $("form").validate({
+      onkeyup: false,
+      submitHandler: function(form) {
+        form.submit();
+        return false;
+      }
+    });
+
+  });
+
+#errContainer
+
+=form_tag('/applications', :multipart => true) do
+
+  .formRight
+
+    .fText
+      =label_tag 'user_first_name', 'First Name: *'
+      =text_field_tag 'user_first_name', ( (params[:user][:first_name].present?) ? params[:user][:first_name] : current_user.first_name ), :class=>'required', :name=>"user[first_name]"
+
+    .fText
+      =label_tag 'user_last_name', 'Last Name: *'
+      =text_field_tag 'user_last_name', ( (params[:user][:last_name].present?) ? params[:user][:last_name] : current_user.last_name ), :class=>'required', :name=>"user[last_name]"  
+
+    .fText
+      =label_tag 'organization_name', 'Organization Name: *'
+      =text_field_tag 'organization_name', ( (params[:organization][:name].present?) ? params[:organization][:name] : current_user.organization.name ), :class=>'required', :name=>"organization[name]"  
+
+    .fText
+      =label_tag 'organization_orgtype_id', 'Organization Type: *'
+      =select_tag 'organization_orgtype_id', options_from_collection_for_select(Orgtype.all, "id", "title", ( (params[:organization][:orgtype_id].present?) ? params[:organization][:orgtype_id] :  (current_user.organization.orgtype_id if current_user.organization.present?) )), :class=>'required', :name=>"organization[orgtype_id]" 
+      -if(params[:organization][:other].present?)
+        #org_other{:style=>"display:block"}
+          =label_tag 'organization_other', 'Other Organization Type:'
+          =text_field_tag 'organization_other', params[:organization][:other], :name=>"organization[other]"
+      -else
+        #org_other
+          =label_tag 'organization_other', 'Other Organization Type:'
+          =text_field_tag 'organization_other', params[:organization][:other], :name=>"organization[other]"      
+      
+    .fText
+      =label_tag 'user_title', 'Your Title: *'
+      =text_field_tag 'user_title', ( (params[:user][:title].present?) ? params[:user][:title] : (current_user.title if current_user.title.present?) ), :class=>'required', :name=>"user[title]"      
+                        
+    .fText
+      =label_tag 'email', 'Your Email: *'
+      =text_field_tag 'user_email', ( (params[:user][:email].present?) ? params[:user][:email] : (current_user.email if current_user.email.present?) ), :class=>'required email', :name=>"user[email]"      
+
+    .fText
+      =label_tag 'phone', 'Your Phone: *'
+      =text_field_tag 'user_phone', ( (params[:phone].present?) ? params[:user][:phone] : (current_user.phone if current_user.phone.present?) ), :class=>'required phoneUS', :name=>"user[phone]"    
+      
+    .fText
+      =label_tag 'first_name', 'Organization URL: *'
+      =text_field_tag 'organization_www', ( (params[:organization][:www].present?) ? params[:organization][:www] : 'http://' ), :class=>'required url', :name=>"organization[www]"
+
+    %span.fNote
+      %b Please note: Secondary Contact should be someone we can reach for timely questions regarding your application if you are not accessible.
+ 
+    .fText
+      =label_tag 'secondary_first_name', 'Secondary Contact First Name: *'
+      =text_field_tag 'secondary_first_name', (params[:secondary][:first_name] if params[:secondary]), :class=>'required', :name=>"secondary[first_name]"
+      
+    .fText
+      =label_tag 'secondary_last_name', 'Secondary Contact Last Name: *'
+      =text_field_tag 'secondary_last_name', (params[:secondary][:last_name] if params[:secondary]), :class=>'required', :name=>"secondary[last_name]"
+      
+    .fText
+      =label_tag 'secondary_title', 'Secondary Contact Title: *'
+      =text_field_tag 'secondary_title', (params[:secondary][:title] if params[:secondary]), :class=>'required', :name=>"secondary[title]"  
+
+    .fText
+      =label_tag 'secondary_email', 'Secondary Contact Email: *'
+      =text_field_tag 'secondary_email', (params[:secondary][:email] if params[:secondary]), :class=>'required email', :name=>"secondary[email]"   
+
+    .fText
+      =label_tag 'secondary_phone', 'Secondary Contact Phone: *'
+      =text_field_tag 'secondary_phone', (params[:secondary][:phone] if params[:secondary]), :class=>'required phoneUS', :name=>"secondary[phone]" 
+                  
+    %span.fNoteBig Organization’s Mailing Address
+    .fText
+      =label_tag 'organization_address', 'Address Line 1: *'
+      =text_field_tag 'organization_address', params[:organization][:address], :class=>'required', :name=>"organization[address]"
+ 
+    .fText
+      =label_tag 'organization_address2', 'Address Line 2:'
+      =text_field_tag 'organization_address2', params[:organization][:address2], :name=>"organization[address2]"
+
+    .fText
+      =label_tag 'organization_city', 'City: *'
+      =text_field_tag 'organization_city', params[:organization][:city], :class=>'required', :name=>"organization[city]"
+
+    .fText
+      =label_tag 'organization_state', 'State: *'
+      =select_tag 'organization_state_id', options_from_collection_for_select(State.all, "id", "name", ( (params[:organization][:state_id].present?) ? params[:organization][:state_id] :  (current_user.organization.state.name if current_user.organization.state.present?) )), :class=>'required', :name=>"organization[state_id]"
+
+    .fText
+      =label_tag 'organization_zip', 'Zip: *'
+      =text_field_tag 'organization_zip', params[:organization][:zip], :class=>'required', :name=>"organization[zip]"
+
+    .fText
+      =label_tag 'application_nom_part', 'Nominating Partner Organization:'
+      =text_field_tag 'application_nom_part', ( (params[:application][:nom_part].present?) ? params[:application][:nom_part] : User.where(:id=>Nomination.where(:nominee_id=>current_user.id).first.nominator_id).first.organization.name ), :name=>"application[nom_part]"
+      
+
+  .formLeft
+    .fText
+      =label_tag 'application_primary_commitment', 'What is your primary commitment to help build the 100Kin10 movement? Please keep your response to 250 characters or less. We encourage you to craft your commitment in the most compelling, accurate, and concise manner possible. My organization will: <span>(<span id="application_primary_commitmentCharsLeft"></span> characters left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_primary_commitment', params[:application][:primary_commitment], :name=>"application[primary_commitment]"
+  
+    .fText
+      =label_tag 'application_collab_org', 'If your commitment reflects collaboration with other organizations, please list their name(s) here: '
+      %br
+      =text_field_tag 'application_collab_org', params[:application][:collab_org], :name=>"application[collab_org]"
+
+    .fText
+  
+      =label_tag 'application_description', 'We\'d like to give you an opportunity to describe your commitment in greater detail. In particular, how does your commitment address excellence and partnership, and in what way does it go above and beyond your existing work? You may want to add information regarding your organizational capacity and track record. And, for commitments under the category of "retain excellence", please elaborate how it is designed to do so. Please use the space below to elaborate as needed. <span>(<span id="application_descriptionCharsLeft"></span> words left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_description', params[:application][:description], :name=>"application[description]"
+      
+    .fText
+      %fieldset.rb
+        =label_tag 'application_commitmentcat', 'Commitment category '
+        =radio_button_tag 'application_commitmentcat', 'Increase supply', (params[:application][:commitmentcat]=='Increase supply' ? true : false), :name=>"application[commitmentcat]"
+        %span
+          %strong Increase supply
+          \- Commitments in this category help increase the supply of excellent STEM teachers through recruitment and/or preparation
+        %br/
+        =radio_button_tag 'application_commitmentcat', 'Retain excellence', (params[:application][:commitmentcat]=='Retain excellence' ? true : false), :name=>"application[commitmentcat]"
+        %span
+          %strong Retain excellence
+          \- Commitments in this category hire, help develop, and retain excellent STEM teachers        
+        %br/
+        =radio_button_tag 'application_commitmentcat', 'Build the movement', (params[:application][:commitmentcat]=='Build the movement' ? true : false), :name=>"application[commitmentcat]"
+        %span
+          %strong Build the movement
+          \- Commitments in this category help strengthen and develop the 100Kin10 movement 
+
+    .fText
+      %fieldset
+        =label_tag '', 'Projected measurable outcomes and goals for your proposed commitment (as applicable) above and beyond your existing work: '
+        %br/
+        %br/
+        =label_tag 'application_year1', '1 Year:'
+        =text_field_tag 'application_year1', params[:application][:year1], :name=>"application[year1]"
+        %br/
+        =label_tag 'application_year2', '2 Year:'
+        =text_field_tag 'application_year2', params[:application][:year2], :name=>"application[year2]"
+        %br/
+        =label_tag 'application_year3', '3 Year:'
+        =text_field_tag 'application_year3', params[:application][:year3], :name=>"application[year3]"
+        %br/
+        =label_tag 'application_year4', '4 Year:'
+        =text_field_tag 'application_year4', params[:application][:year4], :name=>"application[year4]"
+        %br/
+        =label_tag 'application_year5', '5 Year:'
+        =text_field_tag 'application_year5', params[:application][:year5], :name=>"application[year5]"
+        %br/
+
+    .fText
+      %fieldset.rb
+        =label_tag 'application_org_commitment_type', 'My organization’s commitment is… '
+        =radio_button_tag 'application_org_commitment_type', 'a new initiative', (params[:application][:org_commitment_type]=='a new initiative' ? true : false), :name=>"application[org_commitment_type]"
+        a new initiative
+        %br/
+        =radio_button_tag 'application_org_commitment_type', 'an expansion of current work', (params[:application][:org_commitment_type]=='an expansion of current work' ? true : false), :name=>"application[org_commitment_type]"
+        an expansion of current work
+        %br/
+    .fText
+      =label_tag 'application_further_info', 'Please share further information about your capacity to implement your commitment (i.e. budget/staffing/track record) <span>(<span id="add_furtherCharsLeft"></span> words left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_further_info', params[:application][:further_info], :name=>"application[further_info]"
+
+    .fText.fLast
+      =label_tag 'application_avatar', 'Upload high-res logo', :class=>'regularTextarea'
+      -if @application && @application.avatar?
+        =file_field_tag 'application_avatar', :class=>'regularTextarea', :name=>"application[avatar]"
+        %br/
+        =image_tag @application.avatar_url(:thumb)
+      -else
+        =file_field_tag 'application_avatar', :class=>'regularTextarea required', :name=>"application[avatar]"      
+      
+    =check_box_tag 'application_is_consent', true, (params[:application][:is_consent] ? true : false), :name=>"application[is_consent]", :class=>'required'
+    %span Consent for use of logo and final commitment in promotional materials if accepted.
+    %br/
+    %br/
+    %br/
+ 
+  .formLeft
+    %span.fNoteBig Supplemental Commitment(s) (Optional)
+
+    .fText
+      =label_tag 'application_supp_commitment', 'What is/are your supplemental commitment(s) to help build the 100Kin10 movement? Please keep your response to 250 characters or less per supplemental commitment, and add as many supplemental commitments as you would like. We encourage you to craft your commitment in the most compelling, accurate, and concise manner possible. My organization will: <span>(<span id="application_supp_commitmentCharsLeft"></span> characters left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_supp_commitment', params[:application][:supp_commitment], :name=>"application[supp_commitment]"
+  
+    .fText
+      =label_tag 'application_supp_add_commitment', 'We\'d like to give you an opportunity to describe your supplemental commitment(s) in greater detail. For each supplemental commitment: how does it address excellence and partnership, does it reflect an expansion of your current work or is it a new initiative, and into which commitment category does it fall (i.e., increase supply, retain excellence, or build the movement)? For commitments under the category of "retain excellence", please elaborate how you will hire, develop, and/or retain excellent STEM teachers. Please use the space below to elaborate as needed. <span>(<span id="application_supp_add_commitmentCharsLeft"></span> words left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_supp_add_commitment', params[:application][:supp_add_commitment], :name=>"application[supp_add_commitment]"
+
+    .fText
+      %fieldset
+        =label_tag '', 'Projected measurable outcomes and goals for your proposed supplemental commitment(s) above and beyond your existing work: '
+        %br/
+        %br/
+        =label_tag 'application_year1', '1 Year:'
+        =text_field_tag 'application_supp_year1', params[:application][:supp_year1], :name=>"application[supp_year1]"
+        %br/
+        =label_tag 'application_year2', '2 Year:'
+        =text_field_tag 'application_supp_year2', params[:application][:supp_year2], :name=>"application[supp_year2]"
+        %br/
+        =label_tag 'application_year3', '3 Year:'
+        =text_field_tag 'application_supp_year3', params[:application][:supp_year3], :name=>"application[supp_year3]"
+        %br/
+        =label_tag 'application_supp_year4', '4 Year:'
+        =text_field_tag 'application_supp_year4', params[:application][:supp_year4], :name=>"application[supp_year4]"
+        %br/    
+        =label_tag 'application_supp_year5', '5 Year:'
+        =text_field_tag 'application_supp_year5', params[:application][:supp_year5], :name=>"application[supp_year5]"
+        %br/          
+      
+    .fText
+      =label_tag 'application_supp_add_info', 'Is there any additional information you’d like to add. Please use the space below to elaborate as needed. <span>(<span id="application_supp_add_infoCharsLeft"></span> words left)</span>'.html_safe, :class=>'sBlk'
+      =text_area_tag 'application_supp_add_info', params[:application][:supp_add_info], :name=>"application[supp_add_info]"
+      
+      
+                                          
+  =hidden_field_tag 'application[type]', nil, :id=>"application_type"
+  
+  =button_tag("Save", :id=>"application_save", :class=>"cancel")
+  =button_tag("Submit", :id=>"application_submit")
+  
+  

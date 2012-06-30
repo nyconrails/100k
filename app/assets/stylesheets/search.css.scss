@@ -1,0 +1,201 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.excerptshare {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #82C9F0;
+  clear: left;
+  margin-bottom: 10px;
+  h1.searchable {
+    display: inline-block;
+  }
+  .website-link a { color: #82C9F0; }
+  .inner-searchbox {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    .input-content {
+      height: 22px;
+      width: 180px;
+    }
+    .search-button {
+      height: 28px;
+      background: #FFC425;
+      border: none;
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+}
+
+.title h3, .title h2 {
+  color: #585858;
+}
+.sorting {
+  margin: 20px 2px 4px 2px;
+  h2 {
+    color: #585858;
+  }
+  a.current {
+    color: #82C9F0;
+  }
+}
+.excerptshare.opportunity {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  div {
+    display: block;
+    vertical-align: top;
+  }
+
+}
+.excerptshare.project {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  div {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .image {
+    width: 210px;
+    height: 220px;
+    padding-top: 10px;
+    img {
+      width: 210px;
+      height: 210px
+    }
+  }
+  .content {
+    padding: 0 5px;
+    width: 300px;
+    h3 {
+      color: #585858;
+    }
+    .fulfillment {
+      padding-top: 5px;
+    }
+  }
+  .donatebox {
+    background: #82C9F0;
+    padding: 5px;
+    div {
+      display: block;
+      input[type='text']{
+        width: 100px;
+        font-size: 110%;
+        height: 24px;
+      }
+      input[type='submit']{
+        background-color: #330;
+        margin-left: 5px;
+        height: 30px;
+        width: 45px;
+        color: white;
+        border: 1px solid #585858;
+      }
+      .bar {
+        height: 13px;
+        background: whiteSmoke;
+        .percent {
+          height: 13px;
+          background: #663;
+        }
+      }
+    }
+  }
+}
+.paginations {
+  text-align: right;
+  font-weight: bold;
+}
+#rightcolumn {
+  .takeactions#graybox{
+    height: auto !important;
+    min-height: 100px;
+  }
+}
+.facets {
+    display: none;
+    padding: 10px 10px 10px 20px;
+    h2 {
+      margin-top: 25px;
+      color: #585858;
+    }
+    ul.sorted {
+      padding-left: 4px;
+    }
+    .locations {
+      select {
+        min-width: 160px;
+        height: 25px;
+        margin-top: 10px;
+        font-size: 115%;
+        padding-left: 5px;
+      }
+    }
+    a.sup, a.rate-sorting {
+      font-size: 130%;
+    }
+    a.sub {
+      font-size: 115%;
+    }
+    a.sup.current, a.sub.current, a.rate-sorting.current {
+      font-weight: bold;
+      color: #000;
+    }
+
+}
+.subjects {
+  padding-left: 5px;
+  .subject {
+    padding-top: 6px;
+    .subsubjects {
+      padding-left: 10px;
+    }
+  }
+}
+.facets {
+  a.current {
+    color: #FFC425;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+#donorchoose_donate  {
+  .outer-search {
+    select#state{
+      height: 29px;
+      font-size: 120%;
+      margin-right: 7px;
+      padding-left: 5px;
+    }
+    .input-content {
+      height: 25px;
+      width: 240px;
+      font-size: 120%;
+    }
+    .search-button {
+      margin-left: 10px;
+      font-size: 120%;
+      padding: 7px 20px;
+      background: #82C9F0;
+      border: #82C9F0;
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+  #donates {
+    padding-top: 20px;
+  }
+  .breadscrumb {
+    margin-bottom: 15px;
+    font-size: 120%;
+    span.filter-words {
+      font-weight: bold;
+    }
+  }
+}
+.tabs .donate-tab{
+  width: auto !important;
+}

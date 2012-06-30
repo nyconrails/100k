@@ -1,0 +1,53 @@
+<% (1..10).each do |n| %>
+
+nominator<%= n %>:
+  first_name: Nominator<%= n %>
+  last_name: Lastname
+  email: nominator<%= n %>@test.com 
+  salt: gXMCTyPdEb63zqxAKqsh
+  crypted_password: $2a$10$skBTOBjTzmQR.UWtM7m0Ee9J2F0l6VUr7QeHh0fhE4XX4YY3f10mC
+  is_nominator: true
+  organization: organization<%= n %> 
+
+<% end %>
+
+
+<% (1..10).each do |n| %>
+
+nominee<%= n %>:
+  first_name: Nominee<%= n %>
+  last_name: Lastname
+  email: nominee<%= n %>@test.com 
+  salt: gXMCTyPdEb63zqxAKqsh
+  crypted_password: $2a$10$skBTOBjTzmQR.UWtM7m0Ee9J2F0l6VUr7QeHh0fhE4XX4YY3f10mC
+  organization: organization<%= n %>
+  
+<% end %>
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                              :integer         not null, primary key
+#  email                           :string(255)
+#  crypted_password                :string(255)
+#  salt                            :string(255)
+#  first_name                      :string(255)
+#  last_name                       :string(255)
+#  title                           :string(255)
+#  phone                           :string(255)
+#  organization_id                 :integer
+#  is_nominator                    :boolean
+#  is_primary_nominator            :boolean
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  remember_me_token               :string(255)
+#  remember_me_token_expires_at    :datetime
+#  reset_password_token            :string(255)
+#  reset_password_token_expires_at :datetime
+#  reset_password_email_sent_at    :datetime
+#  last_login_at                   :datetime
+#  last_logout_at                  :datetime
+#  last_activity_at                :datetime
+#
+

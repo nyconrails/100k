@@ -1,0 +1,61 @@
+<%= link_to '< back', welcome_index_path %>
+<br>
+<br>
+
+			  <div id="partnerlogo">
+			  <%= image_tag @organization.avatar.regular.url %>
+			  </div>
+
+		
+<div class="leftprofile">
+<h1>ORGANIZATION PROFILE</h1>
+
+
+<%= @organization.name %>
+<br>
+<br>
+<%= show_field("Organization Type", @organization.orgtype.title).html_safe unless @organization.orgtype.blank? %>
+<br>
+<%= show_field("Date Joined", @organization.joined_at.strftime('%m/%Y')).html_safe unless @organization.joined_at.blank? %>
+<br>
+<strong>Address:</strong><br>
+<%= @organization.address %><br>
+<%= (@organization.address2 + "<br>").html_safe unless @organization.address2.blank? %>
+<%= @organization.city %>, <%= @organization.state.abbreviation if @organization.state %> <%= @organization.zip %><br>
+<br>
+<strong>PRIMARY CONTACT</strong><br>
+<% if primary_contact=@organization.primary_contact %>
+<%= primary_contact.full_name %><br>
+Title:  <%= primary_contact.title %><br>
+Email:  <%= primary_contact.email %><br>
+Phone:  <%= primary_contact.phone %><br>
+<% else %>
+Email: <%= @organization.primary_contact_email %><br>
+<% end %>
+
+<br>
+<% if @organization.secondary_contact || !@organization.secondary_contact_email.blank? %>
+<strong>SECONDARY CONTACT</strong><br>
+  <% if secondary_contact=@organization.secondary_contact %>
+  <%= secondary_contact.full_name %><br>
+  Title:  <%= secondary_contact.title %><br>
+  Email:  <%= secondary_contact.email %><br>
+  Phone:  <%= secondary_contact.phone %><br>
+  <% else %>
+  Email: <%= @organization.secondary_contact_email %><br>
+  <% end %>
+<% end %>
+
+</div>
+<div class="rightprofile">
+
+			
+<h3> COMMITMENT</h3>
+<%= @organization.commitment.html_safe %>
+<% unless @organization.additional_commitment.blank? %> 
+  <h3>ADDITIONAL COMMITMENT</h3> 
+  <%= @organization.additional_commitment.html_safe %>
+<% end %>
+			
+</div>
+			

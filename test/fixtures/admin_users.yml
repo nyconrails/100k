@@ -1,0 +1,53 @@
+<% (1..10).each do |n| %>
+
+vetter<%= n %>:
+  first_name: Vetter<%= n %>
+  last_name: Lastname
+  email: vetter<%= n %>@test.com 
+  encrypted_password: $2a$10$v1KvD1nWdpUyeM8W/VmTbuHJzvY1y5yAtpUkfLHMGRHROAK806Ow.
+
+<% end %>
+
+<% (1..10).each do |n| %>
+
+editor<%= n %>:
+  first_name: Editor<%= n %>
+  last_name: Lastname
+  email: editor<%= n %>@test.com 
+  encrypted_password: $2a$10$v1KvD1nWdpUyeM8W/VmTbuHJzvY1y5yAtpUkfLHMGRHROAK806Ow. 
+  editor: true 
+
+<% end %>
+
+<% (1..10).each do |n| %>
+
+superuser<%= n %>:
+  first_name: Superuser<%= n %>
+  last_name: Lastname
+  email: superuser<%= n %>@test.com 
+  encrypted_password: $2a$10$v1KvD1nWdpUyeM8W/VmTbuHJzvY1y5yAtpUkfLHMGRHROAK806Ow.
+  super_user: true
+
+<% end %># == Schema Information
+#
+# Table name: admin_users
+#
+#  id                     :integer         not null, primary key
+#  email                  :string(255)     not null
+#  encrypted_password     :string(128)     not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer         default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  super_user             :boolean
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  editor                 :boolean
+#
+

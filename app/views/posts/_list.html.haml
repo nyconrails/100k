@@ -1,0 +1,28 @@
+- if posts.empty?
+  %p There are no posts.
+- else
+  %ul.list
+    - posts.each do |post|
+      %li{:id => "post-#{post.id}", :rel => "#{post.id}"}
+        %div.author
+          = post.user.full_name
+          - if (controller.action_name == 'edit' || controller.action_name == 'my_account' || controller.controller_name == 'posts')
+            %span.action
+              - if can? :edit, post
+                = link_to image_tag("post-edit-icon.png"), "#", :title => "Edit", :class => "edit-inline-post", :rel => "#{post.id}"
+              - if can? :destroy, post
+                = link_to image_tag("icon_dismiss.png"),organization_post_path(organization, post) , :confirm => "Are you sure you want to delete this post?", :method => :delete,:title => "Delete"
+          %br
+          %div.post_date
+            -#- if post.created_at.year == Date.today.year
+              -#= post.created_at.to_date.strftime('%B %e')
+            -#- else
+            = post.created_at.to_date.strftime('%B %e, %Y')
+        %p.seperator
+        %div.post-content
+          %div.body= post.body
+          %div.form-submit
+            = semantic_form_for([organization, post], :html => {:remote => true, :id => "edit-post-status"}) do |f|
+              = f.text_area :body
+              = f.submit "Update"
+      %br

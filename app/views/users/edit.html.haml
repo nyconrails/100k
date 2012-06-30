@@ -1,0 +1,8 @@
+%h1 Edit Contact
+= render :partial => "form"
+= link_to "Resend welcome mail", welcome_organization_user_path(@organization, @user)
+|
+= link_to "Send reset password instructions to contact's mail address", reset_password_organization_user_path(@organization, @user)
+%br/
+%br/
+= link_to "View All Contacts", organization_users_path(@organization), :class => "button"

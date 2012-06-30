@@ -1,0 +1,3 @@
+<%= render :partial=> 'general',
+  :locals=>{:page_slug=>'page_takeaction',
+    :sidebar_image=>'/images/5984910237_df9a7faef7_b.jpg'} %>

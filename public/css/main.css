@@ -1,0 +1,830 @@
+/*
+rgb colors:
+yellow 255 196 37 / #ffc425
+blue 11 100 172 / #0b64ac FAQ
+lt blue 130 201 240 /#82c9f0
+green 89 165 84 / #59a554 /
+turquoise 0 149 143 / #00958f / partners
+gray #585858
+lt gray #efefef
+*/
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+body {
+    line-height: 1; }
+ol, ul {
+    list-style: none; }
+blockquote, q {
+    quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td   {
+    vertical-align: middle;
+}
+
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('League-Gothic/league_gothic-webfont.eot');
+    src: url('League-Gothic/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('League-Gothic/league_gothic-webfont.woff') format('woff'),
+        url('League-Gothic/league_gothic-webfont.ttf') format('truetype'),
+        url('League-Gothic/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    margin-top: 5px;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    font-family: Arial, Calibri, sans;
+    color: #585858;
+}
+
+/* HEADER STYLES */
+
+#header {
+    width: 984px; /* 1024 width total with padding */
+    height: 88px;
+    margin: 0 auto;
+    border: 0px dotted red;
+    font-size:18px;
+    line-height: 21px;
+    padding: 0 20px 0 20px;
+}
+
+#logo {
+    font-family: arial, sans;
+    float: left;
+
+}
+.logoimg {
+    position: relative;
+    top:20px;
+    margin-left: -25px;
+}
+
+#topbox { /*this applies rule underneath header */
+          border-bottom: 5px solid #585858;
+}
+
+/* MAIN CONTENT DIVS */  /* MAIN CONTENT DIVS */ /* MAIN CONTENT DIVS */
+/* MAIN CONTENT DIVS */  /* MAIN CONTENT DIVS */ /* MAIN CONTENT DIVS */
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -28px;
+}
+.push {
+    height: 28px; /* this must be the same height as the footer div and be the inverse of he bottom margin of the wrapper div ^*/
+}
+
+#content {
+    width: 1024px;
+    overflow: hidden;
+    text-align: left;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+}
+
+#maincontent {
+    margin: 20px 10px 10px 10px;
+    overflow: hidden;
+}
+
+#contentheader { /* This is the colorblock header above the left column, main content */
+                 width: 730px;
+                 min-height: 172px; /* 148 + 20 + 20 pading makes 188 height total */
+                 background-color: #ffc425;
+                 color: #FFF;
+}
+#contentheader h1 {
+    color: #FFF;
+}
+
+.copyblock{ /* styles the text inside the colored block at the top of the content columns */
+            color: #fff;
+            text-align:left;
+            padding:10px;
+            line-height:18px;
+            font-family:arial;
+            font-size:13px;
+            color:#FFF;
+}
+
+.copyblock A:link,
+.copyblock A:visited,
+.copyblock A:active { color: #fff; text-decoration: underline; }
+.copyblock A:hover { background-color: #fff; color: #585858; text-decoration: underline;}
+
+#contenttbl { /* The table inside the colorblock header */
+              text-align: center;
+              border-collapse:collapse;
+              width: 690px;
+}
+#contenttbl td {
+    padding: 10px
+}
+
+/* CONTENT COLUMNS */
+#leftcolumn {
+    float: left;
+    width: 720px;
+}
+
+#leftcolumn .contact_us
+{
+    margin-left: 40px;
+}
+
+#rightcolumn {
+    float: right;
+    width: 280px;
+}
+#graybox { /* right had column spacer box */
+           margin-top: 10px;
+           background-color: #efefef;
+           height: 100px;
+           min-height:340px;
+}
+
+/* HEADER STYLES */
+/* HEADER STYLES */
+
+h1, h2, h3 {
+    font-family: 'LeagueGothicRegular', arial, sans;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 30px;
+    line-height: 28px;
+    margin-bottom: 10px 0;
+    text-transform: uppercase;
+    color: #585858;
+    letter-spacing: 1px;
+}
+h2 {
+    font-size: 25px;
+    line-height: 22px;
+    margin: 10px 0;
+}
+h3 {
+    font-size: 20px;
+    line-height: 18px;
+    margin: 10px 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+blockquote {
+    margin: 20px;
+    background-color: #efefef;
+    padding: 10px;
+}
+/* Blog title style */
+.newsentry{
+    margin: 10px 0 0px 0;
+}
+h3.newsentry{
+    display: inline;
+}
+
+.dateformat {
+    font-weight: bold;
+}
+.newsslash {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, sans;
+    margin: 0 10px;
+}
+
+/* scales images in the maincontent div that are larger than 720 width down to 720 */
+#maincontent  img {
+    max-width: 720px;
+}
+
+
+/* FOOTER */ /* FOOTER */ /* FOOTER */ /* FOOTER */
+/* FOOTER */ /* FOOTER */ /* FOOTER */ /* FOOTER */
+
+.footer {
+    height: 28px;
+    clear: both;
+    background-color: #ffc425;
+}
+.footerbox {
+    width: 1024px;
+    height: 22px;
+    text-align: left;
+    margin-left: auto; margin-right: auto;
+    font-size: 11px;
+    color: #585858;
+    padding: 3px;
+}
+.footericon {
+    height: 20px;
+    width: 20px;
+    vertical-align: top;
+}
+.footerheader {
+    font-family: 'LeagueGothicRegular', arial, sans;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #585858;
+    padding: 0px;
+    float: left;
+}
+
+.footer A:link,
+.footer A:visited,
+.footer A:active {color: #FFF; text-decoration: none;}
+.footer A:hover {color: #585858; text-decoration: underline;}
+
+/* GENERAL NAVIGATION */
+/* GENERAL NAVIGATION */
+
+a:link,
+a:visited,
+a:active {color: #585858; text-decoration: underline}
+a:hover {color: #ffc425; text-decoration: underline;}
+
+
+/* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
+/* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
+
+#mainnav,
+#contentnav,
+#secondarynav ul {
+    list-style: none;
+    text-align: center;
+    font-family: 'LeagueGothicRegular', arial, sans;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+#mainnav ul li {
+    float: left;
+}
+
+#mainnav {
+    clear: right;
+    float: right;
+    position: relative;
+    top:37px;
+    font-size: 20px;
+    border: 0px dotted green;
+    color: #FFF;
+}
+#mainnav A:link,
+#mainnav A:visited,
+#mainnav A:active { padding: 10px 10px 2px; color: #FFF; width:110px; text-decoration: none}
+#mainnav A:hover {
+    width:110px; text-decoration: none;
+    color: #ffc425;
+}
+#mainnav A:active {
+    background: url(../images/navbutton.png) no-repeat 0 0;
+    background-position: 50% 0px;
+}
+
+#mainnav ul li {
+    border-left: 1px solid #FFF;
+    list-style: none;
+    width: 112px;
+    height: 28px;
+    margin-top: -10px;
+    padding-top: 10px;
+    background-color: #585858;
+    text-align: center;
+}
+#mainnav ul {
+    display: inline;
+}
+/* This code will highlight the correct main meu nav button when on that page */
+body#home a#homenav,
+body#aboutus a#aboutnav,
+body#commitments a#commitnav,
+body#news a#newsnav,
+body#partners a#partnersnav,
+body#faq a#faqnav {
+    color: #fff;
+    background: url(../images/navbutton.png) no-repeat 0 0;
+    background-position: 50% 0px;
+}
+
+
+
+/* SECONDARY - TOP RIGHT NAVIGATION MENU */
+/* SECONDARY - TOP RIGHT NAVIGATION MENU */
+#secondarynav ul li {
+    float: left;
+}
+
+#secondarynav {
+    float: right;
+    text-align: right;
+    border: 0px dotted red;
+    -webkit-font-smoothing: antialiased;
+}
+#secondarynav { padding-top: 2px;}
+#secondarynav A:link { color:#585858; text-decoration: none;}
+#secondarynav A:visited {color: #585858; text-decoration: none}
+#secondarynav A:active {color: #585858; text-decoration: none}
+#secondarynav A:hover {color: #999; text-decoration: none;}
+.portal {
+    border-right: 2px solid #585858;
+    padding-top: 2px;
+    padding-right: 10px;
+}
+.contact {
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+/* Styles for search box in sub nav
+=========================================== */
+
+#searchfield {
+    float:right;
+    text-align:right;
+    padding:5px;
+    position:relative;
+    display: inline;
+}
+.contentsearch {
+    text-transform:none;color:#fff;font-family:arial,sans;font-size:11px;
+}
+
+.searchbox  {
+    border:1px solid #ffc425;height:19px;width:120px;padding:0px;
+}
+
+#searchsubmit {
+    background-color: #ffc425 !important;
+    color: #585858 !important;
+    height:22px !important;
+    font-size: 11px !important;
+    -webkit-box-align: center !important;
+    text-align: center !important;
+    padding: 2px 6px 3px !important;
+}
+
+#searchsubmit:hover {
+
+    background-color: #efefef !important;;
+    color: #585858 !important;;
+}
+
+#s {
+    width: 124px;
+}
+
+/* CONTENT NAV UNDERNEATH COORBLOCK DIV */
+
+#contentnav {
+    width: 730px;
+    float: left;
+    background-color: #585858;
+    position: relative;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    height: 36px;
+    vertical-align: middle;
+    display: inline;
+    margin-top: 0px;
+}
+#contentnav A:link,
+#contentnav A:visited,
+#contentnav A:active { padding: 6px 4px 4px 4px; color: #FFF; text-decoration: none;}
+#contentnav A:hover {   color: #ffc425;
+                        text-decoration: none;
+                        padding-bottom: 0px;
+}
+
+div#funders a {
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+#contentnav ul li {
+    margin-top: 0px;
+    border-right: 1px solid #FFF;
+    list-style: none;
+    width: 112px;
+    height: 36px;
+    padding-bottom: 0px;
+    float: left;
+    background-color: #585858;
+    padding: 6px 4px 4px 4px;
+}
+
+#contentnav ul li:last-child {
+    border-right: none;
+}
+
+#contentnav ul.commitmenttabs li {
+    width: 140px;
+}
+
+div.sorting.teacher-opportunities a {
+    text-decoration: none;
+}
+
+/* #Tabs (activate in tabs.js)
+================================================== */
+ul.tabs {
+    display: block;
+    margin: 0 0 1px 0;
+    padding: 0px;
+}
+ul.tabs li {
+    /*  display: block;
+    */
+}
+ul.tabs li a {
+    /*display: block;
+    */
+}
+ul.tabs li a.active {
+    /*
+    background: #fff;
+    */
+    text-decoration: none;
+    background: url(../images/navbutton.png) no-repeat 50% -5px;
+    padding-bottom: 0px;
+    overflow: visible; padding: 7px 4px 4px 4px;
+}
+ul.tabs li:first-child a.active {
+    margin-left: 0; }
+ul.tabs li:first-child a {
+}
+ul.tabs li:last-child a {
+}
+
+ul.tabs-content { margin: 0 0 40px 0; display: block; }
+ul.tabs-content > li { display:none; }
+ul.tabs-content > li.active { display: block; }
+
+/* Clearfixing tabs for beautiful stacking */
+ul.tabs:before,
+ul.tabs:after {
+    content: '\0020';
+    /*display: block;*/
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+ul.tabs:after {
+    clear: both; }
+ul.tabs {
+    zoom: 1; }
+
+
+/* LINKS & HEADERS ON PARTNER PAGES */
+/*
+.partner_details H3 {
+  color: #585858;
+  margin-top: 4px;
+  margin-bottom: 1px;
+}
+
+.partner_details A:link,
+.partner_details A:visited,
+.partner_details A:active {
+background-color: #00958f;
+margin-top: 8px;
+padding: 2px 5px 1px 4px;
+font-size: 18px;
+font-family: 'LeagueGothicRegular', arial, sans;
+font-weight: normal;
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-webkit-text-stroke: 0px black;
+color: #FFF;
+text-decoration: none;
+text-transform: uppercase;
+float: left;
+}
+.partner_details A:hover {background-color: #585858; text-decoration: none;}
+*/
+.partner_details {
+	width:505px;
+	height:247px;
+	min-height:247px;
+	border:1px solid black;
+	padding:0px;
+	line-height: 15px;
+}
+.partner_logo img {
+	bottom: 0px;
+	position: absolute; 
+	bottom: 0;
+}
+.partner_logo {
+    position:relative;
+    margin: 10px;
+    padding:0px;
+    height: 90px;
+}
+.partner_details H1 {
+    color: #FFF !important;
+    line-height: 26px;
+    padding-bottom: 2px;
+}
+.partner_details H3 {
+    color: #585858;
+}
+.inner_details {
+    background: #ffc425;
+    width: 485px;
+    height: 117px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.partner_details A:link,
+.partner_details A:visited,
+.partner_details A:active {
+    margin-top: 4px;
+    padding: 4px 5px 4px 4px;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    font-size: 12px;
+    font-family: arial, sans;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 0px black;
+    color: #585858;
+    color: #fff;
+    text-decoration: none;
+}
+.partner_details A:hover {
+    color: #585858;
+    text-decoration: none;}
+
+/* Hide twitter widget footer */
+.twtr-ft {
+    display: none;
+}
+
+.error { 
+    font-size: 12px;
+    color: #cc0000;
+}
+
+form.formtastic.contacted_organization textarea{
+    max-height: 50px;
+    width: 41.5%;
+    margin-top: 0px;
+}
+form.contacted_organization li#contacted_organization_question_input {
+   margin-top: 9px;
+}
+form.contacted_organization li{
+    list-style-type: none;
+    margin: 2px;
+}
+
+form.contacted_organization label{
+    font-size: 12px;
+    display: inline-block;
+    min-width: 150px;
+    margin-right: 10px;
+    color: #444444;
+}
+.content #contact_us p{
+    text-align: justify;
+    font-size: 12px;
+}
+form.formtastic.contacted_organization p.inline-errors{
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -o-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    border: 1px solid red;
+    display: block;
+    margin: -20px 100px 10px 55%;
+    padding: 2px 0 1px 5px;
+    min-width: 20%;
+    position: relative;
+    background-color: #fff;
+}
+/* Added on 20-Apr-2012 to add new field */
+/* start add */
+form.contacted_organization li#contacted_organization_question_input label{
+    float: left;
+    margin: 10px 10px 0 0;
+}
+form.contacted_organization li#contacted_organization_reason_input label {
+    width: 120px;
+    height: 2px;
+    float: left;
+}
+/* end add */
+#thankyou{
+    color: #395EAD;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'LeagueGothicRegular',arial,sans;
+}
+
+#head{
+    color: #FFC425;
+    letter-spacing: 1px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+/* #Forms
+================================================== */
+
+form {
+    margin-bottom: 20px;
+}
+fieldset {	
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],                      /* Added on 13-Mar-2012 to fix telephone input field as its appearance was inconsistent */
+input[type="number"],
+textarea,
+select {
+    border: 1px solid #ccc;
+    padding: 6px 4px;
+    outline: none;
+    font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #777;
+    margin: 0;
+    width: 280px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    background: #fff;
+}
+
+#membership input[type="text"]
+{
+    width: 230px;
+}
+
+#membership select {
+    width: 240px;
+}
+
+select {
+    padding: 0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,              /* Added on 13-Mar-2012 to fix telephone input field as its appearance was inconsistent */
+textarea:focus {
+    border: 1px solid #aaa;
+    color: #444;
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+    box-shadow:  0 0 3px rgba(0,0,0,.2);
+}
+
+textarea {
+    min-height: 60px; 
+    margin-top:10px;
+    width:100%;
+}
+
+label,
+legend {
+    font-size: 14px;
+    line-height:24px;
+}
+
+select {
+    width: 290px;
+    padding: 6px 4px;
+}
+
+input[type="checkbox"] {
+    display: inline;
+}
+
+label span,
+legend span {
+    font-weight: normal;
+    font-size: 13px;
+    color: #444;
+    line-height:18px;
+}
+
+/* #Buttons
+================================================== */
+
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    background: #ffc42b !important; /* Old browsers */
+    padding: 4px 10px !important;
+    color: #000 !important;
+    font-size: 12px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    margin-bottom: 20px !important;
+    line-height: 21px !important;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    border: 0 !important;
+}
+
+
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    color: #b49f08 !important;
+    background: #333 !Important;
+}
+a.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    color: #b49f08 !important;
+    background: #333 !Important;
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+}
+
+input[name="search"]
+{
+    border: 1px solid #ccc;
+    outline: none;
+    font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #777;
+    margin: 0;
+    width: 120px;
+    margin-bottom: 5px;
+    background: #fff;
+    -webkit-appearance: textfield;
+	padding: 1px;
+	background-color: white;
+	border: 2px inset;
+	border-image: initial;
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	cursor: auto;
+}

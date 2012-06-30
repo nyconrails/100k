@@ -1,0 +1,27 @@
+%h2 Subject
+- subjects = results['facetCounts']["subject"] || {}
+.subjects
+  - DonorSubject.sups.each do |sup|
+    - subsubjects = sup.subsubjects
+    .subject{:class => sup.subject}
+      %a.sup{:class => "sup #{sup.ident==-4 ? 'current': ''} #{subsubjects.empty? ? 'sub' : ''}", :rel => "#{sup.subject}=#{sup.ident}", :href => "javascript:#", :id => "#{sup.subject}-#{sup.id}"}
+        = sup.name
+        %span.number-facets
+        - if subsubjects.any?
+          &nbsp;>
+      - subvalues = {}
+      - subjects[sup.name].to_s.gsub(/^\{|\}$/,'').split(', ').map{|a| a.split('=')}.map {|k,v| subvalues[k]=v}
+      %ul.subsubjects{:style => "display:#{sup.ident==-4 ? '' : 'none'};"}
+        - subsubjects.each do |s|
+          %li
+            %a{:href => "javascript:#", :class => 'sub', :rel => "#{s.subject}=#{s.ident}", :id => "#{s.subject}-#{s.id}"}
+              = s.name
+              %span.number-facets
+                - unless subvalues[s.name].blank?
+                  = "(#{subvalues[s.name]})"
+
+%h2 Rated By
+.rated-by
+  %ul.sorted
+    - Donor::Search::SORTED.each do |k,v|
+      %li= link_to k, "javascript:#", :rel => v, :class => "rate-sorting #{v.to_i==0 ? 'current' : ''}"

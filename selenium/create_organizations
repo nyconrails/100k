@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/" />
+<title>create_organizations</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">create_organizations</td></tr>
+</thead><tbody>
+<tr>
+	<td>loadTestData</td>
+	<td>${load_xml_file}/100K_Suite/list_organizations.xml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>!testdata.EOF()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>nextTestData</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${link}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>link=${link}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${link_org}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>link=${link_org}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_name</td>
+	<td>${name}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_address</td>
+	<td>${add1}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_address2</td>
+	<td>${add2}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_city</td>
+	<td>${city}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_state_id</td>
+	<td>label=Alaska</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_zip</td>
+	<td>${zip}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_joined_at_1i</td>
+	<td>${year}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_joined_at_2i</td>
+	<td>${month}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_joined_at_3i</td>
+	<td>${day}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_primary_contact_id</td>
+	<td>${primary_contact}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=organization_primary_contact_email</td>
+	<td>${primary_email}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_orgtype_id</td>
+	<td>label=${orgtype}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_partner_status</td>
+	<td>${partner}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_commitment_category</td>
+	<td>${commitment}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=organization_additional_commitment_category</td>
+	<td>${add_commit}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Organization was successfully created.</td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${link}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_organization_id</td>
+	<td>label=TestOrg_Two</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>User was successfully updated.</td>
+</tr>
+<tr>
+	<td>storeTable</td>
+	<td>css=table.22.0</td>
+	<td>role</td>
+</tr>
+<tr>
+	<td>storeTable</td>
+	<td>css=table.22.1</td>
+	<td>role_name</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>role</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>role_name</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Edit')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_organization_id</td>
+	<td>label=TestOrg_One</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>User was successfully updated.</td>
+</tr>
+<tr>
+	<td>storeTable</td>
+	<td>css=table.22.0</td>
+	<td>role</td>
+</tr>
+<tr>
+	<td>storeTable</td>
+	<td>css=table.22.1</td>
+	<td>role_name</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>role</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>role_name</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

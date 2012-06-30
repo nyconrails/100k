@@ -1,0 +1,2 @@
+$('#link').html('<%= escape_javascript render(:partial=>"layouts/status_newsfeed") %>');
+$('#paginator').html('<%= escape_javascript(paginate(@top_posts_by_org, :remote => true).to_s) %>');

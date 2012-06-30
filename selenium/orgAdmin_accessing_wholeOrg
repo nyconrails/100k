@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/" />
+<title>orgAdmin_accessing_wholeOrg</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">orgAdmin_accessing_wholeOrg</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Partner Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>Logged in!</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Hello, ${admin_fname}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Resources</td>
+	<td>Resources</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Nomination</td>
+	<td>Nomination</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Partner News</td>
+	<td>Partner News</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partner News</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Organization</td>
+	<td>My Organization</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Admin</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=My Settings</td>
+	<td>My Settings</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Log out</td>
+	<td>Log out</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Organization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.leftprofile &gt; h1</td>
+	<td>ORGANIZATION PROFILE</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>100Kin10 STATUS NEWSFEED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>COMMITMENT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.leftprofile &gt; strong</td>
+	<td>Organization Type:</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='contentWrapper']/div[2]/div/strong[2]</td>
+	<td>Date Joined:</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='contentWrapper']/div[2]/div/strong[3]</td>
+	<td>exact:Address:</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>CONTACTS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Organization Newsfeed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=&lt; back</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Date Joined:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>exact:Address:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Update Organization</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Add New Contact</td>
+	<td>Add New Contact</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=View All Contacts</td>
+	<td>View All Contacts</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Organization Newsfeed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=&lt; back</td>
+	<td>&lt; back</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.content &gt; h1</td>
+	<td>Contact Information</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Password Reset</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Update</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='contentWrapper']/div[2]/h1[2]</td>
+	<td>Post Status</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=post_body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td>POST</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>About us</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partners</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Commitments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Take Action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Press</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>LEARN MORE ABOUT US</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=View Our Partners</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Read All FAQ</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=LEARN MORE ABOUT US</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>MORE ON COMMITMENTS</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

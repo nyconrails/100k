@@ -1,0 +1,319 @@
+        <ul class="tabs-content">
+          <!-- Give ID that matches HREF of above anchors -->
+          
+          <li class="active" id="welcome">
+          <!--Added on 13th April 2012- To make contents in banner Editable in CMS-->
+          <!--Start--> 
+              <div id="log-header">
+               <span id="log-text">
+                 <%= Content.insert('welcome_banner_header')%>
+               </span>
+            </div>
+            <div class="log-arrow-down">
+                 </div>
+              <%#= image_tag 'header-welcome.png', :width=>"630", :height=>"58", :alt=>"Welcome!"%>
+            <div class="contentShell">
+               <%= Content.insert('welcome_banner_body')%>
+                <!--<p>Please log in below.  For any questions, contact <a href="mailto:info@100Kin10.org">info@100Kin10.org</a></p>-->
+          <!--end-->                    
+             <div id="welcomeF">
+              <div class="logIn">
+                <h3>Log In</h3>
+                <%= form_tag sessions_path do %>               
+                <div class="fText formRight">
+                  <%= label_tag :email, "Login" %>
+                  <%= text_field_tag :email, params[:email] %>
+                </div>
+                <div class="fText formRight">
+                  <%= label_tag :password %>
+                  <%= password_field_tag :password %>
+                </div>
+                <div class="remember">
+                <div class="fText">
+                  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                  <%= label_tag :remember_me %>
+                </div>
+                <div class="actions fText"><%= submit_tag "Log in" %></div>
+                <% end %>
+              </div>
+              </div>
+              
+              <div class="actions reset">
+                <h3>Reset Password</h3>
+                <%= form_tag password_resets_path, :method => :post do %>
+                  <div class="field formRight">
+                    <%= label_tag :email %>
+                    <%= text_field_tag :email %> 
+                  </div>
+                  <div class="resetPw">
+                    <%= submit_tag "Reset my password!" %>
+                  </div>
+                <% end %>
+              </div>
+              </div><!-- end welcomeF -->
+                     
+            
+            </div><!-- end contentShell -->
+            
+          </li><!-- end welcome -->
+          
+          <li id="faq">
+            <img src="images/header-faq.png" width="630" height="58" alt="Header Faq">
+            <div class="contentShell">
+            <p>The following FAQs were developed in response to recent questions and inquiries we have received from past 100Kin10 nominees. We hope you will find them helpful and continue to reach out with your questions.</p>
+            
+            <p class="question">1. What does success look like, and how do you intend to grow over time?</p>
+            <p class="answer">The simplest and most specific answer is that we aim to respond to the nation’s need for 10,000 new, excellent STEM teachers over 2 years and 100,000 over 10 years, working closely with partner organizations as well as the Department of Education and the White House to ensure positive, measurable growth. The purpose is to reverse our country’s decades-long decline in STEM subjects, to ensure that all children have the basic STEM literacy to be full participants in our economy and democracy, and to enable our country’s students to address the most pressing national and global challenges.
+            <br><br>
+            We are mobilizing an expanding, multi-sector group of organizations to strategically apply its collective assets in a coordinated way to solve a complex, national problem. We are doing this by creating an “enlightened marketplace” that doesn’t rely on any centralized entity having all the answers to complex questions related to teacher preparation or local demand for STEM talent. Instead, funders with their own expertise can identify and partner with pre-vetted organizations with deep knowledge of local, statewide, and national needs.
+            </p>  
+            
+            <p class="question">2. How does 100Kin10 focus on quality?</p>
+            <p class="answer">100Kin10 is not just about numbers. The movement is focused on excellence. The true end goal is to dramatically increase the quantity and quality of STEM teaching so that all students have access to first-rate STEM learning.
+            <br><br>
+            UEI oversees the 100Kin10 vetting process to ensure that accepted partners have both high-quality commitments and a capacity to execute them with excellence. Additionally, UEI is developing a learning and R&amp;D infrastructure, as
+            <br><br>
+            well as tools for 100Kin10 partners to measure the quality and impact of their commitments. Throughout the next years, UEI will undertake regular, rigorous reviews of all programs, will provide real-time feedback on implementation, and will share best practices to drive improvement across 100Kin10 partners and the STEM teaching field at large.
+            </p>
+            
+            <p class="question">3. Is the focus just on recruiting new teachers?</p>
+            <p class="answer">No. Though increasing the number of new, excellent STEM teachers in the pipeline is important, 100Kin10 recognizes that to achieve these ambitious goals we also need to keep our best STEM teachers in the classroom and encourage commitments that change the circumstances in which STEM teachers work – from how they are recruited, hired, evaluated, and paid to the support they receive and the opportunities they have to grow in their careers.</p>
+            
+            <p class="question">4. What are “bold” commitments?</p>
+            <p class="answer">Bold commitments are creative and innovative responses to our shared goal of 100,000 excellent STEM teachers in 10 years. They reflect new or expanded approaches to tackling this challenge through INCREASING THE SUPPLY of excellent STEM teachers, DEVELOPING AND RETAINING excellent STEM teachers, and/or BUILDING THE 100Kin10 MOVEMENT – all while leveraging the unique assets of your organization. </p>
+
+            <p class="question">5. Are all partners automatically eligible for funding?</p>
+            <p class="answer">To become eligible for funding, partners must complete a common proposal application form that will be reviewed by each funding partner. Application forms and further information on the funding process will be available in late fall 2011. Decisions regarding funding are made independently by each funding partner.</p>
+
+            <p class="question">6. How can I become a funding partner?</p>
+            <p class="answer">Potential funders enter the movement through a separate process and do not need to complete an online application form. If you are interested in joining the funders' collaborative, please contact Talia Milgrom-Elcott at tme@carnegie.org.</p>
+
+            <p class="question">7. How is 100Kin10 different from other groups working on STEM education?</p>
+            <p class="answer">100Kin10 is a growing movement to respond to the national imperative to prepare, deploy, and support 100,000 new, excellent STEM teachers over the coming 10 years. It is neither a paper coalition of similarly-minded allegiances nor a command-and-control, centralized effort. Instead, it is an effort to invite a wide array of players—from federal agencies to states, museums to corporations, universities to school districts, individuals to associations to identify their assets and apply them creatively and strategically to solving one of our country’s most vexing challenges: how to give every child a first-rate STEM education so that we can regain our competitive edge in the STEM fields and address the national and global challenges that will define this century.</p>
+
+            <p class="question">8. In our application, do we need to articulate a plan for reaching our commitment?</p>
+            <p class="answer">Applicants should describe their capacity to carry out their commitments. When setting targets for the scope of your commitment, however, we ask that you do not limit yourself to your current funding streams. We understand that the scope of a commitment may change based on funding received. You are welcome to work with the organization that nominated you to develop your commitment, or view the list of current 100Kin10 commitments as a reference. </p>
+
+            <p class="question">9. Our commitment reflects a partnership among several non-profits, corporations, associations, etc. Can we apply with a commitment from a new or proposed partnership?</p>
+            <p class="answer">We welcome commitments that are designed in partnership. Please specify on your application if other entities are contributing to the commitment.</p>
+
+            <p class="question">10. We are a small organization. Is there a minimum impact number you’re looking for in a strong commitment?</p>
+            <p class="answer">We seek strong partner organizations of all sizes, with bold and significant commitments.</p>
+
+            <p class="question">11. When and how do we apply?</p>
+            <p class="answer">The deadline for online submissions is November 26, 2011. The short submission form is available on the 100Kin10 website.</p>
+
+            <p>For additional information about 100Kin10, please visit 100kin10.org, read our general FAQ, or e-mail <a href="mailto:info@100kin10.org">info@100kin10.org</a> </p>
+
+
+            </div><!-- end contentShell -->
+          </li><!-- end faq -->
+          
+          
+          <li id="application">
+            <img src="images/header-application.png" width="630" height="58" alt="Application">
+            <div class="formShell" id="membership">
+              
+          
+              <div class="formRight">
+
+                <div class="fText">
+                  <label for="fName">First Name:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="lName">Last Name:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="org">Organization Name:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="title">Title:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="email">Email:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="phone">Phone:</label>
+                  <input type="text" id="#" />
+                </div>
+                <div class="fText">
+                  <label for="org">Organization URL:</label>
+                  <input type="text" id="#" />
+                </div>
+              </div><!-- end formRight -->
+              
+              <div class="formLeft">
+
+                <div class="fText">
+                  <fieldset class="rb">
+                    <label for="">How did you receive an invitation for 100Kin10 membership?</label>
+                    <label for="regularRadio">
+                    <input type="radio" name="radios" id="#" value="radio 1" />
+                    <span>From a current 100kin10 partner organization.</span>
+                    </label>
+                    <label for="secondRegularRadio">
+                    <input type="radio" name="radios" id="#" value="radio 2" />
+                    <span>Through attendance at CGI America.</span>
+                    </label>
+                    <label for="secondRegularRadio">
+                    <input type="radio" name="radios" id="#" value="radio 2" />
+                    <span>Other:<input class="other" type="text" id="regularInput" /></span>
+                    </label>
+                  </fieldset>
+                </div>
+
+                <div class="fText">
+                  <label for="regularInput">If you were nominated by a 10Kin100 member, please provide the person's name 
+    and organization here:<span class="fEx">Example: Maya Agarwal/Opportunity Equation </span></label>
+                  <input type="text" id="regularInput" />
+                  </div>
+                  <div class="fText">
+                  <label for="regularTextarea" class="sBlk">Please share your organization's 10Kin100 commitment(s) as clearly and concisely as possible with 250 characters or less per each commitment. If you are involved in a collaboration of multiple organizations in partnership, please specify details within your comments as well. To develop a strong commitment, take a look at our partner organizations' commitments. You may also want to consider consulting with the 100Kin10 partner who nominated you or e-mailing us at info@100Kin10.org. Recognizing there may be future opportunities for collaboration and conversation to refine your commitment, what can your organization commit at this point?
+                  <span class="fBig">My Organization commits to:</span></label>
+                  <textarea id="regularTextarea"></textarea>
+                </div>
+
+                <div class="fText">
+                  <label for="regularInput">If your commitment reflects the collaboration of different non-profits, corporations or associations, please provide the organization(s)' name below:</label>
+                  <input type="text" id="regularInput" />
+                </div>
+
+                <div class="fText">
+                  <label for="regularTextarea">Please list any additional commitments with 250 characters or less:</label>
+                  <textarea id="regularTextarea"></textarea>
+                </div>
+
+              <div class="fText">
+                <fieldset class="rb">
+                  <label for="">Which of the three categories does your commitment most closely support?
+                  <span class="fEx">You may select more than one category.:</span></label>
+                  <label for="regularCheckbox">
+                    <input type="checkbox" id="regularCheckbox" value="checkbox 1" />
+                    <span>Increase Supply:</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>Retain Excellence:</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>Build the Movement:</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>Other:<input class="other" type="text" id="regularInput" /></span>
+                  </label>
+                </fieldset>
+              </div>
+
+              <div class="fText">
+                <fieldset class="rb">
+                  <label for="">My organization's commitment is:
+                  <span class="fEx">You may select more than one category.:</span></label>
+                  <label for="regularCheckbox">
+                    <input type="checkbox" id="regularCheckbox" value="checkbox 1" />
+                    <span>An enhancement of work we’re currently doing in STEM education. [If so, please also check the “Other” box below and elaborate in the space provided]</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>A new project that builds on the work we’re currently doing in STEM education. [If so, please also check the “Other” box below and elaborate in the space provided]</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>A new project that we’ve never undertaken before.</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>A new project that builds on the work we’re currently doing in another area of education. [If so, please also check the “Other” box below and elaborate in the space provided]</span>
+                  </label>
+                  <label for="secondRegularCheckbox">
+                    <input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+                    <span>Other:<input class="other" type="text" id="regularInput" /></span>
+                  </label>
+                </fieldset>
+              </div>
+
+               <div class="fText">
+                <fieldset class="rb">
+                  <label for="">My organization is ready to commitment to the 100kin10 movement for:</label>
+                  <label for="regularRadio">
+                  <input type="radio" name="radios" id="#" value="radio 1" />
+                  <span>The next two years</span>
+                  </label>
+                  <label for="regularRadio">
+                  <input type="radio" name="radios" id="#" value="radio 1" />
+                  <span>The next five years</span>
+                  </label>
+                  <label for="secondRegularRadio">
+                  <input type="radio" name="radios" id="#" value="radio 2" />
+                  <span>The full ten years </span>
+                  </label>
+                  <label for="secondRegularRadio">
+                  <input type="radio" name="radios" id="#" value="radio 2" />
+                  <span>Other:<input class="other" type="text" id="regularInput" /></span>
+                  </label>
+                </fieldset>
+               </div>
+
+
+              <div class="fText">
+                <label for="regularTextarea">Please share further information about your capacity (budget/staffing/track record) to implement your commitment:</label>
+                <textarea id="regularTextarea"></textarea>
+              </div>
+
+
+              <div class="fText">
+                <label for="regularTextarea">Additional Comments:</label>
+                <textarea id="regularTextarea"></textarea>
+              </div>
+
+              </div><!-- end formLeft -->
+
+
+
+
+              
+              <button type="submit">Submit</button>
+              
+              
+            </div><!-- end formShell -->
+            
+            
+            <!-- start thanks-->
+            
+            <div class="contentShell">
+              <h1>Thank You</h1>
+            <p>Thank you for submitting an application to become a partner in the 100Kin10 movement. Partners will be selected and all applicants notified by January 2012. For further information, please visit 100Kin10.org or e-mail <a href="mailto:info@100kin10.org">info@100kin10.org</a></p>
+            </div><!-- end contentShell-->
+            
+
+            <!-- end thanks-->
+            
+            
+          </li><!-- end nomination -->
+          
+          
+        </ul><!-- end tabs-content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
