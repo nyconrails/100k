@@ -1,0 +1,19 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+  
+test: &test
+  adapter: mysql2
+  host: localhost
+  username: root
+  password:
+  database: nytla_test
+
+production: &production
+  adapter: mysql2
+  host: localhost
+  database: nytla
+  username: root
+  password:

@@ -18,7 +18,6 @@
 /tmp/*
 /vendor/bundle
 capybara-*.html
-config/*.yml
 pickle-email-*.html
 rerun.txt
 
