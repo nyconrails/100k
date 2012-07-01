@@ -11,9 +11,9 @@ test: &test
   password:
   database: nytla_test
 
-production: &production
-  adapter: mysql2
-  host: localhost
-  database: nytla
-  username: root
+production:
+  adapter: postgresql
+  host: 69.55.62.19
+  database: production
+  username: postgres
   password:
