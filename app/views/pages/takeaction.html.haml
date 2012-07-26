@@ -1,24 +1,9 @@
-/= render :partial=> 'general',
-/  :locals=>{:page_slug=>'page_takeaction',
-/  :sidebar_image=>'/images/column_chalkboard2.jpg'}
-
-:javascript
-  var show_subsection=function(section) {
-    $('.subsection').hide();
-    $('#maincontent_landing').hide();
-    $('#'+section).show();
-    $("#graybox .facets").hide();
-    $('#graybox_'+section).show();
-    $QUERY_PARAMS = {};
-    //resizeGraybox();
-  }
-
-  $(document).ready(function() {
-    $('.subsection').hide();
-  });
-
 - sidebar_image = nil
 - results ||= {}
+- facets = {'showFacetCounts' => true, :subject4 => -4, :page => 1}
+- results = Donor::Search.find(facets)
+
+
 - Content.insert 'page_takeaction' do |c|
   #leftcolumn
     #contentheader
@@ -36,16 +21,16 @@
         #contentnav
           %ul.tabs
             %li
-              %a.subnav1{:href => "#", :id => "subnav_teacher_opportunities", :onclick => "show_subsection('teacher_opportunities');return false"} Teach
+              %a.subnav1{:href => "/page/teach", :id => "subnav_teacher_opportunities", :class => (current_page?("/page/teach") ? "active" : "")} Teach
             %li
-              %a.subnav1{:href => "#", :id => "subnav_donorchoose_donate", :onclick => "show_subsection('donorchoose_donate');return false"} Donate
+              %a.subnav1{:href => "/page/donate", :id => "subnav_donorchoose_donate", :class => (current_page?("/page/donate") ? "active" : "")} Donate
             %li
-              %a.subnav1{:href => "#", :id => "subnav_participate", :onclick => "show_subsection('participate');return false"} Participate
-            / other subsections
+              %a.subnav1{:href => "/page/participate", :id => "subnav_participate", :class => (current_page?("/page/participate") ? "active" : "")} Participate
+
             - c.subsections.each do |subsection|
               - next if(['teach', 'donate', 'participate'].include?(subsection.title.downcase))
               %li
-                %a.subnav1{:href => "#", :id => "subnav_#{subsection.slug}", :onclick => "show_subsection('#{subsection.slug}');return false"}= subsection.render_field(:title)
+                %a.subnav1{:href => "#", :id => "subnav_#{subsection.slug}"}= subsection.render_field(:title)
           - if false && @searchable
             / search box
             %div{:style => "clear:right;float:right;text-align:right;padding:5px;position:relative;top:2px;"}
@@ -60,63 +45,22 @@
 
     %div{:style => "clear:both;"}
     #maincontent
-      / this is where the main content / running text should go
-      #maincontent_landing
-        = c.render_field(:body)
-      - c.subsections.each do |subsection|
-        - if subsection.title.downcase == 'teach'
-          .subsection#teacher_opportunities
-            .excerptshare
-              = subsection.render_field(:body)
-            .sorting.teacher-opportunities
-              %h2
-                Sort By:
-                = link_to "Partner Name", "javascript:#", :rel => 'partner_name', :class => 'current'
-                &nbsp;|&nbsp;
-                = link_to "Program Name", "javascript:#", :rel => 'program_name'
-                &nbsp;|&nbsp;
-                = link_to "Location",     "javascript:#", :rel => 'location'
-              %br/
-            #opportunities
-              = render :partial => "shared/opportunities", :locals => {:opportunities => Opportunity.page(1).per(10), :params => {:page => 1}}
+      - if content_for? :subsection
+        = yield :subsection
+      - else
+        #maincontent_landing
+          = c.render_field(:body)
 
-        - if subsection.title.downcase == 'donate'
-          .subsection#donorchoose_donate
-            .excerptshare
-              %h1.searchable DONORSCHOOSE.ORG
-              %div.inner-searchbox
-                /%input.input-content{:name => "contentsearch", :type => "text"}/
-                /%input.search-button.gobutton{:type => "submit", :value => "Search Donor Choose", :rel => 'donates' }/
-              %div.tip-msg
-                = subsection.render_field(:body)
-            - facets = {'showFacetCounts' => true, :subject4 => -4, :page => 1}
-            - results = Donor::Search.find(facets)
-            .outer-search
-              - locations = ((results['facetCounts']['location'] || {}) rescue {})
-              - states = locations['state'] || []
-              - states = states.sort_by {|i| i[1]}
-              = select_tag "state", options_for_select([["--- Select State---",nil]] + states.map{|v| ["#{v[1]}", v[0]]})
-              %input.input-content{:name => "contentsearch", :type => "text"}/
-              %input.search-button.gobutton{:type => "submit", :value => "Search", :rel => 'donates' }/
-            #donates= render :partial => "shared/donates", :locals => {:results => results, :params => facets}
 
-        - if subsection.title.downcase == 'participate'
-          .subsection#participate
-            .excerptshare
-              = subsection.render_field(:body)
 
-        - next if(['teach', 'donate', 'participate'].include?(subsection.title.downcase))
 
-        .subsection{:id => subsection.slug}
-          = subsection.render_field(:body)
-    / end maincontent
-  / end leftcolumn
+
 
   #rightcolumn
     %img#rightphoto{:alt => "100kin10", :border => "0", :src => sidebar_image ? sidebar_image : '/images/column_action.jpg'}/
     #graybox.takeactions{ style: 'height: 3200px' }
       #graybox_donorchoose_donate.facets
-        = render :partial => 'shared/facets', :locals => {:results => results}
+        = render :partial => 'shared/facets', :locals => {:results => results} if current_page?("/page/donate")
       #graybox_teach_opportunities
       %script{ charset: 'urf-8', src: 'http://widgets.twimg.com/j/2/widget.js' }
       .twitterfeed

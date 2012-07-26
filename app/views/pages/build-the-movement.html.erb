@@ -1,0 +1,10 @@
+<% content_for :subsection do %>
+<div class="subsection" id="subsection_build_the_movement">
+  <h1>BUILD THE MOVEMENT</h1>
+  <div class="commitment_subtabs"><%= Content.insert 'build_the_movement' %></div>
+  <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).each do |organization| %>
+    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+  <% end %>
+</div>
+<% end %>
+<%= render file: 'pages/commitments' %>

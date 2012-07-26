@@ -1,0 +1,17 @@
+- content_for :subsection do
+  .subsection#teacher_opportunities
+    .excerptshare
+      = Content.insert 'subsection_takeaction_1_stemteacher'
+    .sorting.teacher-opportunities
+      %h2
+        Sort By:
+        = link_to "Partner Name", "javascript:#", :rel => 'partner_name', :class => 'current'
+        &nbsp;|&nbsp;
+        = link_to "Program Name", "javascript:#", :rel => 'program_name'
+        &nbsp;|&nbsp;
+        = link_to "Location",     "javascript:#", :rel => 'location'
+      %br/
+    #opportunities
+      = render :partial => "shared/opportunities", :locals => {:opportunities => Opportunity.page(1).per(10), :params => {:page => 1}}
+
+= render file: 'pages/takeaction'

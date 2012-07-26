@@ -53,7 +53,6 @@ Goodinc::Application.routes.draw do
   get "sessions/new"
   get "users/new"
 
-
   # Should stay at the bottom so it doesn't clobber any other routes
   match "/page/:slug", :controller=>:pages, :action=>:show, :as=>"page"
 

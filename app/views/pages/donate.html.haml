@@ -1,0 +1,22 @@
+- content_for :subsection do
+  .subsection#donorchoose_donate
+    .excerptshare
+      %h1.searchable DONORSCHOOSE.ORG
+      %div.inner-searchbox
+        /%input.input-content{:name => "contentsearch", :type => "text"}/
+        /%input.search-button.gobutton{:type => "submit", :value => "Search Donor Choose", :rel => 'donates' }/
+      %div.tip-msg
+        = Content.insert 'subsection_takeaction_2_donorschoose'
+    - facets = {'showFacetCounts' => true, :subject4 => -4, :page => 1}
+    - results = Donor::Search.find(facets)
+    .outer-search
+      - locations = ((results['facetCounts']['location'] || {}) rescue {})
+      - states = locations['state'] || []
+      - states = states.sort_by {|i| i[1]}
+      = select_tag "state", options_for_select([["--- Select State---",nil]] + states.map{|v| ["#{v[1]}", v[0]]})
+      %input.input-content{:name => "contentsearch", :type => "text"}/
+      %input.search-button.gobutton{:type => "submit", :value => "Search", :rel => 'donates' }/
+    #donates= render :partial => "shared/donates", :locals => {:results => results, :params => facets}
+
+
+= render file: 'pages/takeaction'

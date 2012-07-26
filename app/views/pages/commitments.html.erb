@@ -15,9 +15,9 @@
 </tr></table>
 <div id="contentnav">
 <ul class="commitmenttabs">
-<li><a class="active subsection_increase_supply" href="#" id="subnav1" onclick="show_subsection('subsection_increase_supply');return false;">Increase Supply</a></li>
-<li><a class="subsection_retain_excellence" href="#" id="subnav2" onclick="show_subsection('subsection_retain_excellence');return false;">Retain Excellence</a></li>
-<li><a class="subsection_build_the_movement" href="#" id="subnav3" onclick="show_subsection('subsection_build_the_movement');return false;">Build the Movement</a></li>
+<li><a class="active subsection_increase_supply" href="/page/commitments" id="subnav1">Increase Supply</a></li>
+<li><a class="subsection_retain_excellence" href="/page/retain-excellence" id="subnav2">Retain Excellence</a></li>
+<li><a class="subsection_build_the_movement" href="/page/build-the-movement" id="subnav3">Build the Movement</a></li>
 </ul>
 <!-- search box -->
 <div id="searchfield">
@@ -32,24 +32,6 @@
 </div><!-- end contentnav -->
 </div><!-- end contentheader -->
 <div style="clear:both;"></div>
-
-<script>
-  var show_subsection=function(section) {
-    $('.subsection').hide();
-    $('#maincontent_landing').hide();
-    $('#'+section).show();
-    $('#contentnav .tabs li a').removeClass('active');
-    $('a.'+section).addClass('active');
-        resizeGraybox();
-  }
-
-  $(document).ready(function(){
-    <% if params[:commitment] %>
-      show_subsection('subsection_<%= escape_javascript params[:commitment] %>');
-    <% end %>
-  });
-</script>
-
 
 <div id="maincontent"> <!-- this is where the main content / running text should go -->
 
@@ -77,30 +59,17 @@
 
 <% end %>
 
-
-<div class="subsection" id="subsection_increase_supply">
-  <h1>INCREASE SUPPLY</h1>
-  <div class="commitment_subtabs"><%= Content.insert 'increase_supply' %></div>
-  <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).each do |organization| %>
-    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
-  <% end %>
-</div>
-
-<div class="subsection" id="subsection_retain_excellence" style="display:none;">
-  <h1>RETAIN EXCELLENCE</h1>
-  <div class="commitment_subtabs"><%= Content.insert 'retain_excellence' %></div>
-  <% Organization.all_partners.where(:commitment_category=>'retain_excellence').order(:name).each do |organization| %>
-    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
-  <% end %>
-</div>
-
-<div class="subsection" id="subsection_build_the_movement" style="display:none;">
-  <h1>BUILD THE MOVEMENT</h1>
-  <div class="commitment_subtabs"><%= Content.insert 'build_the_movement' %></div>
-  <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).each do |organization| %>
-    <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
-  <% end %>
-</div>
+<% if content_for? :subsection %>
+  <%= yield :subsection %>
+<% else %>
+  <div class="subsection" id="subsection_increase_supply">
+    <h1>INCREASE SUPPLY</h1>
+    <div class="commitment_subtabs"><%= Content.insert 'increase_supply' %></div>
+    <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).each do |organization| %>
+      <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+    <% end %>
+  </div>
+<% end %>
 
 
 
@@ -121,9 +90,3 @@
 </div><!-- end rightcolumn -->
 
 <% end %>
-
-
-
-
-
-

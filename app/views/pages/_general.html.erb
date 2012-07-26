@@ -1,27 +1,14 @@
-<script>
-  var show_subsection=function(section) {
-    $('.subsection').hide();
-    $('#maincontent_landing').hide();
-    $('#'+section).show();
-    resizeGraybox();
-  }
-
-
-  $(document).ready(function() {
-    $('.subsection').hide();
-  });
-
-</script>
-
-
-
 <% Content.insert page_slug do |c| %>
 
 <div id="leftcolumn">
 <div id="contentheader"><!-- the colorblock header above the texual content -->
 <table id="contenttbl">
 <tr> <td width="220">
-<h1><%= link_to c.render_field(:title), page_path %></h1>
+  <% if page_slug == 'page_aboutus' %>
+    <h1><%= link_to 'ABOUT US', '/page/aboutus' %></h1>
+  <% else %>
+    <h1><%= link_to c.render_field(:title), page_path %></h1>
+  <% end %>
 </td>
 <td width="17"><img src="/images/arrowright.png" width="12" height="148" alt="" /></td>
 <td width="440">
@@ -34,7 +21,8 @@
   <div id="contentnav">
   <ul class="tabs">
     <% c.subsections.each do |subsection| %>
-      <li><a href="#" class="subnav1" id="subnav_<%= subsection.slug %>" onclick="show_subsection('<%= subsection.slug %>');return false"><%= subsection.render_field(:title) %></a></li>
+      <% klass = current_page?("/page/#{subsection.title.parameterize}") ? "active" : "" %>
+      <li><a href="/page/<%= subsection.title.parameterize %>" class="subnav1 <%="#{klass}"%>"><%= subsection.render_field(:title) %></a></li>
     <% end %>
   </ul>
   <% if @searchable %>
@@ -52,14 +40,15 @@
 
 <div id="maincontent"> <!-- this is where the main content / running text should go -->
 
-  <div id="maincontent_landing">
-  <%= c.render_field(:body) %>
-  </div>
-
-
-  <% c.subsections.each do |subsection| %>
-    <div class="subsection" id="<%= subsection.slug %>">
-      <%= subsection.render_field(:body) %>
+  <% if defined?(subsection) %>
+    <% c.subsections.where(:title => subsection).each do |sub| %>
+      <div class="subsection" id="<%= sub.slug %>">
+        <%= sub.render_field(:body) %>
+      </div>
+    <% end %>
+  <% else %>
+    <div id="maincontent_landing">
+    <%= c.render_field(:body) %>
     </div>
   <% end %>
 
