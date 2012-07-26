@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
   rescue_from ActionView::MissingTemplate, :with => :rescue_template
   rescue_from ActionController::RoutingError, :with => :rescue_404
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_404
@@ -11,17 +11,17 @@ class ApplicationController < ActionController::Base
   def all_posts
     posts.find(:all, :order=> 'created_at desc')
   end
-  
+
   #$all_top_posts = all_top_posts_of_organizations
-  
+
   # Added on 10-Mar-2012 to fetch all top posts from each organization
-  # Start 
-  def all_top_posts_of_organizations 
+  # Start
+  def all_top_posts_of_organizations
     posts = Hash.new
-    @top_posts_by_org = Post.select("organization_id as org_id, max(created_at), max(id) as post_id").group("organization_id").order('max Desc').page(params[:page]).per(5) 
+    @top_posts_by_org = Post.select("organization_id as org_id, max(created_at), max(id) as post_id").group("organization_id").order('max Desc').page(params[:page]).per(5)
   end
   #End adding method all_top_posts_of_organizations
-  
+
   def not_authenticated
     if request.flash[:notice]
       redirect_to login_url, :notice => request.flash[:notice]
@@ -53,6 +53,6 @@ class ApplicationController < ActionController::Base
   def rescue_closed
     redirect_to root_path
   end
-  
-  
+
+
 end

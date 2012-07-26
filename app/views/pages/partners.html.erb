@@ -104,7 +104,7 @@
       }
 
       if(tile.position().top + tile.height() + partner_details.height() + slider_top > grid.height()) {
-        var top_offset = tile.position().top - partner_details.height() - 34;
+        var top_offset = tile.position().top - partner_details.height() - 19;
         partner_details.css('top', top_offset + 'px');
       } else {
         partner_details.css('top', '');
@@ -173,6 +173,12 @@
           PartnerGrid.hovering = false;
         }
       });
+
+      $('#content').mouseleave(function(e) {
+        PartnerGrid.hideDetails();
+        PartnerGrid.hovering = false;
+      });
+
     }
   }
 

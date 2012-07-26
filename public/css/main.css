@@ -123,9 +123,14 @@ html, body {
                  background-color: #ffc425;
                  color: #FFF;
 }
-#contentheader h1 {
+#contentheader h1, #contentheader h1 a:link, #contentheader h1 a:visited {
     color: #FFF;
+    text-decoration: none;
 }
+#contentheader h1 a:hover {
+  text-decoration: underline;
+}
+
 
 .copyblock{ /* styles the text inside the colored block at the top of the content columns */
             color: #fff;
@@ -547,17 +552,17 @@ float: left;
 .partner_details A:hover {background-color: #585858; text-decoration: none;}
 */
 .partner_details {
-	width:505px;
-	height:247px;
-	min-height:247px;
-	border:1px solid black;
-	padding:0px;
-	line-height: 15px;
+  width:505px;
+  height:247px;
+  min-height:247px;
+  border:1px solid black;
+  padding:0px;
+  line-height: 15px;
 }
 .partner_logo img {
-	bottom: 0px;
-	position: absolute; 
-	bottom: 0;
+  bottom: 0px;
+  position: absolute;
+  bottom: 0;
 }
 .partner_logo {
     position:relative;
@@ -608,7 +613,7 @@ float: left;
     display: none;
 }
 
-.error { 
+.error {
     font-size: 12px;
     color: #cc0000;
 }
@@ -682,7 +687,7 @@ form.contacted_organization li#contacted_organization_reason_input label {
 form {
     margin-bottom: 20px;
 }
-fieldset {	
+fieldset {
     margin-bottom: 20px;
 }
 
@@ -731,7 +736,7 @@ textarea:focus {
 }
 
 textarea {
-    min-height: 60px; 
+    min-height: 60px;
     margin-top:10px;
     width:100%;
 }
@@ -820,11 +825,11 @@ input[name="search"]
     margin-bottom: 5px;
     background: #fff;
     -webkit-appearance: textfield;
-	padding: 1px;
-	background-color: white;
-	border: 2px inset;
-	border-image: initial;
-	-webkit-rtl-ordering: logical;
-	-webkit-user-select: text;
-	cursor: auto;
+  padding: 1px;
+  background-color: white;
+  border: 2px inset;
+  border-image: initial;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  cursor: auto;
 }

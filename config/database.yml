@@ -1,9 +1,11 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
-  
+  adapter: postgresql
+  host: localhost
+  database: 100k_dev
+  username: postgres
+  password:
+  port:
+
 test: &test
   adapter: mysql2
   host: localhost

@@ -26,7 +26,7 @@
       %table#contenttbl
         %tr
           %td{:width => "220"}
-            %h1= c.render_field(:title)
+            %h1= link_to c.render_field(:title), '/page/takeaction'
           %td{:width => "17"}
             %img{:alt => "", :height => "148", :src => "/images/arrowright.png", :width => "12"}/
           %td{:width => "440"}
@@ -114,10 +114,16 @@
 
   #rightcolumn
     %img#rightphoto{:alt => "100kin10", :border => "0", :src => sidebar_image ? sidebar_image : '/images/column_action.jpg'}/
-    #graybox.takeactions
+    #graybox.takeactions{ style: 'height: 3200px' }
       #graybox_donorchoose_donate.facets
         = render :partial => 'shared/facets', :locals => {:results => results}
-      #graybox_teach_opportunities{:style => "min-height: 200px; height: 3100px;"}
+      #graybox_teach_opportunities
+      %script{ charset: 'urf-8', src: 'http://widgets.twimg.com/j/2/widget.js' }
+      .twitterfeed
+        = image_tag '/images/twitter_bird.png', width: 50, height: 37, alt: 'Follow 100kin10 on Twitter'
+        %h3 Follow #{ link_to '100kin10', 'http://twitter.com/#!/100kin10', target: '_blank' } on Twitter
+        #tweet
+        &nbsp;
   / end rightcolumn
 
 = javascript_include_tag :search

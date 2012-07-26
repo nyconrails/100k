@@ -26,6 +26,7 @@ gem 'mail_view'
 gem 'meta_search',    '>= 1.1.0.pre'
 gem 'mini_magick'
 gem 'mysql2'
+gem 'paper_trail', '~> 2'
 gem 'pg'
 gem 'rails', '3.1.3'
 gem 'redcarpet'
@@ -37,6 +38,10 @@ gem 'thin'
 gem 'vidibus-routing_error'
 gem 'formtastic', '2.0.2'
 gem 'whenever', :require => false
+
+group :development do
+  gem 'quiet_assets'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

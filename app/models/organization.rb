@@ -4,6 +4,8 @@ class Organization < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  has_paper_trail
+
   attr_accessible :name, :address, :address2, :city, :state_id, :zip, :orgtype_id, :www, :avatar, :other,
     :partner_status, :commitment, :additional_commitment, :primary_contact_id, :secondary_contact_id,
     :commitment_category, :additional_commitment_category,
@@ -12,7 +14,7 @@ class Organization < ActiveRecord::Base
   attr_accessor :primary_contact_phone, :primary_contact_email, :primary_contact_title, :primary_contact_name
 
   validates :name, :presence=>true
-  
+
   validates :primary_contact_id, :uniqueness => true, :allow_blank => true
 
   belongs_to :orgtype

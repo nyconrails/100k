@@ -12,8 +12,10 @@
 
 <div id="resource_wrapper">
 
+<% amount = Content.where(:section=>'PORTAL_RESOURCES').size %>
 <% Content.where(:section=>'PORTAL_RESOURCES').order(:slug).each do |content| %>
-  <%= render :partial=>'contents/resource', :locals=>{:content=>content} %>
+  <%= render :partial=>'contents/resource', :locals=>{:content=>content, :count => amount} %>
+  <% amount = amount - 1 %>
 <% end %>
 
 </div>

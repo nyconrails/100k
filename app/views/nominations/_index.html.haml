@@ -7,8 +7,10 @@
           %a{:href => "#community"} Community
         %li
           %a{:href => "#resources"} Resources
-        %li
-          %a{:href => "#nomination"} Nomination
+        - nomination_date = "#{Content.insert('nomination_date')}"
+        - if lambda {Time.now < Time.parse(nomination_date)}.call
+          %li
+            %a{:href => "#nomination"} Nomination
         %li
           %a.active{:href => "#partnernews"} Partner News
     -else
@@ -40,7 +42,7 @@
   %li#nomination
     -#= Content.insert('nomination_header')
     #nom-header
-      %span#nom-text= Content.insert('nomination_header') 
+      %span#nom-text= Content.insert('nomination_header')
     .arrow-down
     #nomination.formShell
       - nomination_date = "#{Content.insert('nomination_date')}"
@@ -48,7 +50,7 @@
       - if nomination_date != ""
         - if lambda {Time.now < Time.parse(nomination_date)}.call
           = Content.insert 'nomination_body'
-          =render '/nominations/form'
+          = render '/nominations/form'
         -else
           = Content.insert('nomination_thankyou_body')
 / end tabs-content

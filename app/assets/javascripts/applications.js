@@ -22,7 +22,7 @@ $(document).ready(function() {
     countDirection: 'down',
     strictMax: true
   });
-      
+
   $('#application_add_info').simplyCountable({
     counter: '#add_infoCharsLeft',
     countType: 'words',
@@ -62,7 +62,7 @@ $(document).ready(function() {
     countDirection: 'down',
     strictMax: true
   });
-  
+
   $('#organization_orgtype_id').change(function() {
 
     if($("#organization_orgtype_id option:selected").text()=='Other') {
@@ -72,10 +72,21 @@ $(document).ready(function() {
       $('#organization_other').val('');
     }
   });
-                 
+
+
+  // All external links open in a new window
+  $('a').each(function() {
+    var lnk = $(this).attr('href');
+    if (lnk !== undefined && lnk != '') {
+      if ( $.trim(lnk.substr(0,4)) == 'http' && lnk.toLowerCase().indexOf("100kin10.org") < 1 ) {
+        $(this).attr('target', '_blank');
+      }
+    }
+  });
+
 });
 
 
 
 
-  
+

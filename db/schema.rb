@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228153246) do
+ActiveRecord::Schema.define(:version => 20120719150756) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -107,6 +107,19 @@ ActiveRecord::Schema.define(:version => 20120228153246) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "contacted_organizations", :force => true do |t|
+    t.string   "emailid"
+    t.text     "question"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "reason"
+    t.string   "phonenumber"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "title"
+    t.string   "organization"
+  end
 
   create_table "contents", :force => true do |t|
     t.string   "title"
@@ -251,6 +264,17 @@ ActiveRecord::Schema.define(:version => 20120228153246) do
 
   add_index "users", ["last_logout_at", "last_activity_at"], :name => "index_users_on_last_logout_at_and_last_activity_at"
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
   create_table "vettings", :force => true do |t|
     t.integer  "user_id"

@@ -29,7 +29,7 @@
     = stylesheet_link_tag    "/css/custom.css"
     = javascript_include_tag "application"
     = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
-    = javascript_include_tag "/javascripts/additional-methods.min.js"    
+    = javascript_include_tag "/javascripts/additional-methods.min.js"
     = javascript_include_tag "/javascripts/twitter-widget.js"
 
     = csrf_meta_tags
@@ -40,7 +40,7 @@
     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
-    
+
   %body
     /
       Primary Page Layout
@@ -48,25 +48,25 @@
     #topMain
       .container
         #logo
-          %a{:href => "/"} 
+          %a{:href => "/"}
         /  - if current_user
         /    %a{:href => "/welcome/index"}
         /  - else
-        /    %a{:href => "/"} 
+        /    %a{:href => "/"}
         %ul#utilityNav
           -if current_user
-            %li 
-              Hello,            
-              = current_user.first_name 
-            %li 
+            %li
+              Hello,
+              = current_user.first_name
+            %li
               = link_to "My Organization", organization_path(current_user.organization), :class => is_active?("show")
             - if can? :edit, current_user.organization
-              %li 
+              %li
                 = link_to "Admin", edit_organization_path(current_user.organization), :class => is_active?("edit")
             - if can? :edit, current_user.organization
-              %li 
+              %li
                 = link_to "Activity", activity_path, :class => is_active?("activity")
-            %li 
+            %li
               = link_to "My Settings", my_account_path, :class => is_active?("my_account")
             %li.last
               = link_to "Log out", logout_path

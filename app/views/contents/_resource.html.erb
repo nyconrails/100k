@@ -4,10 +4,15 @@
   <!-- <img src="/images/newsitem1.jpg" width="290" alt="resource image" /> --><br />
   </div>
   <div class="resourcecontent">
-  <h3><%= content.render_field(:title) %></h3>
+  <h3>
+    <% if defined?(count) %>
+      <%= count.to_s + '. ' %>
+    <% end %>
+    <%= content.render_field(:title) %>
+  </h3>
   <%= content.render_field_without_tags(:body,["img","a"]) %>
   <div class="resourcebutton"><a href="<%= content.parse_body("a")[0]["href"] if content.parse_body("a").any? %>">DOWNLOAD NOW</a></div>
 
-	</div>
-	<div class="spacer"></div>	
+  </div>
+  <div class="spacer"></div>
 </div>
