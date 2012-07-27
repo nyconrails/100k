@@ -1,2 +1,2 @@
-set :domain, "69.55.54.27"
+set :domain, "69.55.55.54"
 set :rails_env, "staging"
