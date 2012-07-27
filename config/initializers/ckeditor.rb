@@ -17,5 +17,5 @@
     
     # Ckeditor files destination path (default 'public/javascripts')
     #config.path = 'public/javascripts'
-  end
-end
+  #end
+#end
