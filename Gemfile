@@ -4,7 +4,7 @@ gem 'sqlite3'
 gem 'airbrake'
 gem 'activeadmin'
 gem 'cancan'
-gem 'capistrano'
+gem 'capistrano', '2.9.0'
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'client_side_validations'
@@ -56,7 +56,7 @@ group :test do
 end
 
 group :test,:development do
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'awesome_print'
   #gem 'capybara'
   gem 'database_cleaner'
