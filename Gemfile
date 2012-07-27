@@ -13,7 +13,6 @@ gem 'delayed_job_active_record'
 gem 'devise'
 gem 'execjs'
 gem 'fog'
-gem 'fog'
 gem 'haml'
 gem 'haml-rails'
 gem 'hashie'
@@ -38,6 +37,7 @@ gem 'thin'
 gem 'vidibus-routing_error'
 gem 'formtastic', '2.0.2'
 gem 'whenever', :require => false
+gem 'capistrano-ext'
 
 group :development do
   gem 'quiet_assets'
@@ -58,13 +58,13 @@ end
 group :test,:development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'awesome_print'
-  gem 'capybara'
+  #gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'faker'
+  #gem 'factory_girl_rails'
+  #gem 'faker'
   gem 'guard'
-  gem 'mail_safe'
-  gem 'rspec-rails'
+  #gem 'mail_safe'
+  #gem 'rspec-rails'
   gem 'shoulda-matchers', '~>1.0.0.beta'
 
   platforms :ruby_18 do

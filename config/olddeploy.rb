@@ -1,7 +1,4 @@
-set :stages, %w(staging production)
-set :default_stage, "production"
-require 'capistrano/ext/multistage'
-
+require 'bundler/capistrano'
 set :application, "100k"
 set :repository,  "git@github.com:alechartman/100k.git"
 set :user, "railsapps"
@@ -11,10 +8,9 @@ set :deploy_to, "/home/railsapps/public_html/#{application}"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set(:domain) { "#{domain}" }
-role(:web) { domain }
-role(:app) { domain }
-role :db,  "69.55.62.60"
+role :web, "69.55.62.60"                          # Your HTTP server, Apache/etc
+role :app, "69.55.62.60"                          # This may be the same as your `Web` server
+role :db,  "69.55.62.60", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
