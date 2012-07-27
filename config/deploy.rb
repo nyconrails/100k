@@ -4,7 +4,7 @@ require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 
 set :application, "100k"
-set :repository, "git@github.com:nyconrails/100k.git"
+set :repository, "https://github.com/nyconrails/100k.git"
 set :user, "railsapps"
 set :use_sudo, false
 set :deploy_to, "/home/railsapps/public_html/#{application}"
