@@ -1,16 +1,27 @@
+set :stages, %w(staging production)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
+
 set :application, "100k"
-set :repository,  "git@github.com:alechartman/100k.git"
+set :repository, "https://github.com/nyconrails/100k.git"
 set :user, "railsapps"
 set :use_sudo, false
 set :deploy_to, "/home/railsapps/public_html/#{application}"
 
+set :branch do
+  tag = "master"
+end
+
+load 'deploy/assets'
+
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "69.55.62.60"                          # Your HTTP server, Apache/etc
-role :app, "69.55.62.60"                          # This may be the same as your `Web` server
-role :db,  "69.55.62.60", :primary => true # This is where Rails migrations will run
+set(:domain) { "#{domain}" }
+role(:web) { domain }
+role(:app) { domain }
+role :db,  "69.55.62.60"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
@@ -23,8 +34,6 @@ role :db,  "69.55.62.60", :primary => true # This is where Rails migrations will
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
-
-load 'deploy/assets'
 
 namespace :deploy do
   task :start do ; end
