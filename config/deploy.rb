@@ -1,12 +1,19 @@
 set :stages, %w(staging production)
-set :default_stage, "production"
+set :default_stage, "staging"
 require 'capistrano/ext/multistage'
+require 'bundler/capistrano'
 
 set :application, "100k"
-set :repository,  "git@github.com:nyconrails/100k.git"
+set :repository, "git@github.com:nyconrails/100k.git"
 set :user, "railsapps"
 set :use_sudo, false
 set :deploy_to, "/home/railsapps/public_html/#{application}"
+
+set :branch do
+  tag = "master"
+end
+
+load 'deploy/assets'
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -27,8 +34,6 @@ role :db,  "69.55.62.60"
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
-
-load 'deploy/assets'
 
 namespace :deploy do
   task :start do ; end
