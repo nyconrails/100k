@@ -7,7 +7,7 @@
 - Content.insert 'page_takeaction' do |c|
   #leftcolumn
     #maincontent
-      .new_heading= defined?(heading) ? c.render_field(:title) + ": " + heading : c.render_field(:title)
+      .new_heading= cool_heading (defined?(heading) ? c.render_field(:title) + ": " + heading : c.render_field(:title))
       .new_subheading= c.render_field(:lede)
 
       - if false && @searchable
