@@ -57,10 +57,17 @@ td   {
 html, body {
     height: 100%;
     text-align: center;
-    font-size: 12px;
-    line-height: 24px;
     font-family: Arial, Calibri, sans;
-    color: #585858;
+    color: #333;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 21px;
+  color: #333;
+  font-family: Arial, Calibri, sans;
 }
 
 /* HEADER STYLES */
@@ -87,6 +94,7 @@ html, body {
 
 #topbox { /*this applies rule underneath header */
           border-bottom: 5px solid #585858;
+          margin-bottom: 10px;
 }
 
 /* MAIN CONTENT DIVS */  /* MAIN CONTENT DIVS */ /* MAIN CONTENT DIVS */
@@ -111,7 +119,6 @@ html, body {
 }
 
 #maincontent {
-    margin: 20px 10px 10px 10px;
     overflow: hidden;
 }
 
@@ -180,25 +187,25 @@ html, body {
 /* HEADER STYLES */
 
 h1, h2, h3 {
-    font-family: 'LeagueGothicRegular', arial, sans;
-    font-weight: normal;
+    font-family: 'nimbus-sans-condensed', sans-serif;
+    font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     font-size: 30px;
-    line-height: 28px;
+    line-height: 30px;
     margin-bottom: 10px 0;
     text-transform: uppercase;
-    color: #585858;
+    color: #333;
     letter-spacing: 1px;
 }
 h2 {
     font-size: 25px;
-    line-height: 22px;
+    line-height: 25px;
     margin: 10px 0;
 }
 h3 {
     font-size: 20px;
-    line-height: 18px;
+    line-height: 20px;
     margin: 10px 0;
 }
 
@@ -240,8 +247,8 @@ h3.newsentry{
 
 a:link,
 a:visited,
-a:active {color: #585858; text-decoration: underline}
-a:hover {color: #ffc425; text-decoration: underline;}
+a:active {color: #333; text-decoration: underline}
+a:hover {color: #333; text-decoration: none;}
 
 
 /* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */

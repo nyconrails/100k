@@ -1,0 +1,45 @@
+- Content.insert page_slug do |c|
+  #leftcolumn
+    #maincontent
+      .new_heading= c.render_field(:title)
+      .new_subheading= c.render_field(:lede)
+
+      - if @searchable
+        %div{:style => "clear:right;float:right;text-align:right;padding:5px;position:relative;top:2px;"}
+          %span.contentsearch{:style => "text-transform:none;color:#fff;font-family:arial,sans;font-size:11px;"}
+            search
+            %input{:name => "contentsearch", :style => "width:120px;", :type => "text"}
+            %input.gobutton{:type => "submit", :value => "GO"}
+
+      - if defined?(subsection)
+        - c.subsections.where(:title => subsection).each do |sub|
+          .subsection{ id: sub.slug }= sub.render_field(:body)
+      - else
+        #maincontent_landing= c.render_field(:body)
+
+
+  #rightcolumn
+    %img#rightphoto{:alt => "100kin10", :border => "0", :src => sidebar_image ? sidebar_image : '/images/column_chalkboard.jpg'}
+    - if c.subsections.any?
+      %ul.new_submenu
+        - c.subsections.each do |subsection|
+          - klass = current_page?("/page/#{subsection.title.parameterize}") ? "active" : ""
+          %li= link_to subsection.render_field(:title), "/page/#{subsection.title.parameterize}", :class => klass
+
+      %p{ style: 'margin-bottom:16px' }
+        %strong 100kin10
+        invites everyone to join the movement. Teach, donate, or participate to get involved today.
+
+      %ul.new_submenu_nobars
+        %li= link_to "Get Involved", ''
+
+
+
+
+
+
+
+
+
+
+= javascript_include_tag :search

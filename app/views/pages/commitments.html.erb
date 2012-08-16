@@ -1,92 +1,82 @@
 <% Content.insert 'page_commitments' do |c| %>
 
 <div id="leftcolumn">
-<div id="contentheader"><!-- the colorblock header above the texual content -->
-<table id="contenttbl">
-<tr> <td width="220">
-<h1><%= link_to c.render_field(:title), '/page/commitments' %></h1>
-</td>
-<td width="17"><img src="/images/arrowright.png" width="12" height="148" alt="" /></td>
-<td width="440">
-<div class="copyblock">
-<%= c.render_field(:lede) %>
-</div>
-</td>
-</tr></table>
-<div id="contentnav">
-<ul class="commitmenttabs">
-<li><a class="active subsection_increase_supply" href="/page/commitments" id="subnav1">Increase Supply</a></li>
-<li><a class="subsection_retain_excellence" href="/page/retain-excellence" id="subnav2">Retain Excellence</a></li>
-<li><a class="subsection_build_the_movement" href="/page/build-the-movement" id="subnav3">Build the Movement</a></li>
-</ul>
-<!-- search box -->
-<div id="searchfield">
-<form method="get" id="searchform">
-  <fieldset>
-  <input type="hidden" name="commitment" value="search">
-  <input type="text" name="search" id="search">
-  <input type="submit" id="searchsubmit" value="Search" class="btn">
-  </fieldset>
-</form>
-</div><!-- end search box -->
-</div><!-- end contentnav -->
-</div><!-- end contentheader -->
-<div style="clear:both;"></div>
+ <div id="maincontent"> <!-- this is where the main content / running text should go -->
 
-<div id="maincontent"> <!-- this is where the main content / running text should go -->
+  <div class="new_heading"><%= defined?(heading) ? "COMMITMENT: " + heading : c.render_field(:title) %></div>
+  <div class="new_subheading"><%= c.render_field(:lede) %></div>
 
-<% if params[:search] %>
+  <div class="new_searchfield">
+  <form method="get" id="searchform">
+    <fieldset>
+    <input type="hidden" name="commitment" value="search">
+    <input type="text" name="search" id="search">
+    <input type="submit" id="searchsubmit" value="Search" class="btn">
+    </fieldset>
+  </form>
+  </div><!-- end search box -->
 
-<div  class="subsection" id="subsection_search">
-  <p><strong>Results for:</strong> <%= highlight params[:search],params[:search] %>  [<%= link_to 'clear', '/page/commitments' %>]</p>
-  <br>
 
-  <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).full_search(params[:search]).each do |organization| %>
-    <h1>INCREASE SUPPLY</h1>
-    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
-  <% end %>
+  <% if params[:search] %>
 
-  <% Organization.all_partners.where(:commitment_category=>'retain_excellence').order(:name).full_search(params[:search]).each do |organization| %>
-    <h1>RETAIN EXCELLENCE</h1>
-    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
-  <% end %>
+  <div  class="subsection" id="subsection_search">
+    <p><strong>Results for:</strong> <%= highlight params[:search],params[:search] %>  [<%= link_to 'clear', '/page/commitments' %>]</p>
+    <br>
 
-  <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).full_search(params[:search]).each do |organization| %>
-    <h1>BUILD THE MOVEMENT</h1>
-    <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
-  <% end %>
-</div>
+    <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).full_search(params[:search]).each do |organization| %>
+      <h1>INCREASE SUPPLY</h1>
+      <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
+    <% end %>
 
-<% end %>
+    <% Organization.all_partners.where(:commitment_category=>'retain_excellence').order(:name).full_search(params[:search]).each do |organization| %>
+      <h1>RETAIN EXCELLENCE</h1>
+      <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
+    <% end %>
 
-<% if content_for? :subsection %>
-  <%= yield :subsection %>
-<% else %>
-  <div class="subsection" id="subsection_increase_supply">
-    <h1>INCREASE SUPPLY</h1>
-    <div class="commitment_subtabs"><%= Content.insert 'increase_supply' %></div>
-    <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).each do |organization| %>
-      <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+    <% Organization.all_partners.where(:commitment_category=>'build_the_movement').order(:name).full_search(params[:search]).each do |organization| %>
+      <h1>BUILD THE MOVEMENT</h1>
+      <%= highlight render(:partial=>'commitment', :locals=>{:organization=>organization}),params[:search]  %>
     <% end %>
   </div>
-<% end %>
 
+  <% end %>
 
+  <% if content_for? :subsection %>
+    <%= yield :subsection %>
+  <% else %>
+    <div class="subsection" id="subsection_increase_supply">
+      <h1>INCREASE SUPPLY</h1>
+      <div class="commitment_subtabs"><%= Content.insert 'increase_supply' %></div>
+      <% Organization.all_partners.where(:commitment_category=>'increase_supply').order(:name).each do |organization| %>
+        <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
+      <% end %>
+    </div>
+  <% end %>
 
 </div><!-- end maincontent -->
 </div><!-- end leftcolumn -->
 
 
 <div id="rightcolumn">
-<img src="/images/column_counting.jpg" id="rightphoto" alt="100kin10" border="0" />
-  <div id="graybox">
-    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <div class="twitterfeed">
-      <img src="/images/twitter_bird.png" width="50" height="37" alt="Follow 100kin10 on Twitter" />
-      <h3>Follow <a href="http://twitter.com/#!/100kin10" target="_blank">100kin10</a> on Twitter</h3>
-      <div id="tweet"></div>
-    </div><!-- end twitterfeed -->
-  </div><!-- #graybox -->
+  <img src="http://100kin10.org/images/column_counting.jpg" id="rightphoto" alt="100kin10" border="0" />
+
+  <ul class="new_submenu">
+    <% {'/page/commitments' => 'Increase Supply',
+        '/page/retain-excellence' => 'Retain Excellence',
+        '/page/build-the-movement' =>  'Build the Movement'
+        }.each do |k, v| %>
+      <% klass = current_page?(k) ? "active" : "" %>
+      <li><a class="<%= klass %>" href="<%= k %>"><%= v %></a></li>
+    <% end %>
+  </ul>
+
+
+  <p style="margin-bottom:16px"><strong>100Kin10</strong> invites everyone to join the movement. Teach, donate, or participate to get involved today.</p>
+  <ul class="new_submenu_nobars">
+    <li><a href="" class="subnav1">Get Involved</li>
+  </ul>
+
 </div><!-- end rightcolumn -->
 
 <% end %>
+<%= javascript_include_tag :search %>

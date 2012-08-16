@@ -1,28 +1,3 @@
-h1, h2, h3 {
-  color: #ffc425;
-}
-
-.footer,
-#contentheader {
-  background-color: #ffc425;
-  color: #FFF;
-}
-.footerbox,
-.footerheader {
-  color: #585858;
-}
-.footer A:hover {background-color: #fff; color: #585858; text-decoration: underline;}
-.footericon {background-color: #ffc425;}
-
-#contentnav ul li {
-  border-right: 1px solid #ffc425;
-}
-
-a:hover {color: #ffc425;}
-
-#contentnav A:hover {
-  color: #ffc425;
-}
 
 /* This code will highlight the correct main meu nav button when on that page */
 body.subnav1 a#subnav1,

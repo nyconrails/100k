@@ -126,6 +126,12 @@ h1 {
   padding: 0 20px;
 }
 
+.copyblock p {
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+}
+
 /* Styles for the logo scroller underneath the color boxes */
 
 #logoscroll {

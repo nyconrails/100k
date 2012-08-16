@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .excerptshare {
   padding-bottom: 10px;
-  border-bottom: 1px solid #82C9F0;
+  border-bottom: 1px solid #FDB242;
   clear: left;
   margin-bottom: 10px;
   h1.searchable {
     display: inline-block;
   }
-  .website-link a { color: #82C9F0; }
+  .website-link a { color: #2599E4; }
   .inner-searchbox {
     display: inline-block;
     float: right;
@@ -20,7 +20,7 @@
     }
     .search-button {
       height: 28px;
-      background: #FFC425;
+      background: #FDB242;
       border: none;
       cursor: pointer;
       cursor: hand;
