@@ -1,0 +1,44 @@
+#footer
+  .inner
+    .columns.clearfix
+      .column
+        .heading ABOUT THE MOVEMENT
+        %p= link_to "Goal & Vision", '/page/goal-vision'
+        %p= link_to "Our History", '/page/out-history'
+        %p= link_to "Our Leadership", '/page/how-to-join'
+        %p= link_to "Partners", '/page/partners'
+        %p= link_to "Commitments", '/page/commitments'
+        %p= link_to "Funding", '/page/funding'
+        %p= link_to "FAQ", '/page/faq'
+        %p= link_to "Contact Us", contactus_path
+
+      .column
+        .heading GET INVOLVED
+        %p= link_to "Teach", '/page/teach'
+        %p= link_to "Donate", '/page/donate'
+        %p= link_to "Participate", '/page/participate'
+        %p= link_to "Partnerships", '/partners'
+
+      .column
+        .heading ACCELERATING R&D
+        %p= link_to "Sub Link", ''
+        %p= link_to "Sub Link", ''
+        %p= link_to "Sub Link", ''
+
+      .column
+        .heading NEWS & RESOURCES
+        %p= link_to "Press", '/page/press'
+        %p= link_to "Articles", ''
+        %p= link_to "Success Stories", ''
+
+      .column
+        .heading CONNECT WITH US
+        = link_to "", "http://twitter.com/100Kin10", :class => 'social_link twitter'
+        = link_to "", "http://www.facebook.com/100Kin10", :class => 'social_link facebook'
+
+
+    .copyright
+      %p © 2012 100Kin10.org
+      %p= link_to 'Privacy and Terms of Service', '/page/privacy', class: 'copyright_link'
+
+

@@ -109,7 +109,7 @@
         .content
           -flash.each do |name, msg|
             =content_tag(:div, msg, :id => "flash_#{name}", :class => "flash") unless msg=="Nil class was successfully created."
-          =yield
+          = yield
         / end content
       / end contentWrapper
     / end container

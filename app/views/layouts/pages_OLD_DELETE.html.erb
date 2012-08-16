@@ -27,7 +27,6 @@
       <!--include for About Us and any other pages not specified -->
       <link href="/css/yellowstyles.css" rel="stylesheet" type="text/css" />
     <% end %>
-    <%= stylesheet_link_tag    "new_design" %>
 
     <!--Added on 27 April for Twitter feeds in Aboutus page-->
      <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -67,59 +66,23 @@
       <div id="topbox">
         <div id="header">
           <div id="logo">
-            <%= link_to (image_tag '/assets/logo.jpg'), root_path %>
+            <%= link_to root_path do %>
+              <img src="/images/logo.png" class="logoimg" border="0" alt="100kin10" />
+            <% end %>
           </div><!-- end logo -->
           <div id="secondarynav">
             <ul>
-              <li><%= link_to 'Partner Login', welcome_index_path, :class=>'partner_login' %></li>
-              <li><%= link_to 'Contact Us', contactus_url, :class=>"contact_us" %></li>
+              <li><%= link_to 'Partner Login', welcome_index_path, :class=>'portal' %></li>
+              <li><%#= link_to 'Contact US', 'mailto:info@100Kin10.org', :class=>"contact" %><%= link_to 'Contact US', contactus_url, :class=>"contact" %></li>
             </ul>
           </div><!-- end secondarynav -->
           <div id="mainnav">
             <ul>
-              <li>
-                <%= link_to "About", page_path(:aboutus), :id=>"aboutnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Goal and Vision", '/page/goal-vision' %></li>
-                  <li><%= link_to "Our History", '/page/our-history' %></li>
-                  <li><%= link_to "Our Leadership", '/page/our-leadership' %></li>
-                  <li><%= link_to "FAQ", '/page/faq' %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to "Partners", page_path(:partners), :id=>"partnersnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Partners", '/page/partners' %></li>
-                  <li><%= link_to "Funders", '' %></li>
-                  <li><%= link_to "Commitments", '/page/commitments' %></li>
-                  <li><%= link_to "Partner Spotlight", '' %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to "Get Involved", page_path(:commitments), :id=>"commitnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Become a Partner", '' %></li>
-                  <li><%= link_to "Teach", '/page/teach' %></li>
-                  <li><%= link_to "Donate", '/page/donate' %></li>
-                  <li><%= link_to "Participate", '' %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to "Accelerating R&D", '', :id=>"rdnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Sub Nav", '' %></li>
-                  <li><%= link_to "Sub Nav", '' %></li>
-                  <li><%= link_to "Sub Nav", '' %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to "News & Resources", page_path(:press), :id=>"newsnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Press", '/page/press' %></li>
-                  <li><%= link_to "Resources", '' %></li>
-                  <li><%= link_to "Success Stories", '' %></li>
-                </ul>
-              </li>
+              <li><%= link_to "About us", page_path(:aboutus), :id=>"aboutnav" %></li>
+              <li><%= link_to "Partners", page_path(:partners), :id=>"partnersnav" %></li>
+              <li><%= link_to "Commitments", page_path(:commitments), :id=>"commitnav" %></li>
+              <li><%= link_to "Take Action", page_path(:takeaction), :id=>"faqnav" %></li>
+              <li><%= link_to "Press", page_path(:press), :id=>"newsnav" %></li>
             </ul>
 
           </div><!-- end mainnav -->
@@ -137,7 +100,17 @@
       <div class="push"></div><!-- needed to stick footer to bottom of screen -->
     </div><!-- end wrapper -->
 
-    <%= render 'shared/footer' %>
+    <div class="footer">
+      <div class="footerbox">
+        <span class="footerheader">SHARE: </span>
+        &nbsp;
+        <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.100kin10.org%2F&amp;source=tweetbutton&amp;text=<%= strip_tags Content.insert('share_twitter_message').squish %>&amp;url=http%3A%2F%2Fwww.100kin10.org"><img src="/images/icons/Twitter_24x24.png" class="footericon" alt="twitter" border="0" /></a>
+
+        <a href="http://www.facebook.com/sharer.php?u=http://www.100kin10.org"><img src="/images/icons/Facebook_24x24.png" class="footericon" alt="facebook" border="0" /></a>
+        &nbsp;
+        Contact Us: <a href="mailto:info@100Kin10.org">info@100Kin10.org</a> &copy; 2011 &nbsp;  <a href="/page/privacy">Privacy and Terms of Service</a>
+      </div><!-- end footerbox -->
+    </div><!-- end footer -->
     <%= javascript_include_tag 'google_analytics.js' %>
   </body>
 </html>

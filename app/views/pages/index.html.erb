@@ -1,106 +1,100 @@
 <script>
   $(document).ready(function() {
     $('.section_square').bind('click',function(event){
-      window.location=$(this).find('a').attr('href');       
-    });  
+      window.location=$(this).find('a').attr('href');
+    });
 
     $('#partner_image_holder img').click(function() {
-      window.location='/page/partners';       
+      window.location='/page/partners';
     });
-        
+
   });
 </script>
 
 
 
-<table id="tbl" border="0" cellspacing="0" cellpadding="0"><tr>
+<div class="blurb">
+  <img src="/assets/front_page_blurb.jpg" />
+  <p>Our goal is to provide America's classrooms with 100,000 Science, Technology, Engineering, and Math teachers over the next 10 years.</p>
+</div>
+<div class="placeholder"><img src="/assets/front_page_placeholder.jpg" /></div>
 
 
-<td class="aboutbox section_square" colspan="2">
-<% Content.insert('homepage_about_us') do |c| %>
-<table class="aboutcontent" style="width:500px;">
-<tr>
-<td style="width:212px;">
-<h1><%= c.render_field(:title) %></h1>
-</td>
-<td>
-<img src="images/arrowright.png" alt="" />
-</td>
-<td style="width:240px;padding:20px;">
-<div class="copyblock">
-  <%= c.render_field(:body) %>
-</div>
-</td>
-</tr>
-</table>
-<% end %>
+<div class="clear">&nbsp;</div>
 
-</td><!-- end td aboutbox -->
-
-<td class="photobox2">
-</td>
-<% Content.insert('homepage_more_commitments') do |c| %>
-<td class="commitmentbox section_square">
-<div class="commitmentboxdiv"><h1><%= c.render_field(:title) %></h1>
-<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
-<div class="copyblock">
-  <%= c.render_field(:body) %>
-</div>
-</div>
-</td>
-<% end %>
-</tr>
-<tr>
-<td class="photobox1">
-</td>
-<% Content.insert('homepage_view_partners') do |c| %>
-<td class="partnerbox section_square">
-<div class="partnerboxdiv"><h1><%= c.render_field(:title) %></h1>
-<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
-<div class="copyblock">
-   <%= c.render_field(:body) %>
-</div>
-</div>
-</td>
-<% end %>
-<td class="photobox3">
-</td>
+<div class="faqbox section_square">
 <% Content.insert('homepage_faq') do |c| %>
-<td class="faqbox section_square">
 <div class="faqboxdiv"><h1><%= c.render_field(:title) %></h1>
 <img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
-<div class="copyblock">
-   <%= c.render_field(:body) %>
+<div class="copyblock homebuttons">
+  <%= c.render_field(:body) %>
 </div>
 </div>
-</td>
 <% end %>
-</tr></table>
+</div>
+
+<div class="aboutbox section_square">
+<% Content.insert('homepage_about_us') do |c| %>
+<div class="aboutcontent"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock homebuttons">
+  <%= c.render_field(:body) %>
+</div>
+</div>
+<% end %>
+</div>
+
+<div class="partnerbox section_square">
+<% Content.insert('homepage_view_partners') do |c| %>
+<div class="partnerboxdiv"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock homebuttons">
+  <%= c.render_field(:body) %>
+</div>
+</div>
+<% end %>
+</div>
+
+<div class="commitmentbox section_square">
+<% Content.insert('homepage_more_commitments') do |c| %>
+<div class="commitmentboxdiv"><h1><%= c.render_field(:title) %></h1>
+<img src="/images/arrowdown.png" alt="" style="margin-top:5px;" />
+<div class="copyblock homebuttons">
+  <%= c.render_field(:body) %>
+</div>
+</div>
+<% end %>
+</div>
+
+
+<div class="clear">&nbsp;</div>
+<div class="spacer_20">&nbsp;</div>
 
 <script>
-  
+
   var displayLength=7;
-  
+
   var scroll_partners_left=function(){
     $('#partner_scroll').append($('#partner_image_holder > img').slice(0,displayLength));
     removeElementsCount=$('#partner_scroll > img').length - displayLength;
     $('#partner_image_holder').append($('#partner_scroll > img').slice(0,$('#partner_scroll > img').length - displayLength));
   }
-  
+
   var scroll_partners_right=function(){
     $('#partner_scroll').prepend($('#partner_image_holder > img').slice(displayLength*(-1)));
-    $('#partner_image_holder').prepend($('#partner_scroll > img').slice(displayLength*(-1)));  
+    $('#partner_image_holder').prepend($('#partner_scroll > img').slice(displayLength*(-1)));
   }
-  
+
   $(document).ready(function(){
     scroll_partners_left();
-    
+
   });
-    
-  
+
+
 
 </script>
 
+<h1 class="logoheading">100kin10 Partners Committed To Excellence<h1>
 <div id="logoscroll">
 <a href="#" onclick="scroll_partners_left(); return false;"><img src="/images/scroll_left.png" alt="Scroll Left" style="border:0;" /></a>
 <!-- begin logos -->

@@ -19,6 +19,13 @@
 
 var $QUERY_PARAMS = {};
 $(document).ready(function() {
+
+    $("#mainnav ul li").hover(function() {
+      $(this).find(".head").css('background', '#fcb347');
+    }, function() {
+      $(this).find(".head").css('background', '#585858');
+    });
+
     // Modified on 10-Mar-2012 to provide Editable Screen to Regular Users
     //Start Modification
     $('div.submit_orgtype').hide();
@@ -69,7 +76,7 @@ $(document).ready(function() {
     });
 
     setTimeout( "jQuery('.flash').fadeOut('fast');",3000 );
-    
+
     /* Added on 27 Mar 2012 to handle multiple clicks when posting status */
     /* Start Here */
     $('form#post-status').ajaxStart(function(){

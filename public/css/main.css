@@ -55,7 +55,6 @@ td   {
     margin: 0;
 }
 html, body {
-    margin-top: 5px;
     height: 100%;
     text-align: center;
     font-size: 12px;
@@ -67,13 +66,12 @@ html, body {
 /* HEADER STYLES */
 
 #header {
-    width: 984px; /* 1024 width total with padding */
-    height: 88px;
+    width: 1024px; /* 1024 width total with padding */
+    height: 100px;
     margin: 0 auto;
     border: 0px dotted red;
     font-size:18px;
     line-height: 21px;
-    padding: 0 20px 0 20px;
 }
 
 #logo {
@@ -237,46 +235,6 @@ h3.newsentry{
     max-width: 720px;
 }
 
-
-/* FOOTER */ /* FOOTER */ /* FOOTER */ /* FOOTER */
-/* FOOTER */ /* FOOTER */ /* FOOTER */ /* FOOTER */
-
-.footer {
-    height: 28px;
-    clear: both;
-    background-color: #ffc425;
-}
-.footerbox {
-    width: 1024px;
-    height: 22px;
-    text-align: left;
-    margin-left: auto; margin-right: auto;
-    font-size: 11px;
-    color: #585858;
-    padding: 3px;
-}
-.footericon {
-    height: 20px;
-    width: 20px;
-    vertical-align: top;
-}
-.footerheader {
-    font-family: 'LeagueGothicRegular', arial, sans;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #585858;
-    padding: 0px;
-    float: left;
-}
-
-.footer A:link,
-.footer A:visited,
-.footer A:active {color: #FFF; text-decoration: none;}
-.footer A:hover {color: #585858; text-decoration: underline;}
-
 /* GENERAL NAVIGATION */
 /* GENERAL NAVIGATION */
 
@@ -289,9 +247,7 @@ a:hover {color: #ffc425; text-decoration: underline;}
 /* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
 /* MAIN NAVIGATION MENU */ /* MAIN NAVIGATION MENU */  /* MAIN NAVIGATION MENU */
 
-#mainnav,
-#contentnav,
-#secondarynav ul {
+#contentnav ul {
     list-style: none;
     text-align: center;
     font-family: 'LeagueGothicRegular', arial, sans;
@@ -302,44 +258,101 @@ a:hover {color: #ffc425; text-decoration: underline;}
     text-transform: uppercase;
 }
 
-#mainnav ul li {
-    float: left;
-}
-
 #mainnav {
     clear: right;
     float: right;
     position: relative;
-    top:37px;
+    top: 35px;
     font-size: 20px;
     border: 0px dotted green;
     color: #FFF;
 }
-#mainnav A:link,
-#mainnav A:visited,
-#mainnav A:active { padding: 10px 10px 2px; color: #FFF; width:110px; text-decoration: none}
-#mainnav A:hover {
-    width:110px; text-decoration: none;
-    color: #ffc425;
-}
-#mainnav A:active {
-    background: url(../images/navbutton.png) no-repeat 0 0;
-    background-position: 50% 0px;
-}
 
 #mainnav ul li {
-    border-left: 1px solid #FFF;
+    margin-left: 3px;
     list-style: none;
-    width: 112px;
-    height: 28px;
-    margin-top: -10px;
-    padding-top: 10px;
-    background-color: #585858;
     text-align: center;
+    float: left;
+    background: #585858;
 }
-#mainnav ul {
-    display: inline;
+
+#mainnav ul li a:link,
+#mainnav ul li a:visited,
+#mainnav ul li a:active {
+  padding: 10px 21px;
+  color: #FFF;
+  background: #585858;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: sans-serif;
+  letter-spacing: -1px;
 }
+#mainnav ul li a:hover {
+  background: #fcb347;
+}
+
+
+#mainnav ul li ul {
+  position: absolute;
+  width: 10em;
+  left: -999em;
+  background: #fcb347;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  z-index: 999;
+}
+
+#mainnav ul li:hover ul {
+  left: auto;
+  background: #fcb347;
+  text-align: left;
+}
+
+#mainnav ul li:last-child:hover ul {
+  left: 485px;
+  background: #fcb347;
+  text-align: right;
+}
+
+#mainnav ul li ul li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  float: none;
+  clear: both;
+}
+
+#mainnav ul li ul li a:link,
+#mainnav ul li ul li a:visited,
+#mainnav ul li ul li a:active {
+  padding: 10px 20px;
+  width: 100%;
+  display: block;
+  background: #fcb347;
+  text-align: left;
+  color: #FFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: sans-serif;
+  letter-spacing: -1px;
+  text-shadow: 0px 1px 2px #b9b9b9;
+  filter: dropshadow(color=#b9b9b9, offx=0, offy=1);
+}
+
+#mainnav ul li ul li a:hover {
+  background: #eda63d;
+}
+
+#mainnav ul li:last-child ul li a:link,
+#mainnav ul li:last-child ul li a:visited,
+#mainnav ul li:last-child ul li a:active {
+  text-align: right;
+}
+
 /* This code will highlight the correct main meu nav button when on that page */
 body#home a#homenav,
 body#aboutus a#aboutnav,
@@ -347,40 +360,44 @@ body#commitments a#commitnav,
 body#news a#newsnav,
 body#partners a#partnersnav,
 body#faq a#faqnav {
-    color: #fff;
-    background: url(../images/navbutton.png) no-repeat 0 0;
-    background-position: 50% 0px;
+
 }
 
 
 
 /* SECONDARY - TOP RIGHT NAVIGATION MENU */
 /* SECONDARY - TOP RIGHT NAVIGATION MENU */
+#secondarynav ul {
+    list-style: none;
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
 #secondarynav ul li {
     float: left;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 15px;
 }
 
 #secondarynav {
     float: right;
+    margin-top: 6px;
     text-align: right;
     border: 0px dotted red;
     -webkit-font-smoothing: antialiased;
 }
 #secondarynav { padding-top: 2px;}
-#secondarynav A:link { color:#585858; text-decoration: none;}
-#secondarynav A:visited {color: #585858; text-decoration: none}
-#secondarynav A:active {color: #585858; text-decoration: none}
-#secondarynav A:hover {color: #999; text-decoration: none;}
-.portal {
-    border-right: 2px solid #585858;
-    padding-top: 2px;
-    padding-right: 10px;
-}
-.contact {
-    padding-top: 2px;
-    padding-left: 10px;
-    padding-right: 0px;
-}
+#secondarynav A:link { color:#333; text-decoration: none; }
+#secondarynav A:visited {color: #333; text-decoration: none; }
+#secondarynav A:active {color: #333; text-decoration: none; }
+#secondarynav A:hover {color: #999; text-decoration: none; }
+#secondarynav .partner_login { background: url('/assets/lock.jpg') no-repeat; padding: 2px 20px 0px 20px }
+#secondarynav .contact_us { background: url('/assets/mail.jpg') no-repeat; padding: 2px 0px 0px 30px }
+
+
 
 /* Styles for search box in sub nav
 =========================================== */

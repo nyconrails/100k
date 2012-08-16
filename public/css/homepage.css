@@ -21,7 +21,7 @@ font-size: 16px;
 font-family: 'LeagueGothicRegular', arial, sans;
 font-weight: normal;
 font-style: normal;
-color: #585858; 
+color: #585858;
 text-decoration: none;
 text-transform: uppercase;
 float: left;
@@ -31,30 +31,29 @@ float: left;
 #tbl .faqbox A:hover {color: #0b64ac; text-decoration: none;}
 #tbl .partnerbox A:hover {color: #00958f; text-decoration: none;}
 
-.photobox1 {
-width:256px;
-height:256px;
-background:#ffffff url('../images/home_photo1.jpg') no-repeat left top;
-}
-.photobox2 {
-width:256px;
-height:256px;
-background:#ffffff url('../images/home_photo2a_256x256.jpg') no-repeat left top;
-}
-.photobox3 {
-width:256px;
-height:256px;
-background:#ffffff url('../images/home_photo2b_256x256.jpg') no-repeat left top;
-}
-
 .partnerbox,
 .commitmentbox,
 .faqbox,
 .aboutbox {
-	/*padding: 20px 20px 0 20px;*/
-	text-align: center;
-	width: 256px;
+  padding: 40px 0px 20px 0px;
+  text-align: center;
+  width: 256px;
+  float: left;
+  position: relative;
+  height: 240px;
 }
+
+.blurb {
+  width: 440px;
+  float: left;
+}
+.blurb p {
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 22px;
+  color: #333;
+}
+.placeholder { float: right; }
 
 
 .partnerbox {
@@ -67,8 +66,6 @@ background:#82c9f0;
 background:#0b64ac;
 }
 .aboutbox {
-width: 512px;
-border: 0px dotted black;
 background:#ffc425;
 }
 
@@ -84,15 +81,49 @@ background:#efefef;
 color:#333;
 }
 
+.copyblock.homebuttons a {
+  color: #333;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 6px 10px;
+  font-size: 14px;
+  letter-spacing: -1px;
+  text-decoration: none;
+  background: white;
+  display: inline-block;
+  position: absolute;
+  text-transform: uppercase;
+  bottom: 20px;
+  border: 1px solid #bababa;
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(189,189,189,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(189,189,189,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(189,189,189,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(189,189,189,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(189,189,189,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(189,189,189,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bdbdbd',GradientType=0 ); /* IE6-9 */
+}
+
+.copyblock.homebuttons a:hover {
+  background: rgb(190,190,190); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(190,190,190,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190,190,190,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(190,190,190,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(190,190,190,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(190,190,190,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(190,190,190,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bebebe', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 
 
 
 h1 {
-	color: #FFF;	
+  color: #FFF;
 }
 
-.copyblock{ 
-	padding: 0 20px;
+.copyblock{
+  padding: 0 20px;
 }
 
 /* Styles for the logo scroller underneath the color boxes */
@@ -104,5 +135,7 @@ padding: 0 5px 0 5px;
 letter-spacing: 4px;
 }
 
-	
+.logoheading { color: #FFC425; padding: 0px 0px 10px 2px; }
+
+
 
