@@ -84,7 +84,7 @@ p {
 #logo {
     font-family: arial, sans;
     float: left;
-
+    margin-top: 6px;
 }
 .logoimg {
     position: relative;
@@ -276,7 +276,7 @@ a:hover {color: #333; text-decoration: none;}
 }
 
 #mainnav ul li {
-    margin-left: 3px;
+    margin-left: 6px;
     list-style: none;
     text-align: left;
     float: left;
