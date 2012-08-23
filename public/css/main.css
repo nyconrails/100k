@@ -269,7 +269,7 @@ a:hover {color: #333; text-decoration: none;}
     clear: right;
     float: right;
     position: relative;
-    top: 35px;
+    top: 27px;
     font-size: 20px;
     border: 0px dotted green;
     color: #FFF;
@@ -319,7 +319,7 @@ a:hover {color: #333; text-decoration: none;}
 }
 
 #mainnav ul li:last-child:hover ul {
-  left: 485px;
+  left: 508px;
   background: #fcb347;
   text-align: right;
 }

@@ -82,43 +82,40 @@
                 <%= link_to "About", page_path(:aboutus), :id=>"aboutnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Goal and Vision", '/page/goal-vision' %></li>
-                  <li><%= link_to "Our History", '/page/our-history' %></li>
-                  <li><%= link_to "Our Leadership", '/page/our-leadership' %></li>
+                  <li><%= link_to "History", '/page/our-history' %></li>
+                  <li><%= link_to "Leadership", '/page/our-leadership' %></li>
                   <li><%= link_to "FAQ", '/page/faq' %></li>
                 </ul>
               </li>
               <li>
                 <%= link_to "Partners", page_path(:partners), :id=>"partnersnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Partners", '/page/partners' %></li>
+                  <li><%= link_to "Who We Are", '/page/partners' %></li>
                   <li><%= link_to "Funders", '' %></li>
                   <li><%= link_to "Commitments", '/page/commitments' %></li>
-                  <li><%= link_to "Partner Spotlight", '' %></li>
+                  <% # link_to "Partner Spotlight", '' %>
+                </ul>
+              </li>
+              <li>
+                <%= link_to "Research & Learning", '', :id=>"rdnav", class: 'head' %>
+                <ul>
                 </ul>
               </li>
               <li>
                 <%= link_to "Get Involved", page_path(:commitments), :id=>"commitnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Become a Partner", '' %></li>
+                  <li><%= link_to "Join", page_path(:commitments) %></li>
                   <li><%= link_to "Teach", '/page/teach' %></li>
                   <li><%= link_to "Donate", '/page/donate' %></li>
-                  <li><%= link_to "Participate", '/page/participate' %></li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to "Accelerating R&D", '', :id=>"rdnav", class: 'head' %>
-                <ul>
-                  <li><%= link_to "Sub Nav", '' %></li>
-                  <li><%= link_to "Sub Nav", '' %></li>
-                  <li><%= link_to "Sub Nav", '' %></li>
+                  <% # link_to "Participate", '/page/participate' %>
                 </ul>
               </li>
               <li>
                 <%= link_to "News & Resources", page_path(:press), :id=>"newsnav", class: 'head' %>
                 <ul>
+                  <li><%= link_to "Resources", page_path(:press) %></li>
                   <li><%= link_to "Press", '/page/press' %></li>
-                  <li><%= link_to "Resources", '' %></li>
-                  <li><%= link_to "Success Stories", '' %></li>
+                  <% # link_to "Success Stories", '' %>
                 </ul>
               </li>
             </ul>
