@@ -269,7 +269,7 @@ a:hover {color: #333; text-decoration: none;}
     clear: right;
     float: right;
     position: relative;
-    top: 27px;
+    top: 16px;
     font-size: 20px;
     border: 0px dotted green;
     color: #FFF;
@@ -278,7 +278,7 @@ a:hover {color: #333; text-decoration: none;}
 #mainnav ul li {
     margin-left: 3px;
     list-style: none;
-    text-align: center;
+    text-align: left;
     float: left;
     background: #585858;
 }
@@ -286,7 +286,7 @@ a:hover {color: #333; text-decoration: none;}
 #mainnav ul li a:link,
 #mainnav ul li a:visited,
 #mainnav ul li a:active {
-  padding: 10px 21px;
+  padding: 4px 21px;
   color: #FFF;
   background: #585858;
   display: block;

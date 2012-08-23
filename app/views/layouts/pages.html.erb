@@ -79,7 +79,7 @@
           <div id="mainnav">
             <ul>
               <li>
-                <%= link_to "About", page_path(:aboutus), :id=>"aboutnav", class: 'head' %>
+                <%= link_to raw("About The<br />Movement"), page_path(:aboutus), :id=>"aboutnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Goal and Vision", '/page/goal-vision' %></li>
                   <li><%= link_to "History", '/page/our-history' %></li>
@@ -88,7 +88,7 @@
                 </ul>
               </li>
               <li>
-                <%= link_to "Partners", page_path(:partners), :id=>"partnersnav", class: 'head' %>
+                <%= link_to raw("100kin10<br />Partners"), page_path(:partners), :id=>"partnersnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Who We Are", '/page/partners' %></li>
                   <li><%= link_to "Funders", '' %></li>
@@ -97,12 +97,12 @@
                 </ul>
               </li>
               <li>
-                <%= link_to "Research & Learning", '', :id=>"rdnav", class: 'head' %>
+                <%= link_to raw("Research &<br />Learning"), '', :id=>"rdnav", class: 'head' %>
                 <ul>
                 </ul>
               </li>
               <li>
-                <%= link_to "Get Involved", page_path(:commitments), :id=>"commitnav", class: 'head' %>
+                <%= link_to raw("Get<br />Involved"), page_path(:commitments), :id=>"commitnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Join", page_path(:commitments) %></li>
                   <li><%= link_to "Teach", '/page/teach' %></li>
@@ -111,7 +111,7 @@
                 </ul>
               </li>
               <li>
-                <%= link_to "News & Resources", page_path(:press), :id=>"newsnav", class: 'head' %>
+                <%= link_to raw("News &<br />Resources"), page_path(:press), :id=>"newsnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Resources", page_path(:press) %></li>
                   <li><%= link_to "Press", '/page/press' %></li>
