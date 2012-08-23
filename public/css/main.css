@@ -319,7 +319,7 @@ a:hover {color: #333; text-decoration: none;}
 }
 
 #mainnav ul li:last-child:hover ul {
-  left: 380px;
+  left: 395px;
   background: #fcb347;
   text-align: right;
 }
