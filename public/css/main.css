@@ -174,8 +174,14 @@ p {
 
 #rightcolumn {
     float: right;
+    background: #fff3e2;
     width: 280px;
 }
+
+#rightcolumn p {
+  padding: 0px 24px;
+}
+
 #graybox { /* right had column spacer box */
            margin-top: 10px;
            background-color: #efefef;

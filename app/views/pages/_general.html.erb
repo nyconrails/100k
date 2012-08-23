@@ -4,6 +4,9 @@
 <div id="maincontent"> <!-- this is where the main content / running text should go -->
 
   <div class="new_heading"><%= cool_heading (defined?(subsection) ? subsection : c.render_field(:title)) %></div>
+  <% if current_page? '/page/aboutus' %>
+  <iframe src="http://player.vimeo.com/video/43373380" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br /><br />
+  <% end %>
   <div class="new_subheading"><%= c.render_field(:lede) %></div>
 
   <% if defined?(subsection) %>
@@ -23,7 +26,7 @@
 
 
 <div id="rightcolumn">
-  <img src="http://100kin10.org/images/column_microscope.jpg" id="rightphoto" alt="100kin10" border="0" />
+  <iframe src="http://player.vimeo.com/video/43373380" width="279" height="157" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
   <% if c.subsections.any? %>
     <ul class="new_submenu">
@@ -34,7 +37,7 @@
     </ul>
   <% end %>
 
-  <p style="margin-bottom:16px"><strong>100Kin10</strong> invites everyone to join the movement. Teach, donate, or participate to get involved today.</p>
+  <p style="margin-bottom:16px;"><strong>100Kin10</strong> invites everyone to join the movement. Teach, donate, or participate to get involved today.</p>
   <ul class="new_submenu_nobars">
     <li><a href="" class="subnav1">Get Involved</li>
   </ul>
