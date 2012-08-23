@@ -14,6 +14,7 @@
 //= require applications
 //= require sessions
 //= require tabs
+//= require slider
 //= require_self
 // require_tree .
 
