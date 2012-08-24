@@ -1,0 +1,5 @@
+- content_for :subsection do
+  .subsection#join
+    = Content.insert 'subsection_research_2_notable'
+
+= render file: 'pages/research', :locals => { :heading => 'Notable Series' }

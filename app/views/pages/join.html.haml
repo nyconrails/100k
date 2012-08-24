@@ -1,0 +1,5 @@
+- content_for :subsection do
+  .subsection#join
+    = Content.insert 'subsection_takeaction_4_join'
+
+= render file: 'pages/takeaction', :locals => { :heading => 'Join' }

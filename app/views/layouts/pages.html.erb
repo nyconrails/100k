@@ -99,12 +99,14 @@
               <li>
                 <%= link_to raw("Research &<br />Learning"), '', :id=>"rdnav", class: 'head' %>
                 <ul>
+                  <li><%= link_to "Research & Learning", '/page/research-and-learning' %></li>
+                  <li><%= link_to "Notable Series", '/page/notable-series' %></li>
                 </ul>
               </li>
               <li>
                 <%= link_to raw("Get<br />Involved"), page_path(:commitments), :id=>"commitnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Join", page_path(:commitments) %></li>
+                  <li><%= link_to "Join", '/page/join' %></li>
                   <li><%= link_to "Teach", '/page/teach' %></li>
                   <li><%= link_to "Donate", '/page/donate' %></li>
                   <% # link_to "Participate", '/page/participate' %>

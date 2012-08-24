@@ -1,0 +1,30 @@
+- Content.insert 'page_research' do |c|
+  #leftcolumn
+    #maincontent
+      .new_heading= cool_heading (defined?(heading) ? c.render_field(:title) + ": " + heading : c.render_field(:title))
+      .new_subheading= c.render_field(:lede)
+
+      - if content_for? :subsection
+        = yield :subsection
+      - else
+        #maincontent_landing
+          = c.render_field(:body)
+
+      .clear
+
+  #rightcolumn
+    = image_tag '/images/column_action.jpg', id: "rightphoto"
+
+    %ul.new_submenu
+      %li
+        %a.subnav1{:href => "/page/research-and-learning", :class => (current_page?("/page/research-and-learning") ? "active" : "")} Research & Learning
+      %li
+        %a.subnav1{:href => "/page/notable-series", :class => (current_page?("/page/notable-series") ? "active" : "")} Notable Series
+
+
+    %p{ style: 'margin-bottom:16px' }
+      %strong 100kin10
+      invites everyone to join the movement. Teach, donate, or participate to get involved today.
+
+    %ul.new_submenu_nobars
+      %li= link_to "Get Involved", '/page/join'

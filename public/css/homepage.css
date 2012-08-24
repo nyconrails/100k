@@ -46,13 +46,26 @@ float: left;
 .blurb {
   width: 440px;
   float: left;
-}
-.blurb p {
-  margin-top: 20px;
   font-family: sans-serif;
-  font-size: 22px;
-  color: #333;
+  color: #343434;
 }
+
+.blurb p.big {
+  margin-top: 10px;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.blurb p.medium {
+  font-size: 22px;
+  line-height: 27px;
+  margin-bottom: 40px;
+}
+
+.blurb p.small {
+  font-size: 16px;
+}
+
 .placeholder { float: right; }
 
 

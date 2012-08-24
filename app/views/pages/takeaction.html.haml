@@ -32,6 +32,8 @@
     - if c.subsections.any?
       %ul.new_submenu
         %li
+          %a.subnav1{:href => "/page/join", :class => (current_page?("/page/join") ? "active" : "")} Join
+        %li
           %a.subnav1{:href => "/page/teach", :id => "subnav_teacher_opportunities", :class => (current_page?("/page/teach") ? "active" : "")} Teach
         %li
           %a.subnav1{:href => "/page/donate", :id => "subnav_donorchoose_donate", :class => (current_page?("/page/donate") ? "active" : "")} Donate
@@ -48,7 +50,7 @@
         invites everyone to join the movement. Teach, donate, or participate to get involved today.
 
       %ul.new_submenu_nobars
-        %li= link_to "Get Involved", ''
+        %li= link_to "Get Involved", '/page/join'
 
     - if current_page?("/page/donate")
       #graybox.takeactions{ style: 'height: 3200px' }
