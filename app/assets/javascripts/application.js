@@ -15,6 +15,9 @@
 //= require sessions
 //= require tabs
 //= require slider
+//= require mwheelIntent
+//= require jscrollpane
+//= require jquery.mousewheel.min.js
 //= require_self
 // require_tree .
 

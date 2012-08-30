@@ -1,0 +1,135 @@
+#partners
+
+  .heading 100kin10 Partners Committed to Excellence
+
+  - first = Organization.all_partners.random
+  - partners = Organization.all_partners.order("name asc")
+
+  .feature
+    .logo= image_tag first.avatar.regular.url
+    .blurb
+      .inner
+        .title= first.name
+        .commitment
+          Commitment:
+          %span.commitment_text= first.commitment_category.humanize
+        .text= h truncate strip_tags(Hpricot.uxs first.commitment.gsub(/[[:cntrl:]]/, '')), :length=>250, :separator => ' '
+    .next= image_tag 'next.png'
+  .clear
+  .line
+
+  .collection
+    .list
+      .inner
+        .search= text_field_tag 'search', nil, :placeholder => 'Search....', :class => 'partner_search'
+        .orgs
+          - partners.each do |p|
+            = link_to (truncate p.name, :length => 90), '', :id => "p#{p.id}"
+
+    .logos
+      - Organization.all_partners.find_in_batches(:batch_size => 15) do |group|
+        .section
+          - group.each do |org|
+            - text = h truncate strip_tags(Hpricot.uxs org.commitment.gsub(/[[:cntrl:]]/, '')), :length=>250, :separator => ' '
+            .logo{ :id => "p#{org.id}", :data => { :title => org.name, :commitment => org.commitment_category.humanize, :tex => text } }
+              = image_tag org.avatar.regular.url
+
+
+  .more MORE >
+
+
+:javascript
+  $(document).ready(function() {
+
+    var cont = $('.logos');
+    $(cont).data('section', 1);
+    var total = $('.section').length;
+
+    $('.section').first().fadeIn();
+
+    $('.more').click(function() {
+
+      var current = parseInt( $(cont).data('section') );
+      var old = $('.section').eq(current - 1);
+
+      var next = (current + 1 > total) ? $('.section').eq(0) : $('.section').eq(current);
+
+      $(next).css({'z-index': '200', 'left': '800px', 'display': 'block'}).animate({'left': '0px'}, function() {
+        $(old).hide();
+        $(next).css({'z-index': '2'});
+
+        if (current + 1 > total) {
+          $(cont).data('section', 1);
+        } else {
+          $(cont).data('section', current+1);
+        }
+      });
+
+    });
+
+    $('.logo').click(function() {
+      var _this = $(this);
+      $('.inner', '.blurb').fadeOut(function() {
+        $('.title', '.blurb').text( $(_this).attr('data-title') );
+        $('.commitment_text', '.blurb').text( $(_this).attr('data-commitment') );
+        $('.text', '.blurb').text( $(_this).attr('data-tex') );
+      }).fadeIn();
+
+      var new_image = $('<img src="' + $('img', _this).attr('src') + '" />');
+      var logospot = $('.logo', '.feature');
+      $(logospot).fadeOut(function() {
+        $(logospot).html(new_image);
+      }).fadeIn();
+
+    });
+
+    $('a', '.orgs').click(function(e) {
+      e.preventDefault();
+      console.log($(this).attr('id'));
+      var _this = $('#' + $(this).attr('id'), '.logos');
+      console.log(_this);
+      $('.inner', '.blurb').fadeOut(function() {
+        $('.title', '.blurb').text( $(_this).attr('data-title') );
+        $('.commitment_text', '.blurb').text( $(_this).attr('data-commitment') );
+        $('.text', '.blurb').text( $(_this).attr('data-tex') );
+      }).fadeIn();
+
+      var new_image = $('<img src="' + $('img', _this).attr('src') + '" />');
+      var logospot = $('.logo', '.feature');
+      $(logospot).fadeOut(function() {
+        $(logospot).html(new_image);
+      }).fadeIn();
+
+    });
+
+    $('.next').click(function() {
+      $.getJSON('/randompartner', function(data) {
+
+        $('.inner', '.blurb').fadeOut(function() {
+          $('.title', '.blurb').html( data.title );
+          $('.commitment_text', '.blurb').html( data.commitment );
+          $('.text', '.blurb').html( data.text );
+        }).fadeIn();
+
+        var new_image = $('<img src="' + data.img + '" />');
+        console.log(new_image);
+        var logospot = $('.logo', '.feature');
+        $(logospot).fadeOut(function() {
+          $(logospot).html(new_image);
+        }).fadeIn();
+
+      });
+    });
+
+    var $orgazes = $('.orgs a');
+    $('.partner_search').keyup(function() {
+        var re = new RegExp($(this).val(), "i"); // "i" = case-insensitive
+        $orgazes.show().filter(function() {
+            return !re.test($(this).text());
+        }).hide();
+        $('.orgs').jScrollPane("reinitialize");
+    });
+
+    $('.orgs').jScrollPane({contentWidth: '0px'});
+
+  });

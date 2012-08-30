@@ -18,6 +18,7 @@ Goodinc::Application.routes.draw do
 
   resources :applications
 
+  get "/randompartner" => 'pages#randompartner'
   get "password_resets/create"
   get "password_resets/edit"
   get "password_resets/update"
