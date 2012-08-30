@@ -52,18 +52,32 @@ float: left;
 
 .blurb p.big {
   margin-top: 10px;
-  font-size: 30px;
-  margin-bottom: 40px;
+  font-size: 48px;
+  line-height: 48px;
+  font-family: "nimbus-sans-condensed", sans-serif;
+  text-transform: uppercase;
+  color: #0b64ac;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .blurb p.medium {
   font-size: 22px;
   line-height: 27px;
-  margin-bottom: 40px;
+  font-family: "nimbus-sans-condensed", sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .blurb p.small {
   font-size: 16px;
+  line-height: 20px;
+  font-family: "nimbus-sans-condensed", sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .placeholder { float: right; }

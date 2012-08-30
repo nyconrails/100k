@@ -327,7 +327,6 @@ a:hover {color: #333; text-decoration: none;}
 #mainnav ul li:last-child:hover ul {
   left: 395px;
   background: #fcb347;
-  text-align: right;
 }
 
 #mainnav ul li ul li {
@@ -363,7 +362,7 @@ a:hover {color: #333; text-decoration: none;}
 #mainnav ul li:last-child ul li a:link,
 #mainnav ul li:last-child ul li a:visited,
 #mainnav ul li:last-child ul li a:active {
-  text-align: right;
+
 }
 
 /* This code will highlight the correct main meu nav button when on that page */

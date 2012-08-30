@@ -1,38 +1,37 @@
-#footer
+#footer.clearfix
   .inner
     .columns.clearfix
       .column
-        .heading ABOUT THE MOVEMENT
+        .heading= link_to 'ABOUT THE MOVEMENT', '/page/aboutus'
         %p= link_to "Goal & Vision", '/page/goal-vision'
         %p= link_to "History", '/page/out-history'
         %p= link_to "Leadership", '/page/how-to-join'
         %p= link_to "FAQ", '/page/faq'
 
       .column
-        .heading PARTNERS
+        .heading= link_to 'PARTNERS', '/page/partners'
         %p= link_to "Who We Are", '/page/partners'
         %p= link_to "History", '/page/our-history'
         %p= link_to "Leadership", '/page/our-leadership'
         %p= link_to "FAQ", '/page/faq'
 
       .column
-        .heading RESEARCH & LEARNING
-        %p= link_to "Research & Learning", '/page/research-and-learning'
-        %p= link_to "Notable Series", '/page/notable-series'
+        .heading= link_to 'RESEARCH & LEARNING', '/page/research-and-learning'
 
       .column
-        .heading GET INVOLVED
+        .heading= link_to 'GET INVOLVED', '/page/commitments'
         %p= link_to "Join", page_path(:commitments)
         %p= link_to "Teach", '/page/teach'
         %p= link_to "Donate", '/page/donate'
 
       .column
-        .heading NEWS & RESOURCES
-        %p= link_to "Resources", '/page/press'
+        .heading= link_to 'NEWS & RESOURCES', '/page/press'
+        %p= link_to "Tools", '/page/tools'
         %p= link_to "Press", '/page/press'
 
     .copyright
-      %p © 2012 100Kin10.org
-      %p= link_to 'Privacy and Terms of Service', '/page/privacy', class: 'copyright_link'
+      %p
+        © 2012 100Kin10.org.
+        = link_to 'Privacy and Terms of Service', '/page/privacy', class: 'copyright_link'
 
 

@@ -91,16 +91,14 @@
                 <%= link_to raw("100kin10<br />Partners"), page_path(:partners), :id=>"partnersnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Who We Are", '/page/partners' %></li>
-                  <li><%= link_to "Funders", '' %></li>
+                  <li><%= link_to "Funders", '/page/funding' %></li>
                   <li><%= link_to "Commitments", '/page/commitments' %></li>
                   <% # link_to "Partner Spotlight", '' %>
                 </ul>
               </li>
               <li>
-                <%= link_to raw("Research &<br />Learning"), '', :id=>"rdnav", class: 'head' %>
+                <%= link_to raw("Research &<br />Learning"), '/page/research-and-learning', :id=>"rdnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Research & Learning", '/page/research-and-learning' %></li>
-                  <li><%= link_to "Notable Series", '/page/notable-series' %></li>
                 </ul>
               </li>
               <li>
@@ -115,7 +113,7 @@
               <li class="last">
                 <%= link_to raw("News &<br />Resources"), page_path(:press), :id=>"newsnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Resources", page_path(:press) %></li>
+                  <li><%= link_to "Tools", page_path(:tools) %></li>
                   <li><%= link_to "Press", '/page/press' %></li>
                   <% # link_to "Success Stories", '' %>
                 </ul>

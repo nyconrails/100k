@@ -1,0 +1,28 @@
+#leftcolumn
+  #maincontent
+
+    .new_heading= cool_heading "Tools"
+    .new_subheading 100kin10 Tools and Resources.
+
+    %h2 Printed Tools
+    %ul.pretty
+      %li= link_to '100kin10 Partner List', '/tools/100kin10_partners_list_81012.pdf', :target => '_blank'
+      %li= link_to '100kin10 Flyer', '/tools/100Kin10_Flyer.pdf', :target => '_blank'
+      %li= link_to 'Funder Overview Document', '/tools/100Kin10_Funders_in_Funder_1.pdf', :target => '_blank'
+
+    .spacer_20
+    %h2 Video Tools
+    %ul.pretty
+      %li= link_to 'Answering the Nation\'s Call: 100kin10', 'http://vimeo.com/37821939', :target => '_blank'
+      %li= link_to "The Partners of 100Kin10: A Look Inside the Movement", '', :target => '_blank'
+      %li= link_to "President Clinton at CGI America 2011", 'http://www.youtube.com/watch?v=6QOg43MqmrE&list=PLA6C99DDD753EB571&index=1', :target => '_blank'
+      %li= link_to "President Obama at CGI Global 2011", 'http://www.livestream.com/cgi_plenary/video?clipId=pla_396097da-98f3-4b17-a11b-f360767bb0ca&utm_source=lslibrary&utm_medium=ui-thumb', :target => '_blank'
+
+
+
+
+
+#rightcolumn
+  <img src="/images/calculator.png" id="rightphoto" alt="100kin10" border="0" />
+
+= javascript_include_tag :search
