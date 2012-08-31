@@ -7,7 +7,7 @@ ActiveAdmin.register Upload do
   index do
     column :name
     column "Link" do |item|
-      link_to item.file.url, item.file.url
+      link_to "#{Rails.root}#{item.file.url}", item.file.url
     end
     default_actions
   end
@@ -25,7 +25,7 @@ ActiveAdmin.register Upload do
     attributes_table do
       row :name
       row :link do
-        link_to item.file.url, item.file.url
+        link_to "#{Rails.root}#{item.file.url}", item.file.url
       end
     end
     active_admin_comments
