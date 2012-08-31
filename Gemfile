@@ -38,6 +38,7 @@ gem 'vidibus-routing_error'
 gem 'formtastic', '2.0.2'
 gem 'whenever', :require => false
 gem 'capistrano-ext'
+gem "paperclip", "~> 3.0"
 
 group :development do
   gem 'quiet_assets'

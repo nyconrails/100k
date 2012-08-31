@@ -13,6 +13,7 @@ class Ability
 
       #Add Content permissions if user is editor
       can :manage, Content if user.editor?
+      can :manage, Upload if user.editor?
       can :manage, Opportunity if user.editor?
       can :manage, Organization if user.editor?
       can :manage, User if user.editor?

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719150756) do
+ActiveRecord::Schema.define(:version => 20120831175348) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -234,6 +234,16 @@ ActiveRecord::Schema.define(:version => 20120719150756) do
   create_table "states", :force => true do |t|
     t.string "name"
     t.string "abbreviation"
+  end
+
+  create_table "uploads", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|
