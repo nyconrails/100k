@@ -3,7 +3,7 @@
 $(document).ready(function() {
   if ( $('#custom_slider').length ) {
 
-
+  var sliderActive = false;
   var $slider = $('#custom_slider');
   var $triggers = $('#custom_slider_triggers');
   var current_slide_item = 0;
@@ -33,8 +33,10 @@ $(document).ready(function() {
   }
 
   function auto_slide_next() {
-    var next = (current_slide_item == 2) ? 0 : current_slide_item + 1;
-    slide(next);
+    if (sliderActive) {
+      var next = (current_slide_item == 2) ? 0 : current_slide_item + 1;
+      slide(next);
+    }
   }
 
   // Clicking triggers
@@ -44,7 +46,28 @@ $(document).ready(function() {
   });
 
   // Auto scroll
+  sliderActive = true;
   setInterval(function() { auto_slide_next() }, 4000);
+
+
+  // Videos and sliders
+  // Pause slider when videos are playing
+  var myVideo;
+
+  var stopSlider = function() {
+    sliderActive = false;
+  };
+
+  var startSlider = function() {
+    sliderActive = true;
+  };
+
+  _V_("my_video_1").ready(function() {
+    var myVideo = this;
+
+    myVideo.addEvent("play", stopSlider);
+    myVideo.addEvent("ended", startSlider);
+  });
 
 
   }
