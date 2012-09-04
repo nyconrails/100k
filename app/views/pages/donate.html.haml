@@ -18,5 +18,6 @@
       %input.search-button.gobutton{:type => "submit", :value => "Search", :rel => 'donates' }/
     #donates= render :partial => "shared/donates", :locals => {:results => results, :params => facets}
 
+- content_for :subheading, 'Support the movement by retaining the excellent teachers we currently have in our nation\'s schools.'
 
 = render file: 'pages/takeaction', locals: {heading: 'Donate'}

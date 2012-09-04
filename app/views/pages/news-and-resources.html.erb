@@ -1,41 +1,35 @@
-<% Content.insert 'page_funders' do |c| %>
+<% Content.insert 'page_news_resources' do |c| %>
 
 <div id="leftcolumn">
- <div id="maincontent"> <!-- this is where the main content / running text should go -->
+<div id="maincontent"> <!-- this is where the main content / running text should go -->
 
-  <div class="new_heading"><%= c.render_field(:title) %></div>
+  <div class="new_heading"><%= cool_heading c.render_field(:title) %></div>
   <div class="new_subheading"><%= c.render_field(:lede) %></div>
 
-  <div class="subsection">
+  <div id="maincontent_landing">
     <%= c.render_field(:body) %>
   </div>
-
 
 </div><!-- end maincontent -->
 </div><!-- end leftcolumn -->
 
+<% end %>
 
 <div id="rightcolumn">
-  <img src="http://100kin10.org/images/column_microscope.jpg" id="rightphoto" alt="100kin10" border="0" />
+  <img src="/images/calculator.png" id="rightphoto" alt="100kin10" border="0" />
 
   <ul class="new_submenu">
-    <% {'/page/funding' => 'Funders',
-        '/page/commitments' => 'Increase Supply',
-        '/page/retain-excellence' => 'Retain Excellence',
-        '/page/build-the-movement' =>  'Build the Movement'
+    <% {'/page/news-and-resources' => 'News & Resources',
+        '/page/tools' => 'Tools',
+        '/page/press' => 'Press'
         }.each do |k, v| %>
       <% klass = current_page?(k) ? "active" : "" %>
       <li><a class="<%= klass %>" href="<%= k %>"><%= v %></a></li>
     <% end %>
   </ul>
 
-
   <p style="margin-bottom:16px"><strong>100Kin10</strong> invites everyone to join the movement. Teach, donate, or participate to get involved today.</p>
   <ul class="new_submenu_nobars">
     <li><a href="/page/takeaction" class="subnav1">Get Involved</li>
   </ul>
-
 </div><!-- end rightcolumn -->
-
-<% end %>
-<%= javascript_include_tag :search %>

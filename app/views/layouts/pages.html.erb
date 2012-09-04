@@ -81,7 +81,7 @@
               <li>
                 <%= link_to raw("About The<br />Movement"), page_path(:aboutus), :id=>"aboutnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Goal and Vision", '/page/goal-vision' %></li>
+                  <li><%= link_to "Goal & Vision", '/page/goal-vision' %></li>
                   <li><%= link_to "History", '/page/our-history' %></li>
                   <li><%= link_to "Leadership", '/page/our-leadership' %></li>
                   <li><%= link_to "FAQ", '/page/faq' %></li>
@@ -90,7 +90,6 @@
               <li>
                 <%= link_to raw("100kin10<br />Partners"), page_path(:partners), :id=>"partnersnav", class: 'head' %>
                 <ul>
-                  <li><%= link_to "Who We Are", '/page/partners' %></li>
                   <li><%= link_to "Funders", '/page/funding' %></li>
                   <li><%= link_to "Commitments", '/page/commitments' %></li>
                   <% # link_to "Partner Spotlight", '' %>
@@ -102,7 +101,7 @@
                 </ul>
               </li>
               <li>
-                <%= link_to raw("Get<br />Involved"), page_path(:commitments), :id=>"commitnav", class: 'head' %>
+                <%= link_to raw("Get<br />Involved"), '/page/takeaction', :id=>"commitnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Join", '/page/join' %></li>
                   <li><%= link_to "Teach", '/page/teach' %></li>
@@ -111,7 +110,7 @@
                 </ul>
               </li>
               <li class="last">
-                <%= link_to raw("News &<br />Resources"), page_path(:press), :id=>"newsnav", class: 'head' %>
+                <%= link_to raw("News &<br />Resources"), '/page/news-and-resources', :id=>"newsnav", class: 'head' %>
                 <ul>
                   <li><%= link_to "Tools", page_path(:tools) %></li>
                   <li><%= link_to "Press", '/page/press' %></li>

@@ -4,30 +4,33 @@
       .column
         .heading= link_to 'ABOUT THE MOVEMENT', '/page/aboutus'
         %p= link_to "Goal & Vision", '/page/goal-vision'
-        %p= link_to "History", '/page/out-history'
-        %p= link_to "Leadership", '/page/how-to-join'
-        %p= link_to "FAQ", '/page/faq'
-
-      .column
-        .heading= link_to 'PARTNERS', '/page/partners'
-        %p= link_to "Who We Are", '/page/partners'
         %p= link_to "History", '/page/our-history'
         %p= link_to "Leadership", '/page/our-leadership'
         %p= link_to "FAQ", '/page/faq'
 
       .column
+        .heading= link_to 'PARTNERS', '/page/partners'
+        %p= link_to "Funding", '/page/funders'
+        %p= link_to "Commitments", '/page/commitments'
+
+      .column
         .heading= link_to 'RESEARCH & LEARNING', '/page/research-and-learning'
 
       .column
-        .heading= link_to 'GET INVOLVED', '/page/commitments'
-        %p= link_to "Join", page_path(:commitments)
+        .heading= link_to 'GET INVOLVED', '/page/takeaction'
+        %p= link_to "Join", 'page/join'
         %p= link_to "Teach", '/page/teach'
         %p= link_to "Donate", '/page/donate'
 
       .column
-        .heading= link_to 'NEWS & RESOURCES', '/page/press'
+        .heading= link_to 'NEWS & RESOURCES', '/page/news-and-resources'
         %p= link_to "Tools", '/page/tools'
         %p= link_to "Press", '/page/press'
+
+      .column.last
+        .heading= 'CONNECT WITH US'
+        = link_to "", "http://twitter.com/100Kin10", :class => 'social_link twitter'
+        = link_to "", "http://www.facebook.com/100Kin10", :class => 'social_link facebook'
 
     .copyright
       %p

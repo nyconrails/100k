@@ -2,18 +2,18 @@
   #maincontent
 
     .new_heading= cool_heading "Tools"
-    .new_subheading 100kin10 Tools and Resources.
+    .new_subheading Learn more about 100Kin10 and its partners through these resources. View our videos, access materials about 100Kin10 and its partners, and <a href="mailto:info@100kin10.org" style="color: #FFF">reach out to us</a> for further information.
 
     %h2 Printed Tools
     %ul.pretty
-      %li= link_to '100kin10 Partner List', '/tools/100kin10_partners_list_81012.pdf', :target => '_blank'
-      %li= link_to '100kin10 Flyer', '/tools/100Kin10_Flyer.pdf', :target => '_blank'
+      %li= link_to '100Kin10 Partner List', '/tools/100Kin10_partners_list_81012.pdf', :target => '_blank'
+      %li= link_to '100Kin10 Flyer', '/tools/100Kin10_Flyer.pdf', :target => '_blank'
       %li= link_to 'Funder Overview Document', '/tools/100Kin10_Funders_in_Funder_1.pdf', :target => '_blank'
 
     .spacer_20
     %h2 Video Tools
     %ul.pretty
-      %li= link_to 'Answering the Nation\'s Call: 100kin10', 'http://vimeo.com/37821939', :target => '_blank'
+      %li= link_to 'Answering the Nation\'s Call: 100Kin10', 'http://vimeo.com/37821939', :target => '_blank'
       %li= link_to "The Partners of 100Kin10: A Look Inside the Movement", '', :target => '_blank'
       %li= link_to "President Clinton at CGI America 2011", 'http://www.youtube.com/watch?v=6QOg43MqmrE&list=PLA6C99DDD753EB571&index=1', :target => '_blank'
       %li= link_to "President Obama at CGI Global 2011", 'http://www.livestream.com/cgi_plenary/video?clipId=pla_396097da-98f3-4b17-a11b-f360767bb0ca&utm_source=lslibrary&utm_medium=ui-thumb', :target => '_blank'
@@ -23,6 +23,13 @@
 
 
 #rightcolumn
-  <img src="/images/calculator.png" id="rightphoto" alt="100kin10" border="0" />
+  <img src="/images/calculator.png" id="rightphoto" alt="100Kin10" border="0" />
+  %ul.new_submenu
+    - {'/page/news-and-resources' => 'News & Resources', '/page/tools' => 'Tools', '/page/press' => 'Press' }.each do |k, v|
+      - klass = current_page?(k) ? "active" : ""
+      %li= link_to v, k, class: klass
 
-= javascript_include_tag :search
+
+  %p{ style: "margin-bottom:16px"} <strong>100Kin10</strong> invites everyone to join the movement. Teach, donate, or participate to get involved today.
+  %ul.new_submenu_nobars
+    %li= link_to 'Get Involved', "/page/takeaction"

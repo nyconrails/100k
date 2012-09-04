@@ -7,8 +7,8 @@
 - Content.insert 'page_takeaction' do |c|
   #leftcolumn
     #maincontent
-      .new_heading= cool_heading (defined?(heading) ? c.render_field(:title) + ": " + heading : c.render_field(:title))
-      .new_subheading= c.render_field(:lede)
+      .new_heading= cool_heading (defined?(heading) ? heading : c.render_field(:title))
+      .new_subheading= content_for?(:subheading) ? yield(:subheading) : c.render_field(:lede)
 
       - if false && @searchable
         %div{:style => "clear:right;float:right;text-align:right;padding:5px;position:relative;top:2px;"}
@@ -32,13 +32,14 @@
     - if c.subsections.any?
       %ul.new_submenu
         %li
+          %a.subnav1{:href => "/page/takeaction", :class => (current_page?("/page/takeaction") ? "active" : "")} Get Involved
+        %li
           %a.subnav1{:href => "/page/join", :class => (current_page?("/page/join") ? "active" : "")} Join
         %li
           %a.subnav1{:href => "/page/teach", :id => "subnav_teacher_opportunities", :class => (current_page?("/page/teach") ? "active" : "")} Teach
         %li
           %a.subnav1{:href => "/page/donate", :id => "subnav_donorchoose_donate", :class => (current_page?("/page/donate") ? "active" : "")} Donate
-        %li
-          %a.subnav1{:href => "/page/participate", :id => "subnav_participate", :class => (current_page?("/page/participate") ? "active" : "")} Participate
+
 
           - c.subsections.each do |subsection|
             - next if(['teach', 'donate', 'participate'].include?(subsection.title.downcase))
@@ -50,7 +51,7 @@
         invites everyone to join the movement. Teach, donate, or participate to get involved today.
 
       %ul.new_submenu_nobars
-        %li= link_to "Get Involved", '/page/join'
+        %li= link_to "Get Involved", '/page/takeaction'
 
     - if current_page?("/page/donate")
       #graybox.takeactions{ style: 'height: 3200px' }

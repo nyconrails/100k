@@ -14,4 +14,6 @@
     #opportunities
       = render :partial => "shared/opportunities", :locals => {:opportunities => Opportunity.page(1).per(10), :params => {:page => 1}}
 
+- content_for :subheading, 'Help to increase the supply of excellent STEM teachers by becoming one of the 100K.'
+
 = render file: 'pages/takeaction', :locals => { :heading => 'Teach' }

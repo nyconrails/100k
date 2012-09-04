@@ -44,6 +44,8 @@
     var cont = $('.logos');
     $(cont).data('section', 1);
     var total = $('.section').length;
+    var partnerTimer;
+    var partnerTimerSet;
 
     $('.section').first().fadeIn();
 
@@ -77,6 +79,9 @@
 
       var new_image = $('<img src="' + $('img', _this).attr('src') + '" />');
       var logospot = $('.logo', '.feature');
+
+      resetPartnerTimer();
+
       $(logospot).fadeOut(function() {
         $(logospot).html(new_image);
       }).fadeIn();
@@ -85,9 +90,8 @@
 
     $('a', '.orgs').click(function(e) {
       e.preventDefault();
-      console.log($(this).attr('id'));
       var _this = $('#' + $(this).attr('id'), '.logos');
-      console.log(_this);
+
       $('.inner', '.blurb').fadeOut(function() {
         $('.title', '.blurb').text( $(_this).attr('data-title') );
         $('.commitment_text', '.blurb').text( $(_this).attr('data-commitment') );
@@ -96,14 +100,18 @@
 
       var new_image = $('<img src="' + $('img', _this).attr('src') + '" />');
       var logospot = $('.logo', '.feature');
+
+      resetPartnerTimer();
+
       $(logospot).fadeOut(function() {
         $(logospot).html(new_image);
       }).fadeIn();
 
     });
 
-    $('.next').click(function() {
+    function partnerRandomizer() {
       $.getJSON('/randompartner', function(data) {
+        console.log('fetching');
 
         $('.inner', '.blurb').fadeOut(function() {
           $('.title', '.blurb').html( data.title );
@@ -112,13 +120,17 @@
         }).fadeIn();
 
         var new_image = $('<img src="' + data.img + '" />');
-        console.log(new_image);
+
         var logospot = $('.logo', '.feature');
         $(logospot).fadeOut(function() {
           $(logospot).html(new_image);
         }).fadeIn();
 
       });
+    }
+
+    $('.next').click(function() {
+      partnerRandomizer();
     });
 
     var $orgazes = $('.orgs a');
@@ -130,6 +142,18 @@
         $('.orgs').jScrollPane("reinitialize");
     });
 
+    function startPartnerTimer() {
+      partnerTimer = setInterval(function() { partnerRandomizer(); }, 5000);
+    }
+
+    function resetPartnerTimer() {
+      window.clearInterval(partnerTimer);
+      window.clearTimeout(partnerTimerSet);
+      partnerTimerSet = setTimeout(function() { startPartnerTimer(); }, 5000);
+    }
+
+    // Init.
     $('.orgs').jScrollPane({contentWidth: '0px'});
+    startPartnerTimer();
 
   });
