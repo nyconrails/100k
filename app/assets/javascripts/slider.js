@@ -56,6 +56,14 @@ $(document).ready(function() {
   // Pause slider when videos are playing
   var myVideo;
 
+  function stopSlider() {
+    sliderActive = false;
+  }
+
+  function startSlider() {
+    sliderActive = true;
+  }
+
   var stopSlider = function() {
     sliderActive = false;
   };
