@@ -42,7 +42,9 @@ $(document).ready(function() {
   // Clicking triggers
   $('li', $triggers).click(function() {
     var ind = parseInt( $(this).index() );
+    stopSlider();
     slide(ind);
+    setTimout(function() { startSlider(); }, 4000);
   });
 
   // Auto scroll
