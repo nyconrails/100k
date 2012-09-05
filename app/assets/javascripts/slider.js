@@ -79,6 +79,13 @@ $(document).ready(function() {
     myVideo.addEvent("ended", startSlider);
   });
 
+  _V_("my_video_2").ready(function() {
+    var myVideo2 = this;
+
+    myVideo2.addEvent("play", stopSlider);
+    myVideo2.addEvent("ended", startSlider);
+  });
+
 
   }
 });
