@@ -44,7 +44,7 @@ $(document).ready(function() {
     var ind = parseInt( $(this).index() );
     stopSlider();
     slide(ind);
-    setTimout(function() { startSlider(); }, 4000);
+    setTimeout(function() { startSlider(); }, 4000);
   });
 
   // Auto scroll
