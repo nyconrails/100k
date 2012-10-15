@@ -1,0 +1,8 @@
+- @orgs.each do |org|
+  %p
+    %strong= org.name
+    - if org.avatar.to_s.present?
+      = link_to "View", org.avatar.to_s, target: "_blank"
+      = link_to "Download", downloadl_admin_organization_path(org)
+    - else
+      No logo uploaded.

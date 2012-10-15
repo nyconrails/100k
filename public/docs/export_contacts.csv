@@ -1,1 +1,471 @@
-"Contact_firstname";"Contact_lastname";"Contact_title";"Org_name";"Email";"Contact_number";"Partner_status";"Is_nominator"
+Contact_firstname,Contact_lastname,Contact_title,Org_name,Email,Contact_number,Partner_status,Is_nominator
+Todd,Kern,Principal,2Revolutions,tvk@2revolutions.net,917-640-7608 ,,false
+Sarah,Elizabeth,,Academy for Global Citizenship (AGC),sarahelizabeth@agcchicago.org,,,true
+Brian,Russell,Development Manager,Academy for Urban School Leadership,brussell2@cps.k12.il.us,773-534-0129,partner,true
+Brian,Sims,"Managing Director, Training Academies & Teacher Development",Academy for Urban School Leadership,bdsims@cps.k12.il.us,773-534-0129,partner,true
+Dacia,Toll,Director,Achievement First,sarahblanton@achievementfirst.org,3103090734,,false
+Dacia,Toll,,Achievement First,daciatoll@achievementfirst.org,,,
+Jane,Ashdown,Dean,"Adelphi University, Ruth S. Ammon School of Education",jashdown@adelphi.edu,(516) 877-4065,,false
+Robert C. ,Hilborn,Associate Executive Officer,American Association of Physics Teachers ,rhilborn@aapt.org,301-209-3325,partner,true
+Beth A. ,Cunningham,Executive Officer,American Association of Physics Teachers ,bcunningham@aapt.org,301-209-3310,partner,true
+Mary,Kirchhoff,Director of Education,American Chemical Society,m_kirchhoff@acs.org,202-872-4562,,false
+Mark,Schober,President,American Modeling Teachers Associationd,jmschober@gmail.com,917-723-2957,partner,true
+Colleen,Megowan-Romanowicz,Executive Officer,American Modeling Teachers Associationd,megowan@asu.edu,480-213-5687,partner,true
+Lisa ,Gugenheim,"Senior Vice President, Institutional Advancement, Strategic Planning, and Education",American Museum of Natural History,ljg@amnh.org,212-769-5333 ,partner,true
+Angela,Stach,"",American Museum of Natural History,astach@amnh.org,"",partner,true
+Merrily,Sterns,,American Museum of Natural History,msterns@amnh.org,,,true
+Bob,Black,Deputy Executive Director,American Society For Engineering Education,b.black@asee.org,202-331-3532,,false
+Darcy,Renfro,Vice President and Director of STEM Initiative,Arizona STEM Network of Science Foundation AZ,drenfro@sfaz.org,602-682-2881 ,,false
+Kristin,Priscella,Vice President of External Affairs,Arizona Science Center,priscellak@azscience.org,602-716-2017,,false
+Sara ,Torres,Executive Director,Arizona Science Teachers Association (ASTA),astaexecdir@gmail.com,520-709-1886 ,,false
+Dr. Ed,Franklin,Executive Director,Arkansas Association of Two-Year Colleges,efranklin@aatyc.org,5013710404,,false
+Rex,Nelson,Executive Director,Arkansas’s Independent Colleges and Universities,kdietz@windstream.net,501-378-0843,,false
+Chitra  ,Krishnan,Director of Knowledge and Learning,Ashoka Changemakers,ckrishnan@changemakers.net,703-600-8232     ,partner,true
+Michael,Pease,Director of Math & Science,Aspire Teacher Residency,michael.pease@aspirepublicschools.org,916.812.7340,partner,true
+Heather,Kirkpatrick,VP of Education,Aspire Teacher Residency,heather.kirkpatrick@aspirepublicschools.org,(650)776-7713,partner,true
+Allison,Leslie,Director,Aspire Teacher Residency,allison.leslie@aspirepublicschools.org,510-434-5000,partner,true
+George,Niedfeldt,Tester,Association,george@niedfeldt.com,2125551212,,false
+Randy,Bell,President,Association for Science Teacher Education   ,rlb6f@eservices.virginia.edu, (434) 924-1380,,false
+Randy,Bell,President,Association for Science Teacher Education   ,randybell@virginia.edu, (434) 924-1380,,false
+Rhonda,Shade,"",Association of Learning,rhondashade@gmail.com,"",new_partner,true
+Ryan,Reid Salta,Director of Mathematics,Baltimore City Public Schools,treid@bcps.k12.md.us,443-642-4088,partner,true
+Sonja,Santelises,Chief Academic Officer,Baltimore City Public Schools,sbsantelises@bcps.k12.md.us,410-396-8810 ,,true
+Virginia,Roach,"Dean, Graduate School of Education",Bank Street College of Education,vroach@bankstreet.edu,212-875-4668,,false
+Deborah,Barton,Associate Director,Boettcher Teacher Program,dbarton@pebc.org,303-861-1169,,false
+Alec,Peck,Associate Dean,Boston College,peck@bc.edu,617-552-3149,partner,true
+Maureen,Kenny,Interim Dean,Boston College,kennym@bc.edu,617-552-4200,partner,true
+Jesse ,Solomon,Executive Director,Boston Teacher Residency,jsolomon@bostonteacherresidency.org,617-227-8055,partner,true
+Lindsey,Musen,Development Associate,Boston Teacher Residency,lmusen@bpe.org,617-275-0760,partner,true
+Erica ,Christensen La Blanc,"Director, Community Affairs",CA Technologies,erica.christensen@ca.com,646-710-6677,funding_partner,true
+David,Rose,,CAST,drose@cast.org,,,
+Reagan ,Flowers,President and CEO,CSTEM,rflowers@cstem.org,7134434521,,
+Deborah,Hunt,CEO,CSTEM,dhunt@cslnetold.org,3103090734,,false
+Yvonne ,Choi,Assistant,California STEM Learning Network,ychoi@cslnet.org,415-489-7730,partner,true
+Chris ,Roe,CEO,California STEM Learning Network,croe@cslnet.org,415-489-7769,partner,true
+Jeff,Rudolph,President,California Science Center Foundation,jrudolph@cscmail.org,2137447483,,false
+Beverly ,"Young, Ph.D.","Assistant Vice Chancellor, Academic Affairs",California State University,byoung@calstate.edu,(562) 951-4747,partner,true
+Joan,Bissell,"Director, Teacher Education and Public School Programs",California State University,jbissell@calstate.edu,(562) 951-4716,partner,true
+Tania ,Schalburg-Dykes,President,California Teacher Corps,taschalburg@kern.org,3103090734,,false
+Sarah ,Strom,Capital Teaching Residency Director,Capital Teaching Residency,sarah.strom@kippdc.org,(202) 383-4035,partner,true
+Demetria ,Giles,KIPP DC Grants Manager,Capital Teaching Residency,demetria.giles@kippdc.org,(202) 383-4024 ,partner,true
+Bret,Test,Program Officer,Carnegie Corporation of New York,bret@dblsystems.com,212-207-6251,funding_partner,true
+Lauren,Coape-Arnold,"",Carnegie Corporation of New York,lauren@100kin10.org,"",funding_partner,true
+Talia ,Milgrom-Elcott,Program Officer,Carnegie Corporation of New York,tme@carnegie.org,212-207-6251,funding_partner,true
+Sarah Kwon,Johnson,Program Assistant,Carnegie Corporation of New York,sj@carnegie.org,"",funding_partner,true
+Becky,Crowe,Partner Relationships Manager,Carnegie Corporation of New York,becky@100kin10.org,"",funding_partner,true
+Tony,Bryk,President,Carnegie Foundation for the Advancement of Teaching,bryk@carnegiefoundation.org,3103090734,,false
+Martin,Gartzman,,Center for Elementary Math and Science Education,mgartzman@uchicago.edu,,,
+Katherine,Hovde,"Senior Analyst, Education",Center for High Impact Philanthropy,khovde@pobox.com,215-868-8258,partner,true
+Katherina ,Rosqueta,"Executive Director, Center for High Impact Philanthropy",Center for High Impact Philanthropy,rosqueta@sp2.upenn.edu,215-746-2408 ,partner,true
+Etta,Herber,"",Chabot Space and Science Center,eherber@chabotspace.org,"",,
+Linda,Rosen,CEO,Change the Equation,lrosen@changetheequation.org,202 626 5740,partner,true
+Claus,von Zastrow,COO/Director of Research,Change the Equation,cvonzastrow@changetheequation.org,202-626-5734,partner,true
+Uri,Treisman,Founder and Director,Charles A Dana Center,uri@mail.utexas.edu,512-471-6190,,false
+Ann,Clark,,Charlotte-Mecklenburg Schools (CMS),a.clark@cms.k12.nc.us,,,
+Dan ,Challener,President,Chattanooga-Hamilton County Public Education Foundation,dan@pefchattanooga.org,423-265-9403,partner,true
+Cheri ,Dedmon,"Director, TEACH/Here",Chattanooga-Hamilton County Public Education Foundation,cdedmon@pefchattanooga.org,423.648.4447,partner,true
+Lee,Clow,CCO,Chiat Day,rhonda@emblematicinc.com,555-555-5555,,false
+John ,Werner ,Managing Director & Chief Mobilizing Officer,Citizen Schools,johnwerner@citizenschools.org,617-474-2400 ,partner,true
+Thomas,Del Prete,Chair and Director of the Jacob Hiatt Center for Urban Education,Clark University,tdelprete@clarku.edu,(508) 793-7197,,false
+Jeff,Miller,Superintendent of Schools,Clear Creek School District RE-1,jeff1.miller@ccsdre1.org,303-537-3850,,false
+Marilia ,Bezerra ,Commitments Director ,Clinton Global Initiative,marilia.bezerra@clintonglobalinitiative.org,212-397-2255,,true
+Alex,Reeves,CGI America Manager- Education,Clinton Global Initiative,alex.reeves@clintonglobalinitiative.org,2127104440,partner,true
+K. Alexander,Schmidt,Senior Director of Advancement,"College of Education, University of Illinois at Urbana-Champaign",aschmid@illinois.edu,217 244-9155,,false
+Michael,Simon,Vice President,Colorado Mountain College,msimon@coloradomtn.edu,719-486-4206,,false
+Chad,Dorsey,President,Concord Consortium,cdorsey@concord.org,3103090734,,false
+Gary,Hoachlander,President,ConnectEd,ghoachlander@connectedcalifornia.org,(510) 849-4945,,false
+Timothy,Volmer,Policy Coordinator,Creative Commons,tvol@creativecommons.org,608-698-2403,"",true
+Cathy ,Casserly,CEO,Creative Commons,cathy@creativecommons.org,650-294-4732 ,"",true
+Robert,Pianta,"Dean, Curry School of Education",Curry School of Education at the University of Virginia,pianta@virginia.edu,434-243-5481,,false
+Sara Y.  ,So ,"Coordinator, Teacher Recruitment and Selection District of Columbia Public SchoolsOffice of the Chancellor",DC Public Schools,sara.so@dc.gov,"",partner,true
+Sydney,Henriques-Payne,Coordinator of Recruitment and Selection,DC Public Schools,sydney.henriques-payne@dc.gov,202.645.6568,partner,true
+Camsie,McAdams,Director of STEM education at DC Public Schools,DC Public Schools,camsie.mcadams@dc.gov,"",partner,true
+Bill ,Kurtz,CEO,DSST Public Schools ,bill.kurtz@scienceandtech.org,303-302-5570 x130  ,partner,true
+Jenny,Meyer,"",DSST Public Schools ,jenny.meyer@scienceandtech.org,"",partner,true
+Polly,Andrews,Director,Denver Museum of Nature and Science,polly.andrews@dmns.org,3103090734,,false
+Julie,Rottier,DTR Manager of Program and Curriculum,Denver Teacher Residency,julie_rottier@dpsk12.org,720-423-3213,partner,true
+Thalia,Nawi,"Director, Denver Teacher Residency",Denver Teacher Residency,thalia_nawi@dpsk12.org,720-423-3213,partner,true
+Kate,Zdrojewski,Site Manager,Denver Teaching Fellows,kzdrojewski@tntp.org,(720) 423-3248 ,,false
+Laura,Adolfie,,Department of Defense STEM Development Office,laura.adolfie@osd.mil,,,
+Karl,Topper,Director,Dillon Valley Elementary School Science & Math Learning Center,ktopper@summit.k12.co.us,970-368-1020,,false
+Melanie ,Duppins,Director of Program Expansion Partnerships,Donors Choose,melanie@donorschoose.org,202-821-3365,,true
+Missy ,Sherburne,Chief Partnerships Officer,DonorsChoose.org,missy@donorschoose.org,252-903-0037,partner,true
+Holly,Woods,Director of Fund Development,Eagle County Schools,holly.woods@eagleschools.net,970-328-2755,,false
+Reo,Pruiett,Program Officer,Educate Texas,rpruiett@cftexas.org,214-750-4106,partner,true
+Dee,Chambliss,Program Officer,Educate Texas,dchambliss@cftexas.org,214-750-4222,partner,true
+Steve,Villano,,EnCorps,steve@encorpsteachers.org,,,true
+Caprice Y,Young,Chairman & CEO ,EnCorps Teachers Program,caprice@encorpsteachers.org,877-619-3482 x511,partner,true
+Elaine,Guarnieri-Nunn,Bay Area Regional Director,EnCorps Teachers Program,elaine@encorpsteachers.org,510-708-3224,partner,true
+Bonnie,Lloyd,Director of Institutional Support Exploratorium,Exploratorium Institute for Inquiry,bloyd@exploratorium.edu,415-561-0320,partner,true
+Lynn ,Rankin,Director of the Exploratorium Institute for Inquiry,Exploratorium Institute for Inquiry,lrankin@exploratorium.edu,415-561-0334,partner,true
+Fay,Hanleybrown,,FSG ,fay.hanleybrown@fsg.org,,,
+Sherry,Lassiter,Director,Fab Foundation,sherry.lassiter@cba.mit.edu,617-331-4659,,false
+Jo,Adkins,Director of Communications,Florida International University,jadkins@fiu.edu,305-348-0398,partner,true
+Howard R.,Lipman,"President & CEO, The FIU Foundation",Florida International University,lipmanh@fiu.edu, 305-348-6298,partner,true
+Nicole ,Kaufman,"Director, Corporate & Foundation Relations",Florida International University,kaufmann@fiu.edu,305-348-1925,partner,true
+Frank,Niedfeldt,CEO,Frank Org,frank@niedfeldt.com,2125551212,,false
+Tracy ,Bame,President,Freeport-McMoRan Copper & Gold Foundation,tracy_bame@fmi.com,602-366-8018,funding_partner,true
+Zak ,Stone,Editorial Assistant,GOOD,zak@goodinc.com,323-206-6495,partner,true
+Liz,Dwyer,Education Editor,GOOD,liz@goodinc.com,(310) 882-8144,partner,true
+Nikky,Canter,Partnerships & Strategy Manager,GOOD/Corps,nikky@goodcorps.com,310-882-8144,partner,true
+Alec,Hartman,"",GOOD/Corps,info@nyconrails.com,"",partner,false
+Max,Schorr,,GOOD/Corps,max@goodcorps.com,,,true
+Test,Test,Test,GOOD/Corps,alejandroldecastro@gmail.com,3103090734,,true
+Lavanya,Mahendran,"Director, New Partnerships",GOOD/Corps,lavanya@goodcorps.com,9173015815,,true
+Grace,Kim,,GOOD/Corps,grace@goodcorps.com,,,true
+Michael ,Feuer,Dean,George Washington University Graduate School of Education and Human Development,mjfeuer@gwu.edu,202-994-6161,,false
+Michael ,Feuer,Dean,George Washington University Graduate School of Education and Human Development,mjfeuer@gwu.edu,202-994-6161,,false
+Jordan ,Bookey,K-12 Education Outreach,Google,bookey@google.com,512-343-5346,partner,true
+Ben,Malbourne,Creative Director,Google Labs,test@test.com,212-555-5555,,false
+Zachary,Levine,Director of Human Capital,Green Dot Public Schools,zachary.levine@greendot.org,650-575-5277,,false
+David,Gruber,Director,Growth Sector,david@growthsector.org,(415) 235-2494,,false
+Blaine ,Grimes,Chief Development Officer,Gulf of Maine Research Institute,blaine@gmri.org,207-228-1655,partner,true
+Alan ,Lishness,Chief Innovation Officer,Gulf of Maine Research Institute,alan@gmri.org,207-228-1632,partner,true
+Robert,Sharpe,"Assistant Superintedent, Secondary Education",Hamilton County Department of Education,sharpe_r@hcde.org,4232098425,,false
+Jim,Vanides,,Hewlett Packard,jim.vanides@hp.com,,,
+Allison ,Ohle,"Administrative Dean, High Tech High Graduate School of Educaiton",High Tech High,aohle@hightechhigh.org,619-243-5006,partner,true
+Ann,Best,,Houston Independent School District,abest@houstonisd.org,,,
+Dr. David,Steiner,Dean,Hunter College School of Education,steinedm@me.com,3103090734,,false
+Maura ,Banta,Regional Manager,IBM,mbanta@us.ibm.com,781-662-7467,,false
+Grace,Suh,,IBM,gracesuh@us.ibm.com,,,
+Susanna ,Crafton,Chief Development Officer,IDEA Public Schools,susanna.crafton@ideapublicschools.org,956-373-4033 ,partner,true
+Zach ,Foughty,Assistant Director of College and Career Readiness,Indiana Department of Education ,zfoughty@doe.in.gov,317-233-5019,partner,false
+Mindy ,Schlegel,Senior Advisor for Teacher Quality,Indiana Department of Education ,schlegel@doe.in.gov,317-232-0542,partner,false
+Tisha ,Bacigalupi,Sponsor Relations Manager,Industry Initiatives for Science and Math Education (IISME - pronounced IZ-MEE),tbacigalupi@iisme.org,408.553.2239,partner,true
+Jennifer ,Bruckner,Executive Director,Industry Initiatives for Science and Math Education (IISME - pronounced IZ-MEE),jbruckner@iisme.org,408.553.2249,partner,true
+Barbara,McAllister,Intel Foundation STEM Programs ,Intel Corporation,barbara.h.mcallister@intel.com,480 552 5023,partner,true
+Carlos ,Contreras,US Education Director,Intel Corporation,carlos.contreras@intel.com,"",partner,true
+Susan,Patrick,President,International Association for K-12 Online Learning,spatrick@inacol.org,3103090734,,false
+Claire,Sylvan,Executive Director,Internationals Network for Public Schools,claire.sylvan@internationalsnetwork.org,(212) 868-5180,,false
+Mark E. ,Rigdon,Executive Director,JPMorgan Chase Foundation,mark.e.rigdon@jpmchase.com,212-270-9114,funding_partner,true
+Joel,Niedfeldt,CEO,JT Org,jt@niedfeldt.com,,,true
+Radha,Basu,Founder Director,Jhumki Basu Foundation,rrbasu@anudip.org,1-408-872-0700,,false
+Dipak,Basu,Co-Founder ,Jhumki Basu Foundation,dbasu@anudip.org,408 872 0700,,false
+David,Andrews,"Dean, School of Education",Johns Hopkins University,davidandrews@jhu.edu,410-516-7987 ,,false
+James,Campbell,Senior Communications Manager,Johns Hopkins University,jcamp@jhu.edu,(410) 516-5588,,false
+John,Mighton,Founder,Jump Math,jmighton@fields.utoronto.ca,(416) 348-9710 ,,false
+Tara,Petersen,Development Manager,"Junior Achievement, Rocky Mountain Inc.",tpetersen@jacolorado.org,303-628-7374,,false
+Ken ,Goeddeke,Head of Houston Schools,KIPP Houston,kgoeddeke@kipphouston.org,"",partner,true
+Dr. Valerie B. ,"Schild, Ph.D.","Director, Kenan Fellows Program for Curriculum and LeadershipDevelopment",Kenan Fellows Program for Curriculum and Leadership Development,valerie_schild@ncsu.edu,919 515 5118,partner,true
+Raj,Narayan,Associate Director,"Kenan Institute for Engineering, Technology & Science at NC State University",raj_narayan@ncsu.edu,919 515 5118,,true
+Angelo,Collins,Founding Executive Director,Knowles Science Teaching Foundation,acollins@kstf.org,856-608-0001,,false
+Nicole,Gillespie,Director for Teaching Fellowships,Knowles Science Teaching Foundation,ngillespie@kstf.org,8566080001  ,,false
+Bette,Kokenes,Superintendent,Lake County School District,bkokenes@lakecountyschools.net,719-486-6810,,false
+Craig,Strang,Director of Professional Development,Lawrence Hall of Science,cstrang@berkeley.edu,510-642-9809,partner,true
+Elizabeth,Stage,Director,Lawrence Hall of Science,stage@berkeley.edu,(510) 642-4193,partner,true
+Birdy,Reynolds,Research Associate,Learning Research and Development Center at the University of Pittsburgh,birdy@pitt.edu,(412) 624-7479,partner,true
+Chris,Schunn,"Professor, University of Pittsburgh Department of Psychology; Senior Scientist, Learning Research and Development Center",Learning Research and Development Center at the University of Pittsburgh,schunn@pitt.edu,412-624-8807,partner,true
+Robert,Schwartz,Executive Director,Level Playing Field Institute,robert@lpfi.org,415-946-3052,,false
+Scott,Noppe-Brandon,Executive Director,Lincoln Center Institute,snb@lincolncenter.org,(212) 875-5545,,false
+Rob ,Humphrey,Lead University Evangelist,LinkedIn,rhumphrey@linkedin.com,919-961-6260,,false
+Christine ,Dominguez,"Deputy Superintendent, Curriculum, Instruction, and Professional Development",Long Beach Unified School District,cdominguez@lbschools.net,(562) 997-8267,,false
+Drew,Furedi,"",Los Angeles Unified School District,drew.furedi@lausd.net,"",partner,true
+Jamie,Aquino,Incoming Deputy Superintendent of Instruction,Los Angeles Unified School District,jaime.aquino@lausd.net,"",partner,true
+John,Deasy,Deputy Superintendent,Los Angeles Unified School District,john.deasy@lausd.net,213-241-7000,partner,true
+Katharine W. ,Clemmer,"Executive Director, LMU Center for Math and Science Teaching",Loyola Marymount University School of Education,kclemmer@lmu.edu,310-568-6655,partner,true
+Paul,Prisco,"Coordinator, LMU Center for Math and Science Teaching",Loyola Marymount University School of Education,pprisco@lmu.edu,310-338-2916,partner,true
+Veronica ,Gentile,Assistant to the CEO,MATCH Teacher Residency,veronica.gentile@matchschool.org,904-687-3722,partner,true
+Michael,Goldstein,CEO/Founder,MATCH Teacher Residency,mgoldstein@matchschool.org,6172320300,partner,true
+Sarah,Higgins,"",MATCH Teacher Residency,sarah.higgins@matchschool.org,"",partner,true
+Dale,Dougherty,,Make Magazine/Maker Faire,dale@oreilly.com,,,
+Mari ,Koerner,Dean & Professor,Mary Lou Fulton Teachers College at Arizona State University,mari.koerner@asu.edu,602-543-6352,partner,true
+Nikki,Gusz,"",Mary Lou Fulton Teachers College at Arizona State University,nikki.gusz@asu.edu,"",partner,true
+Kathleen,Seay,Deputy Director,Maryland Business Roundtable for Education,kathy@mbrt.org,410-788-0333,partner,true
+June,Streckfus,Executive Director,Maryland Business Roundtable for Education,june@mbrt.org,410-788-0333,partner,true
+Julie,Saffran,"",Maryland Business Roundtable for Education,julie@mbrt.org,410-788-0333,partner,true
+Morton,Orlov II,"President, Mass Math + Science Initiative",Mass Insight Education & Research Institute,orlovm@massinsight.org,(617) 778-1528,partner,true
+Melanie ,Winklosky,"Vice President, Mass Insight Education",Mass Insight Education & Research Institute,mwinklosky@massinsight.org,(617) 778-1523,partner,true
+Tina,Straley,,Mathematical Association of America,tstraley@maa.org,,,
+Elen,Badger,,McKinsey,ellen_badger@mckinsey.com,,,
+Robin,Scott,Director of Education,Memphis Teacher Residency,robin@memphistr.org,901-937-4681,partner,true
+David,Montague,Director,Memphis Teacher Residency,david@memphistr.org,901-937-4680,partner,true
+Josephine,Modica-Napolitano,"Interim Provost and Dean, Science and Engineering",Merrimack College,modicanapolj@merrimack.edu,978-837-5115,partner,true
+Dan,Butin,Dean of the School of Education,Merrimack College,butind@merrimack.edu,978-837-5338,partner,true
+Micah ,Sagebiel,"",Michael & Susan Dell Foundation,micah.sagebiel@msdf.org,"",funding_partner,true
+Dr. Avner,Segall,Chair,Michigan State University,avner@msu.edu,517-353-9150  ,partner,true
+Dr. Suzanne M.,Wilson,Chair,Michigan State University,swilson@msu.edu,517-410-8076,partner,true
+Jennifer ,Chayes,,Microsoft Research,jchayes@microsoft.com,,,
+Jennifer,Robinson,"Director, Center of Pedagogy",Montclair State University,robinsonj@mail.montclair.edu,973-655-4226,partner,true
+Ada Beth,Cutler,"Dean, College of Education and Human Services",Montclair State University,cutlera@mail.montclair.edu,973-655-5167,partner,true
+Weldon,Jackson,Senior Vice President,Morehouse College,wjackson@morehouse.edu,404-215-2645,,false
+Carries,Morgridge,,Morgridge Family Foundation,carriemorgridge@comcast.net,,,
+Nicole ,Kowrach,Director of Teaching and Learning,Museum of Science and Industry,nicole.kowrach@msichicago.org,773 753 6206,partner,true
+Andrea ,Ingram,"Vice President Education and Guest Services, Museum of Science and Industry",Museum of Science and Industry,andrea.ingram@msichicago.org,773 753 1350,partner,true
+Ryan,Williams,,NBC News,ryan.williams@nbcuni.com,,,
+Karl,Rectanus,NC STEM Community Collaborative Leader,NC STEM Community Collaborative,krectanus@ncstem.org,919-248-1107,,false
+Pamela ,Fraser-Abder,"","NYU Steinhardt School of Culture, Education, and Human Development",pa1@nyu.edu,"",partner,true
+Eric,Narburgh,"Director of Operations, Office of the Dean","NYU Steinhardt School of Culture, Education, and Human Development",eric.narburgh@nyu.edu,212-998-5001,partner,true
+Mary ,Brabeck,Gale and Ira Drukier Dean,"NYU Steinhardt School of Culture, Education, and Human Development",mary.brabeck@nyu.edu,212-998-5000,partner,true
+Martin,Storksdieck,"Director, NRC Board on Science Education",National Academy of Sciences,mstorksdieck@nas.edu,(202) 334-3987,partner,true
+Jay,Labov,Senior Advisor for Education and Communication,National Academy of Sciences,jlabov@nas.edu,(202) 334-1458,partner,true
+Shelley ,Canright,"Manager, Elementary, Secondary and eEducation Program",National Aeronautics and Space Administration (NASA),shelley.canright@nasa.gov,202-358-1021,partner,true
+Leland ,Melvin,Associate Administrator for Education,National Aeronautics and Space Administration (NASA),leland.d.melvin@nasa.gov,202-358-0103,partner,true
+Sharon ,"Lynch, PhD",President,National Association for Research in Science Teaching,slynch@gwu.edu,202-994-6174,partner,true
+Ron ,Thorpe,President,National Board for Professional Teaching Standards,thorpe@wnet.org,212-560-2880,,false
+Lori,Maxfield,"Associate Dean, Education Dept",National Center for STEM Elementary Education at St. Catherine University,lrmaxfield@stkate.edu,651-690-8898,partner,true
+Anthony,Murphy,Director,National Center for STEM Elementary Education at St. Catherine University,apmurphy@stkate.edu,651-690-8877,partner,true
+Cindy,Mackey,"VP, Marketing & External Affairs","National Center for Technological Literacy at the Museum of Science, Boston",cmackey@mos.org,6175890252,partner,true
+Patti,Curtis,"Managing Director, Washington Office","National Center for Technological Literacy at the Museum of Science, Boston",curtisp@mos.org,5712376367,partner,true
+Melinda ,George,NCTAF VP,National Commission on Teaching and America's Future,mgeorge@nctaf.org,"",partner,true
+Tom ,Carroll,"President, Teaching for America’s Future",National Commission on Teaching and America's Future,tcarroll@nctaf.org,202-429-2570,partner,true
+Kichoon,Yang,Executive Director,National Council of Teachers of Mathematics ,kyang@nctm.org,(703) 620-9840,partner,true
+Ken,Krehbiel,Associate Executive Director,National Council of Teachers of Mathematics ,kkrehbiel@nctm.org,(703) 620-9840,partner,true
+Michoon,Yang,,National Council of Teachers of Mathematics (NCTM),nctm@nctm.org,,,
+Becky,Pfordresher,"Director of Foundation Relations, National Geographic Society",National Geographic Education Program,rpfordre@ngs.org,202-828-6641,,false
+Dan,Crippen,,National Governors Association,webmaster@nga.org,,,
+Jack,Hidary,,National Lab Network,jack@jhidary.com,,,
+Mary Ann  ,Rankin,President and CEO,National Math and Science Initiative,mrankin@nationalmathandscience.org,214-665-2512,,true
+Mary Ann  ,Rankin,"Dean, College of Natural Sciences",National Math and Science Initiative,mar@uts.cc.utexas.edu,"",partner,true
+Kat,Neilson,Curator,National Mining Hall of Fame & Museum,curatorial@mininghalloffame.org,719-486-1229,,false
+Marlene ,Kaplan,Deputy Director of Education,National Oceanic and Atmospheric Administration,marlene.kaplan@noaa.gov,202-482-4592,partner,true
+Elizabeth	,VanderPutten,Program Officer,National Science Foundation,evanderp@nsf.gov,703-292-7546,partner,true
+James E. ,Hamos,Program Director,National Science Foundation,jhamos@nsf.gov,703-292-7546,partner,true
+Sue,Allen,Acting Division Director,National Science Foundation,suallen@nsf.gov,703-292-7546,,true
+Zipporah,Miller,Associate Executive Director,National Science Teachers Association,tbirts@nsta.org,3103090734,,true
+Damaries,Blondonville,Senior Director for Professional Development,National Science Teachers Association ,dblondonville@nsta.org,703-312-9275,partner,true
+Zipporah ,Miller,Associate Executive Director for Professional Programs and Conferences,National Science Teachers Association ,zmiller@nsta.org,703 312 9235,partner,true
+Jane,Walsh,"Vice President, Corporate & Foundation Relations ",Network for Teaching Entrepreneurship,jane.walsh@nfte.com,212-232-3333,,false
+Chris,Cerf,,New Jersey Department of Education,chris.cerf@doe.state.nj.us,,,
+Julie,Mikuta,Mikuta,New School Venture Fund,alejandro@goodcorps.com,3103090734,,true
+Grace,Clawater,Project Associate,New Teacher Center,gclawater@ias.org,406-431-7722,partner,true
+Ellen ,Moir,CEO,New Teacher Center,emoir@newteachercenter.org,831-600-2200 ,partner,true
+Alyson ,Mike,Director of Online Professional Development ,New Teacher Center,amike@newteachercenter.org,406-227-5242,partner,true
+Jaime ,Greenberg,Vice President for External Affairs,New Visions for Public Schools,jgreenberg@newvisions.org,(212)645-5110,partner,true
+Robert ,Hughes,President,New Visions for Public Schools,rhughes@newvisions.org,212-645-5110,partner,true
+Ellis,Rubinstein,President and Chief Executive Officer,New York Academy of Sciences,erubinstein@nyas.org,2122988686,,false
+Amy,Way,Deputy Executive Director,New York City Department of Education ,away@schools.nyc.gov,(718) 935 - 2906,partner,true
+Vicki ,Bernstein,"Executive Director of Teacher Recruitment & Quality Division of Human Resources, NYC Department of Education",New York City Department of Education ,vbernst@schools.nyc.gov,718-935-2882,partner,true
+Margaret1,Honey,CEO,New York Hall of Science,mhoney1@nysci.org,718-699-0005 x327  ,partner,true
+Margaret ,Honey,CEO,New York Hall of Science,mhoney@nysci.org,718-699-0005 x327  ,partner,true
+Deborah ,McGriff,Partner,NewSchools Venture Fund,dmcgriff@newschools.org,"",funding_partner,true
+Julie ,Mikuta,Partner,NewSchools Venture Fund,jmikuta@newschools.org,415-615-6864 ,funding_partner,true
+Lynne,Garrison,Vice President of Strategic Partnerships and Engagement,North Carolina New Schools Project,lgarrison@newschoolsproject.org,(919) 277-3778,partner,true
+April,Anthony,Director of Development,North Carolina New Schools Project,aanthony@newschoolsproject.org,(919) 277-3779,partner,true
+Mike ,Johnston,State Senator,Office of Colorado State Senator Mike Johnston,mike@mikejohnston.org,720-838-7633,partner,false
+Leslie,Colwell,Legislative Director,Office of Colorado State Senator Mike Johnston,lcolwell@mikejohnston.org,202-641-0865,partner,true
+John,Ratliff,Director of Policy,Office of Governor Martin O'Malley,ratliff@gov.state.md.us,,,true
+Tom ,Vander Ark,CEO,Open Education Solutions,tvanderark@openedsolutions.com,2069098251,,false
+Donn ,Poll,Executive Director,Opening the Mind through the Arts (OMA) Foundation,donn@omafoundation.org,520-309-5858,,false
+Maya1,Lundhagen ,Project Director,Opportunity Equation,maya@ias1.edu,212.207.6312,partner,true
+Justin,LaMont,Project Assistant,Opportunity Equation,jlamont@ias.edu,212-207-6230,partner,true
+Lyle,Hurst,"",Opportunity Equation,lylehurst@gmail.com,"",partner,true
+Bakul,Patel,"",Opportunity Equation,bakul@aspiresoftwareconsultancy.com,"",partner,true
+Grace,Clawater,Project Associate,Opportunity Equation,gclawater@ias.edu,212.207.6332,partner,true
+Maya,Lundhagen,Project Director,Opportunity Equation,maya@ias.edu,212.207.6312,partner,true
+Michael ,Haberman,President,PENCIL,mhaberman@pencil.org,212-524-2390,,false
+Nona ,Prestine,Professor of Education,Penn State University College of Education,nap11@psu.edu,(814) 863-3762,,false
+Peter,Niedfeldt,CEO,PeterOrg,peter@niedfeldt.com,9175551212,,false
+Jennifer,Trachtman,Development Director,Philadelphia Teacher Residency at the Philadelphia Education Fund,jtrachtman@philaedfund.org,2156651400,partner,true
+Diana,Campbell,"Director, Philadelphia Teacher Residency",Philadelphia Teacher Residency at the Philadelphia Education Fund,dcampbell@philaedfund.org,2156651400,partner,true
+Theodore,"Hodapp, Ph.D","APS Director of Education and Diversity; PhysTEC Project Director, American Physical Society","PhysTEC (led by APS, in partnership with AAPT)",hodapp@aps.org,301-209-3263,partner,true
+Monica ,"Plisch, Ph.D.",APS Assistant Director of Education,"PhysTEC (led by APS, in partnership with AAPT)",plisch@aps.org,301-209-3273,partner,true
+Jerry ,Hultin,President,Polytechnic Institute of New York University,hultin@poly.edu,718-260-3500 ,partner,true
+Ben,Esner,"Director, K-12 STEM Education",Polytechnic Institute of New York University,besner@poly.edu,718-260-3511,partner,true
+Gabe ,Lyons or Paige Ponder (CEO) pponder@projectexploration.org,Founder,Project Exploration,glyon@projectexploration.org,773-834-7666,,false
+Debbie ,Hughes,Director or Public/Private Partnerships,Project Lead the Way,dhughes@pltw.org,(914) 299-1177,,false
+Ulcca ,Hansen,Executive Director,Public Education & Business Coalition,uhansen@pebc.org,303-861-8661,,false
+Julie,Kowal,Senior consultant,Public Impact,julie_kowal@publicimpact.com,(919) 294-9798,partner,true
+Bryan,Hassel,Co-Director ,Public Impact,bryan_hassel@publicimpact.com,919-967-5102,partner,true
+Sharon,Barrett,Research consultant and copy editor,Public Impact,sharon_barrett@publicimpact.com,"",partner,true
+Brent ,Maddin,Provost,Relay Graduate School of Education,bmaddin@relayschool.org,212-228-1888 X116,partner,true
+Norman,Atkins,Founder & CEO,Relay Graduate School of Education,natkins@teacheru.org,212.228.1888,partner,true
+Norman,Atkins,,Relay Graduate School of Education,mjoelson@teacheru.org,,,true
+Jean,Kutcher,TLC & Rider SELECT Administrative Director,Rider University,jkutcher@rider.edu,609-896-5000,,false
+Julie ,Kidd,Program Officer,"S. D. Bechtel, Jr. Foundation ",jkidd@sdbjrfoundation.org,(415) 284-8818,funding_partner,true
+Leigh,Abts,"Research Associate Professor, College of Education and The A. James Clark School of Engineering, University of Maryland",SEEK 16,labts@umd.edu,301-405-8483,,false
+Jeremy,Roschelle,Director,SRI (Center for Technology and Learning),jeremy.roschelle@sri.com,6509069814,,false
+James ,Brown,,STEM Education Coalition,jfbrown@stemedcoalition.org,,,
+Alex,De Ocompo,,Saban Family Foundation,adeocampo@saban.com,,,
+Chris,Reising,,San Diego County School District,creising@sdcoe.net,,,
+Christi,Harter,Director,San Mateo County Office of Education STEM Center,charter@smcoe.k12.ca.us,(650) 802-5401,,false
+Elisabeth,Swanson,Director,Science Math Resource Center - Montana State University,eswanson@montana.edu,1-406-994-5952,,false
+Kacy ,"Redd, PhD","Assistant Director, Science & Mathematics Education Policy, APLU",Science and Mathematics Teacher Imperative of the Association of Public and Land-grant Universities,kredd@aplu.org,202-478-6022,partner,true
+Howard ,Gobstein,"Co-Director, SMTI, Executive Vice President, APLU",Science and Mathematics Teacher Imperative of the Association of Public and Land-grant Universities,hgobstein@aplu.org,202-478-6077,partner,true
+Paul,Sally,Director ,Seminars for Endorsement of Science and Mathematics Educators (SESAME),sally@math.uchicago.edu,(773) 702-7389 ,,false
+Lewis,Bernstein,"Executive Vice President, Education, Research, and Outreach",Sesame Workshop,lewis.bernstein@sesame.org,212-875-6212,partner,true
+Patrick,Key,"Vice President, Strategic Partnerships and Development",Sesame Workshop,patrick.key@sesame.org,212-875-6760,partner,true
+Muhammed,Chaudhry,CEO,Silicon Valley Education Foundation,muhammed@svefoundation.org,408-790-9410,,false
+Rajesh,Jha,Founder and CEO,SimInsights,rkjha1@siminsights.com,714-651-4104,,false
+Ira,Lit,"Assoc. Professor (Teaching), Director Stanford Elementary Teacher Education Program",Stanford Teacher Education Program,iralit@stanford.edu,650-725-2221,partner,true
+Rachel,Lotan,"Professor (Teaching), Director Stanford Teacher Education Program",Stanford Teacher Education Program,rlotan@stanford.edu,1-650-723-5992,partner,true
+Doug ,Levin,Executive Director,State Educational Technology Directors Association,dlevin@setda.org,202-556-3684,,false
+Emily,Jordan-Cox,Policy Director,State of Arkansas,emily.jordan-cox@governor.arkansas.gov,(501) 682-8040,partner,true
+Susan,Harriman,Director of Policy,State of Arkansas,susan.harriman@arkansas.gov,5016823667,partner,true
+Haley,Keenan-Gray,Advisor for Intergovernmental Affairs,State of Arkansas,haley.keenan-gray@governor.arkansas.gov,501.683.6412,partner,true
+John,Ratliff,"Director of Policy, Office of Governor Martin O’Malley",State of Maryland,jratliff@gov.state.md.us,410-974-3901,partner,true
+Angela ,Lagdameo,"Senior Analyst, Office of Governor Martin O’Malley",State of Maryland,alagdameo@gov.state.md.us,410.260.3961 ,partner,true
+Jeff,Edmondson,Managing Director,Strive,edmondsonj@strivenetwork.org,513-218-7927,,false
+Meg ,Palisoc,CEO,Synergy Academies,megpalisoc@gmail.com,323-459-5463,,false
+Frank,Davis,President,TERC,frank_davis@terc.edu,617-873-9600,,false
+Tim  ,Daly,President,TNTP,tdaly@tntp.org,(917) 686-2669,partner,true
+Amy ,Etten,Communications and Development,TNTP,aetten@tntp.org,(917) 686-2669,partner,true
+Steven,Farr,Chief Knowledge Officer,Teach For America,steven.farr@teachforamerica.org,"",partner,true
+Melissa ,Gregson,Senior Recruitment Director,Teach For America,melissa.gregson@teachforamerica.org,"",partner,true
+Celine ,Coggins,CEO,Teach Plus,ccoggins@teachplus.org,617-428-0700,,false
+Andrew,Schulman,VP Strategy and Outreach,Teaching Channel,aschulman@teachingchannel.org,310-694-3098,,false
+Patricia ,Wasley,Chief Academic Officer,Teaching Channel,pwasley@teachingchannel.org,206-372-0629,,false
+Jan ,Morrison,"President, TIES Teaching Institute for Excellence in STEM",Teaching Institute for Excellence in STEM,janmorrison@tiesteach.org,443-421-1076,partner,true
+Angie ,Kastning,Director of Project Management and Associate Director of Grants ,Teaching Institute for Excellence in STEM,angiekastning@tiesteach.org,440.477.3181,partner,true
+Francesca,Forzani,Associate Director,"TeachingWorks, University of Michigan",fforzani@umich.edu,662-428-2512,,false
+Trish ,Millines Dziko,Executive Director,Technology Access Foundation,trishmi@techaccess.org,2067259095,,false
+Sky ,Gallegos,"Director, STEM Innovation Network",Tennessee Department of Education,sky.gallegos@tn.gov,615-532-6254,partner,true
+Joel,Niedfeldt,Nominator,Test Org,joel@niedfeldt.com,2125551212,,true
+Charlyne,Young,Professional Development Alliance Manager,Texas Instruments,cfyoung@ti.com,972-917-2898,,false
+Sneha,Sheth,Special Projects Manager,The Achievement Network,ssheth@achievementnetwork.org,6177250000,partner,true
+Mora,Segal,Chief Executive Officer,The Achievement Network,msegal@achievementnetwork.org,6177250000,partner,true
+Samantha,Messer,"",The Achievement Network,smesser@achievementnetwork.org,"",partner,true
+ Gregory,Budzban,Professor and Interim Chair,"The Algebra Project, Inc.",gbudzban@siu.edu,618-453-6522,partner,true
+Robert P ,Moses,Founder and President,"The Algebra Project, Inc.",ben@algebra.org,617-491-0200,partner,true
+Rhonda,Shade,Founder & CEO,"The Algebra Project, Inc.",rhonda@harbingerpro.com,212-228-1888,partner,true
+Lynn ,Olson,Senior Program Officer,The Bill & Melinda Gates Foundation,lynn.olson@gatesfoundation.org,"",funding_partner,true
+Jessic,Baylor,"",The Boston Foundation,jessica.baylor@tbf.org,(617) 338-2691,funding_partner,true
+Elizabeth ,Pauley,"",The Boston Foundation,elizabeth.pauley@tbf.org,"",funding_partner,true
+Bina ,Venkataraman,Senior Science Policy Adviser,The Broad Institute of Harvard & MIT,bina@broadinstitute.org,617-714-7016 ,partner,true
+Aleta ,Margolis,Executive Director,The Center for Inspired Teaching,aleta@inspiredteaching.org,2024621956,,false
+Sandy ,Cardin,President,The Charles and Lynn Schusterman Family Foundation,scardin@schusterman.org,"",funding_partner,true
+Stacy ,Schusterman,"",The Charles and Lynn Schusterman Family Foundation,sschuste@samson.com,"",funding_partner,true
+Tom,Rudin,"Senior Vice President for Advocacy, Government Relations and Development",The College Board,trudin@collegeboard.org,202-741-4710,,false
+Nancy,Conrad,Founder,The Conrad Foundation,nconrad@conradfoundation.org,(714) 330-2853 ,,false
+Laura,Winters,Senior Project Director,The Council for Adult & Experiential Learning,lwinters@cael.org,312-449-2650,,false
+Bo  ,Miller,"global Director, Corporate Citizenship",The Dow Chemical Company,bomiller@dow.com,989 636 1204,funding_partner,true
+Leslie ,Gurrola,"",The Greater Texas Foundation,lesliegurrola@greatertexasfoundation.org,"",funding_partner,true
+Wynn  ,Rosser,Executive Director,The Greater Texas Foundation,wynnrosser@greatertexasfoundation.org,979-779-6100,funding_partner,true
+Deanna ,Gomby,"Vice President, Education",The Heising-Simons Foundation,deanna@heisingsimons.org,650-887-0277 ,funding_partner,true
+Jeremy ,Kranowitz,"Director, Center for Education",The Keystone Center,jkranowitz@keystone.org,202-452-1594 ,,false
+Holli,Martinez,Co-Founder and President,The Martinez Foundation,info@themartinezfoundation.org,425-614-8585,,false
+Glen,Whitney,,The Museum of Mathematics,whitney@momath.org,,,
+mfarley@nbpts.org,Farley,Chief Development Officer,The National Board for Professional Teaching Standards,mfarley@nbpts.org,703-312-6256 ,,false
+Tim,Presiado,,The New Teach Network,tpresiado@newteachnetwork.org,,,
+Mike,Johnston,Colorado State Senator,The New Teacher Project,mcjohnstonian@gmail.com,303-866-4864,,false
+Jo Ann ,Norris,Executive Director,The North Carolina Teaching Fellows Program,jnorris@ncforum.org,(919) 781-6833,,false
+Kam,NG,,The Office of Naval Research,kam.ng1@navy.mil,,,
+Maggie,Gilburg,Director of Development,The Texas Tribune,mgilburg@texastribune.org,512-716-8686,partner,true
+Barbara,Knaggs,Chief Operating Officer,The Texas Tribune,bknaggs@texastribune.org,512-716-8613,partner,true
+Pamela,Romero,Associate Director of the UTeach Institute,The UTeach Institute,promero@austin.utexas.edu,512-232-9238,partner,true
+Kimberly,Hughes,Director of The UTeach Institute,The UTeach Institute,khughes@austin.utexas.edu,512-689-5781,partner,true
+James ,Fraser,Senior Vice President for Programs,The Woodrow Wilson National Fellowship Foundation,fraser@woodrow.org,508-763-5654,partner,true
+Linda,Distad,Professor and Steering Committee Chair ,Twin Cities Teacher Collaborative,lsdistad@stkate.edu,651-690-6798,partner,true
+Laura ,Mogelson,Director,Twin Cities Teacher Collaborative,lmogelson01@gw.hamline.edu,651-523-2596,partner,true
+Kate,Edwards,"Program Director, Education Department",UCLA Extension ,kedwards@unex.ucla.edu,(310) 206-3335,,false
+ Freeman ,"Hrabowski, III",President of UMBC,UMBC,pgranger@umbc.edu,(410) 455 - 3880,,false
+Nina ,Crum,Executive Assistant to Dean Karen Symms Gallagher,USC Rossier School of Education,ncrum@usc.edu,213.740.5756 ,partner,true
+Karen ,Gallagher,"Dean, Rossier School of Education",USC Rossier School of Education,kgallghr@usc.edu,213-740-5756  ,partner,true
+Matthew,Gross," Executive Director, Regents Research Fund",USNY Regents Research Fund,mgross@mail.nysed.gov, 212-951-6572,partner,true
+Josh ,Skolnick,Director of Institutional Giving Regents Research Fund,USNY Regents Research Fund,jskolnic@mail.nysed.gov,212-725-4083,partner,true
+Tracy ,LaQuey Parker,Director of the UTeach Institute,"UTeach - University of Texas, Austin",marymiller@mail.utexas.edu,(512) 232-0687,,false
+Lily ,Kunin,Development Coordinator,Uncommon Schools,lkunin@uncommonschools.org,646- 532-9738,partner,true
+Brigid ,Ganley  ,Director of Development,Uncommon Schools,bganley@uncommonschools.org,847-420-6148,partner,true
+John ,Wolfe,Associate Vice Chancellor for Academic Affairs,University System of Maryland,jwolfe@usmd.edu,(301) 445-1917,partner,true
+Nancy ,Shapiro,Associate Vice Chancellor for Academic Affairs,University System of Maryland,nshapiro@usmd.edu,(301) 445-2797,partner,true
+WIlliam (Bill),McCallum,"Co-Director, UA STEM Learning Center and Department Head, Mathematics",University of Arizona STEM Learning Center,wmc@math.arizona.edu,(520) 621-2713,partner,true
+Bruce,Johnson,"Department Head, Teaching, Learning and Sociocultural Studies and Co-Director, UA STEM Learning Center",University of Arizona STEM Learning Center,brucej@email.arizona.edu,520-626-8700,partner,true
+Jeffrey,Remmel,Associate Dean of Physical Sciences,University of California San Diego,jremmel@ucsd.edu,858-534-4159,partner,true
+Sherry,Seethaler,Director of Education Initiatives,University of California San Diego,sseethaler@ucsd.edu,858-534-4656,partner,true
+Deborah ,Nolan,Professor of Statistics & Associate Dean for Mathematical and Physical Sciences,"University of California, Berkeley",nolan@stat.berkeley.edu,510-643-7097,partner,true
+George C.,Johnson,"Professor, Mechanical Engineering","University of California, Berkeley",gjohnson@me.berkeley.edu,510-642-3371,partner,true
+Claire ,Durwood,"",University of Chicago Urban Education Institute and Center for Elementary Mathematics and Science Education,cdurwood@uchicago.edu,"",partner,true
+Jean ,Westrick,"",University of Chicago Urban Education Institute and Center for Elementary Mathematics and Science Education,jwestrick@uchicago.edu,"",partner,true
+Douglas,O'Roark,Director of Secondary Math and Biology Education,University of Chicago Urban Education Institute and Center for Elementary Mathematics and Science Education,dougoroark@uchicago.edu,"",partner,true
+Tim ,Knowles,Director,University of Chicago Urban Education Institute and Center for Elementary Mathematics and Science Education,tknowles@uchicago.edu,773-702-2797,partner,true
+Mike,Lach,Project Director,University of Chicago Urban Education Institute and Center for Elementary Mathematics and Science Education,mlach@uchicago.edu,773-834-1775,partner,true
+Margot,Neufeld,Senior Director of Development ,University of Colorado Boulder,margot.neufeld@cufund.org,303-492-2990,partner,true
+Patty,McDonald,Executive Assistant to the Dean,University of Colorado Boulder,pat.mcdonald@colorado.edu,(303) 492-6939,partner,true
+Noah,Finkelstein,Associate Professor,University of Colorado Boulder,finkelsn@colorado.edu,303 735 6082,partner,true
+Lorrie,Shepard,"Dean, School of Education",University of Colorado Boulder,lorrie.shepard@colorado.edu,(303) 492-6937,partner,true
+Deborah ,Balogh,Executive Vice President,University of Indianapolis,dbalogh@uindy.edu,317.788.3213,partner,true
+Kathryn ,Moran,"Provost/Dean, School of Education",University of Indianapolis,kmoran@uindy.edu,317.788.3367,partner,true
+Jennifer,Drake,"Acting Dean, College of Arts and Sciences; Director, Woodrow Wilson Indiana Teaching Fellowship Program,",University of Indianapolis,jdrake@uindy.edu,317.791.5704,partner,true
+Charles,Dershmer,Director Woodrow Wilson Fellowship Program,University of Michigan,dersh@umich.edu,734-615-9604,,false
+Barbara,Billington,Science Education Teaching Specialist,University of Minnesota STEM Education Center,bill0041@umn.edu,612-626-2471,,false
+Suzanne,Zentner,National Director of P20 Education,University of Phoenix / Apollo Group,suzanne.zentner@apollogrp.edu,602-557-7716,,false
+Lynn,Bell,Director of Development Communications,University of Virginia-Curry School of Education,llb6v@virginia.edu,434-924-3450,,false
+Tom ,Stritikus,Dean,University of Washington College of Education,tstrit@uw.edu,206-616-7854,,true
+Jessica ,Thompson,"Research Assistant Professor, Curriculum and Instruction",University of Washington College of Education,jjthomps@uw.edu,206-221-4630,partner,true
+Sara,Stoelinga,,Urban Education Institute,srstoelinga@uchicago.edu,,,true
+"Phillip ""Uri""",Treisman,Director,"Urban Mathematics Leadership Network, the Charles A. Dana Center-The University of Texas at Austin",uri@austin.utexas.edu,512-471-6190,,false
+Christina,Hall,Co-Director,Urban Teacher Center,christinah@urbanteachercenter.org,443-414-8949,partner,true
+Jennifer,Green,Co-Director,Urban Teacher Center,jenniferg@urbanteachercenter.org,410-708-4435,partner,true
+Vernee,Green,"",Urban Teacher Residency United,vgreen@utrunited.org,"",partner,true
+Diana,Hagans,Finance and Operations Manager,Urban Teacher Residency United,dhagans@utrunited.org,312-397-8878,partner,true
+Anissa,Listak,Executive Director,Urban Teacher Residency United,alistak@utrunited.org,312-397-8878 x114,partner,true
+Jon ,Rubin,"Acting Director, Education",WNETasdf,rubinj@wnet.org,2125608841,partner,true
+Kay,Coz,"Associate Director, Institutional Giving ",WNETasdf,cozk@wnet.org,2125602950 ,partner,true
+Mark,Lewis,Senior Program Officer,Washington STEM,mark@washingtonstem.org,2066584328,,false
+Julia,Novy-Hildesley,Chief Executive Officer,Washington STEM,julia@washingtonstem.org,206-658-4320,,
+Lori,Haack,Robotics and Science Teacher,West Grand High School,haackl@westgrand.k12.co.us,970-724-3425,,false
+Kelly,Stuart,"Dorector of Dissemination, Doing What Works",WestEd,kstuart@wested.org,(415) 615-3209,,false
+Philip,Schmidt,Associate Provost for the Teachers College,Western Governors' University,pschmidt@wgu.edu,8454891748,,false
+Dean,McKibbens,,Wheelock College in Boston,dmckibbens@wheelock.edu,,,
+Victor,Vuchic,"Program Officer, Open Educational Resources",William and Flora Hewlett Foundation,vvuchic@hewlett.org,650.234.4761,funding_partner,true
+Jennifer,Chauvot,Associate Professor of Mathematics Education,"iSMART (integration of Science, Mathematics and Reflective Teaching) at University of Houston College of Education",jchauvot@uh.edu,713-743-9864,,false
+test,testitytest,testity test test,test,rhonda.shade@thinkfa.com,555-555-5555,,false
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true
+Anissa,Listak,Executive Director,,alistak1@utrunited.org,312-397-8878 x114,,true
+David ,Archer,Senior Policy Advisor,,david.archer@state.co.us,303-866-5980,,true
+Chelsea,Spann,Partnership and Strategy Senior Coordinator,,chelsea@goodcorps.com,818-429-6046,,
+Test,Tester,"",,info@100kin10.org,"",,false
+Steve,McQueen,Mr. ,,lamontjl@gmail.com,212-207-6230,,true
+deleted,deleted,"",,deleted@deleted.com,212-207-6230,,false
+Test,User,,,kavita@locomotivellc.com,,,true

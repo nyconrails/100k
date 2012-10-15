@@ -1,3 +1,5 @@
+require 'open-uri'
+
 ActiveAdmin.register Organization do
   controller.authorize_resource
   controller do
@@ -126,10 +128,19 @@ ActiveAdmin.register Organization do
     f.buttons
   end
 
+
 # added on- 10-apr-2012 Exporting contacts
 # Start add
   action_item :only => :index do
+    link_to 'Download Logos', :action => 'download_logos'
+  end
+
+  action_item :only => :index do
     link_to 'Export Contacts', :action => 'export_csv'
+  end
+
+  collection_action :download_logos do
+    @orgs = Organization.all
   end
 
   collection_action :export_csv do
@@ -145,6 +156,13 @@ ActiveAdmin.register Organization do
         :type => 'text/csv; charset=utf-8; header=present',
         :disposition => 'attachment',
         :filename => (file))
+  end
+
+  member_action :downloadl do
+    org = Organization.find(params[:id])
+    open(URI.parse(org.avatar.to_s)) do |f|
+      send_data f.read, :type => "image/jpeg", :disposition => "attachment"
+    end
   end
 
 
