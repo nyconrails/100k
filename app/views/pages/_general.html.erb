@@ -30,11 +30,16 @@
 
   <% if c.subsections.any? %>
     <ul class="new_submenu">
-      <% klass = current_page?("/page/aboutus") ? "active" : "" %>
-      <li><a href="/page/aboutus" class="subnav1 <%="#{klass}"%>">About the Movement</a></li>
-      <% c.subsections.each do |subsection| %>
-        <% klass = current_page?("/page/#{subsection.title.parameterize}") ? "active" : "" %>
-        <li><a href="/page/<%= subsection.title.parameterize %>" class="subnav1 <%="#{klass}"%>"><%= subsection.render_field(:title) %></a></li>
+      <% {
+        "/page/aboutus" => "About the Movement",
+        "/page/goal-vision" => "Goal & Vision",
+        "/page/our-history" => "Our History",
+        "/page/how-to-join" => "How To Join",
+        "/page/our-leadership" => "Our Leadership",
+        "/page/faq" => "FAQ"
+      }.each do |k, v| %>
+        <% klass = current_page?(k) ? "active" : "" %>
+        <li><a href="<%= k %>" class="subnav1 <%="#{klass}"%>"><%= v %></a></li>
       <% end %>
     </ul>
   <% end %>
