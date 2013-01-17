@@ -17,6 +17,7 @@ class Ability
       can :manage, Opportunity if user.editor?
       can :manage, Organization if user.editor?
       can :manage, User if user.editor?
+      can :manage, ContactedOrganization if user.editor?
 
       #Add Super User privileges
       can :manage, :all if user.super_user?
