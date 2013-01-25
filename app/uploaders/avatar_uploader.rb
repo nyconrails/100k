@@ -3,8 +3,8 @@
 class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
@@ -37,37 +37,37 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def create_rollovers(width,height)
-    # manipulate!(:format=>:png) do |img|
-    #   img.fuzz='5%'
-    #   img.resize_to_fit!(width-10,height-10)
-    #   img=img.transparent('white')
-    #
-    #   tile=Magick::Image.read(Rails.root+'app/uploaders/logo_grey_tile.png')
-    #   tile[0].composite!(img,Magick::CenterGravity,Magick::OverCompositeOp)
-    #   img=tile[0]
-    # end
+    manipulate!(:format=>:png) do |img|
+      img.fuzz='5%'
+      img.resize_to_fit!(width-10,height-10)
+      img=img.transparent('white')
+
+      tile=Magick::Image.read(Rails.root+'app/uploaders/logo_grey_tile.png')
+      tile[0].composite!(img,Magick::CenterGravity,Magick::OverCompositeOp)
+      img=tile[0]
+    end
   end
 
   def create_rollover_sprite(width,height)
-    # manipulate!(:format=>:png) do |img|
-    #   base   = Magick::Image.new(width, height)
-    #   img    =img.resize_to_fit(width - 10, height - 10)
-    #   sprite = Magick::Image.new(width, height * 2)
-    #   sprite_mask = Magick::Image.read(Rails.root+'app/uploaders/logo_grey_black_sprite.png').first
-    #
-    #   # extend edges to tile size
-    #   img = base.composite(img, Magick::CenterGravity, Magick::OverCompositeOp)
-    #   sprite.composite!(img, Magick::SouthWestGravity, Magick::OverCompositeOp)
-    #   sprite.composite!(sprite_mask, Magick::CenterGravity, Magick::OverCompositeOp)
-    #
-    #   # make white transparent
-    #   img.fuzz = '5%'
-    #   img = img.transparent('white')
-    #   # apply image on light part of sprite
-    #   sprite.composite!(img, Magick::NorthWestGravity,Magick::OverCompositeOp)
-    #
-    #   img=sprite
-    # end
+    manipulate!(:format=>:png) do |img|
+      base   = Magick::Image.new(width, height)
+      img    =img.resize_to_fit(width - 10, height - 10)
+      sprite = Magick::Image.new(width, height * 2)
+      sprite_mask = Magick::Image.read(Rails.root+'app/uploaders/logo_grey_black_sprite.png').first
+
+      # extend edges to tile size
+      img = base.composite(img, Magick::CenterGravity, Magick::OverCompositeOp)
+      sprite.composite!(img, Magick::SouthWestGravity, Magick::OverCompositeOp)
+      sprite.composite!(sprite_mask, Magick::CenterGravity, Magick::OverCompositeOp)
+
+      # make white transparent
+      img.fuzz = '5%'
+      img = img.transparent('white')
+      # apply image on light part of sprite
+      sprite.composite!(img, Magick::NorthWestGravity,Magick::OverCompositeOp)
+
+      img=sprite
+    end
   end
 
 #   def filename
