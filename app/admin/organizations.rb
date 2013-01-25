@@ -31,7 +31,7 @@ ActiveAdmin.register Organization do
     else
       output = "Click a link below to revert to an older version of this item.<br/><br />"
       versions.reverse.each do |v|
-        unless v.whodunnit.to_i == 0 # system made a version
+        unless v.whodunnit.to_i == 0 || v.object.nil? # system made a version
           whodunnit = AdminUser.find(v.whodunnit)
 
           # Create the links to view / revert to this previous version
