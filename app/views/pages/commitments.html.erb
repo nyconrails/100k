@@ -39,7 +39,7 @@
     <% end %>
   </div>
 
-  <% end %>
+  <% else %>
 
   <% if content_for? :subsection %>
     <%= yield :subsection %>
@@ -51,6 +51,8 @@
         <%= render :partial=>'commitment', :locals=>{:organization=>organization} %>
       <% end %>
     </div>
+  <% end %>
+
   <% end %>
 
 </div><!-- end maincontent -->
