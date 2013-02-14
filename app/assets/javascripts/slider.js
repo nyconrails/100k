@@ -34,7 +34,7 @@ $(window).load(function() {
 
   function auto_slide_next() {
     if (sliderActive) {
-      var next = (current_slide_item == 2) ? 0 : current_slide_item + 1;
+      var next = (current_slide_item == 3) ? 0 : current_slide_item + 1;
       slide(next);
     }
   }
