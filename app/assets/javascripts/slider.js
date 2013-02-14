@@ -1,12 +1,12 @@
 // Custom slider by NYC Dev Shop for 100kin10
 
-$(window).load(function() {
+$(document).ready(function() {
   if ( $('#custom_slider').length ) {
 
-  var sliderActive = false;
   var $slider = $('#custom_slider');
   var $triggers = $('#custom_slider_triggers');
   var current_slide_item = 0;
+  var sliderTimer;
 
   // Initialize
   $($slider).find('.sliderli').not(":first").hide().css('left', '600px');
@@ -30,13 +30,12 @@ $(window).load(function() {
       $(current_item).css({'z-index': '1', 'left': '600px'}).removeClass('active');
       $(new_item).addClass('active');
     });
+
   }
 
   function auto_slide_next() {
-    if (sliderActive) {
-      var next = (current_slide_item == 3) ? 0 : current_slide_item + 1;
-      slide(next);
-    }
+    var next = (current_slide_item == 3) ? 0 : current_slide_item + 1;
+    slide(next);
   }
 
   // Clicking triggers
@@ -44,13 +43,8 @@ $(window).load(function() {
     var ind = parseInt( $(this).index() );
     stopSlider();
     slide(ind);
-    setTimeout(function() { startSlider(); }, 4000);
+    startSlider();
   });
-
-  // Auto scroll
-  sliderActive = true;
-  setInterval(function() { auto_slide_next() }, 4000);
-
 
   // Videos and sliders
   // Pause slider when videos are playing
@@ -65,11 +59,11 @@ $(window).load(function() {
   }
 
   var stopSlider = function() {
-    sliderActive = false;
+    clearInterval(sliderTimer);
   };
 
   var startSlider = function() {
-    sliderActive = true;
+    sliderTimer = setInterval(function() { auto_slide_next() }, 4000);
   };
 
   _V_("my_video_a").ready(function() {
@@ -86,6 +80,10 @@ $(window).load(function() {
     myVideob.addEvent("ended", startSlider);
   });
 
+
+
+  // Auto scroll
+  startSlider();
 
   }
 });
