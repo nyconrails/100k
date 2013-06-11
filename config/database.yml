@@ -2,15 +2,15 @@ development:
   adapter: postgresql
   host: localhost
   database: 100k_dev
-  username: postgres
+  username: John
   password:
   port:
 
 test: &test
   adapter: mysql2
   host: localhost
-  username: root
-  password:
+  username: john
+  password: password
   database: nytla_test
 
 production:
